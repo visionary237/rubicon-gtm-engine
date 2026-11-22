@@ -58,7 +58,7 @@ Ce que fait concrètement le prototype :
 
 Ce qu'il ne fait pas : prédire la conversion, appeler à votre place, envoyer des messages, ni surveiller les commerciaux. Il n'infère aucune émotion ni fatigue. Les poids sont des hypothèses configurables, pas une vérité scientifique.
 
-Côté technique : un seul moteur de décision en JavaScript, exécuté à l'identique en ligne de commande et dans n8n (vérifié sur une vraie instance), 10 Claude Skills, des modes mock, dry-run et live, SQLite et Python pour l'analyse, 30 tests automatisés.
+Côté technique : un seul moteur de décision en JavaScript, exécuté à l'identique en ligne de commande et dans n8n (vérifié sur une vraie instance), 11 Claude Skills, des modes mock, dry-run et live, SQLite et Python pour l'analyse, 31 tests automatisés.
 
 La méthode de qualification s'appuie sur l'Outbound Blueprint de Valentin Morterol (Scalon), publié sous licence MIT. Merci à lui d'avoir partagé un travail aussi concret.
 

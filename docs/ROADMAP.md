@@ -1,7 +1,7 @@
 # Roadmap
 
 ## Done — v1.0.0 (2026-11-19)
-Decision engine (qualification, contacts, waterfall quotes, offer matching, scoring, ITW, NBA, allocation, briefs, roadmap, post-call), CLI, mock/dry-run/live adapters, two n8n workflows executed on n8n 1.123.99, SQLite schema + KPIs + Python analytics, 10 skills (6 implemented), 500-account synthetic dataset, 30 automated tests.
+Decision engine (qualification, contacts, waterfall quotes, offer matching, scoring, ITW, NBA, allocation, briefs, roadmap, post-call), CLI, mock/dry-run/live adapters, two n8n workflows executed on n8n 1.123.99, SQLite schema + KPIs + Python analytics, 11 skills (7 implemented), registry sourcing by sector × zone, 500-account synthetic dataset, 31 automated tests.
 
 ## Week plan (owner's target, not a commitment)
 | Day | Goal | Exit criterion |
