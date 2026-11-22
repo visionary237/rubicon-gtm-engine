@@ -1,0 +1,4018 @@
+{
+  "engineVersion": "1.0.0",
+  "ruleVersion": "1.0.0",
+  "mode": "mock",
+  "workspace": "ws-demo",
+  "date": "2026-11-20",
+  "runAt": "2026-11-20T07:00:00Z",
+  "roadmaps": [
+    {
+      "repId": "r-alex",
+      "repName": "Alex",
+      "date": "2026-11-20",
+      "items": [
+        {
+          "time": "08:00",
+          "block": "1 · Relances promises",
+          "action": "callback",
+          "minutes": 15,
+          "contact": "Lina Martin",
+          "company": "Atlas Fitness Club",
+          "offerId": "robot-cleaning",
+          "why": "promis aujourd'hui à 09:00 · P 85.59",
+          "priority": 85.59,
+          "briefId": "B-A-2026-11-20-c01-callback"
+        },
+        {
+          "time": "09:00",
+          "block": "3 · Bloc prospection 1",
+          "action": "call",
+          "minutes": 15,
+          "contact": "Hugo Leroy",
+          "company": "Atlas Fitness Club",
+          "offerId": "robot-cleaning",
+          "why": "O 71.73 · M 90.35 · P 68.55",
+          "priority": 68.55,
+          "briefId": "B-A-2026-11-20-c02-call"
+        },
+        {
+          "time": "09:15",
+          "block": "4 · Clôture",
+          "action": "post_call_notes",
+          "minutes": 15,
+          "why": "Notes courtes puis /post-call-sync"
+        }
+      ],
+      "overdueFollowUps": 0,
+      "plannedMinutes": 30,
+      "capacityMinutes": 120,
+      "fitsBeforeDayEnd": true,
+      "available": true
+    },
+    {
+      "repId": "r-sam",
+      "repName": "Sam",
+      "date": "2026-11-20",
+      "items": [
+        {
+          "time": "08:00",
+          "block": "1 · Relances promises",
+          "action": "followup_email",
+          "minutes": 10,
+          "contact": "Victor Faure",
+          "company": "Bureaux Quai Ouest",
+          "offerId": "facility-care",
+          "why": "promis le 2026-11-18 à 16:00 · P 88.52",
+          "priority": 88.52,
+          "briefId": "B-A-2026-11-20-c08-followup_email"
+        },
+        {
+          "time": "08:10",
+          "block": "2 · Préparation rendez-vous",
+          "action": "prepare_meeting",
+          "minutes": 20,
+          "contact": "Eva Lambert",
+          "company": "Galerie Marée",
+          "offerId": "crm-automation",
+          "why": "O 65.12 · M 85 · P 61.32",
+          "priority": 61.32,
+          "briefId": "B-A-2026-11-20-c17-prepare_meeting"
+        },
+        {
+          "time": "09:00",
+          "block": "3 · Bloc prospection 1",
+          "action": "call",
+          "minutes": 15,
+          "contact": "Noé Bernard",
+          "company": "Galerie Marée",
+          "offerId": "crm-automation",
+          "why": "O 65.12 · M 82.75 · P 64.32",
+          "priority": 64.32,
+          "briefId": "B-A-2026-11-20-c05-call"
+        },
+        {
+          "time": "09:15",
+          "block": "4 · Clôture",
+          "action": "post_call_notes",
+          "minutes": 15,
+          "why": "Notes courtes puis /post-call-sync"
+        }
+      ],
+      "overdueFollowUps": 1,
+      "plannedMinutes": 45,
+      "capacityMinutes": 90,
+      "fitsBeforeDayEnd": true,
+      "available": true
+    },
+    {
+      "repId": "r-jordan",
+      "repName": "Jordan",
+      "date": "2026-11-20",
+      "items": [
+        {
+          "time": "09:00",
+          "block": "3 · Bloc prospection 1",
+          "action": "call",
+          "minutes": 15,
+          "contact": "Marc Dubois",
+          "company": "Boulangerie du Port",
+          "offerId": "review-cards",
+          "why": "O 62.1 · M 85.75 · P 64.39 · manque intent_timing",
+          "priority": 64.39,
+          "briefId": "B-A-2026-11-20-c09-call"
+        },
+        {
+          "time": "09:15",
+          "block": "3 · Bloc prospection 1",
+          "action": "reactivate",
+          "minutes": 15,
+          "contact": "Nadia Perrin",
+          "company": "Pain & Co — Le Havre Centre",
+          "offerId": "review-cards",
+          "why": "O 56.7 · M 81.25 · P 55.57 · manque intent_timing",
+          "priority": 55.57,
+          "briefId": "B-A-2026-11-20-c11-reactivate"
+        },
+        {
+          "time": "09:30",
+          "block": "4 · Clôture",
+          "action": "post_call_notes",
+          "minutes": 15,
+          "why": "Notes courtes puis /post-call-sync"
+        }
+      ],
+      "overdueFollowUps": 0,
+      "plannedMinutes": 30,
+      "capacityMinutes": 60,
+      "fitsBeforeDayEnd": true,
+      "available": true
+    }
+  ],
+  "briefs": [
+    {
+      "id": "B-A-2026-11-20-c08-followup_email",
+      "actionId": "A-2026-11-20-c08-followup_email",
+      "rep": "Sam",
+      "type": "followup_email",
+      "account": {
+        "id": "a04",
+        "name": "Bureaux Quai Ouest",
+        "domain": "quai-ouest.example",
+        "sector": "offices",
+        "location": "Le Havre",
+        "summary": "Centre d'affaires et location de bureaux. Clients : PME et indépendants.",
+        "verdict": "oui"
+      },
+      "contact": {
+        "id": "c08",
+        "name": "Victor Faure",
+        "title": "Directeur général",
+        "buyingRole": "economic_buyer"
+      },
+      "potentialProblems": [
+        {
+          "key": "cleaning_quality_complaints",
+          "label": "Plaintes sur la qualité d'entretien",
+          "evidenceId": "ev-a04-1",
+          "status": "hypothesis_to_validate_in_call"
+        }
+      ],
+      "offer": {
+        "id": "facility-care",
+        "name": "Entretien professionnel"
+      },
+      "history": {
+        "at": "2026-11-12T15:00:00+01:00",
+        "status": "Qualifié",
+        "summary": "contrat d'entretien à renouveler fin janvier, attend une grille de diagnostic"
+      },
+      "sources": [
+        {
+          "id": "src-a04-site",
+          "url": "https://quai-ouest.example",
+          "checkedAt": "2026-11-09"
+        }
+      ],
+      "reasonForCall": null,
+      "script": {
+        "text": "Bonjour Victor, Sam de Northbay. Comme convenu lors de notre échange du 2026-11-12, je reviens vers vous pour envoyer la grille de diagnostic d'entretien. Est-ce que lundi ou mardi vous conviendrait pour un échange de 20 minutes ?",
+        "blocks": [
+          {
+            "k": "intro",
+            "t": "Bonjour Victor, Sam de Northbay."
+          },
+          {
+            "k": "continuity",
+            "t": "Comme convenu lors de notre échange du 2026-11-12, je reviens vers vous pour envoyer la grille de diagnostic d'entretien."
+          },
+          {
+            "k": "ask",
+            "t": "Est-ce que lundi ou mardi vous conviendrait pour un échange de 20 minutes ?"
+          }
+        ],
+        "estimatedSeconds": 13
+      },
+      "icebreaker": {
+        "basis": "previous_interaction",
+        "text": "Reprendre : contrat d'entretien à renouveler fin janvier, attend une grille de diagnostic"
+      },
+      "objections": [
+        "Notre contrat court jusqu'à l'été",
+        "C'est le siège qui décide",
+        "Nos équipes font le ménage",
+        "C'est trop cher",
+        "Envoyez une plaquette"
+      ],
+      "questions": [
+        "Quels espaces sont concernés ?",
+        "Quelle fréquence ?",
+        "Quand échoit votre contrat ?"
+      ],
+      "nextAction": "Envoyer le complément promis (brouillon à relire, jamais envoyé automatiquement)",
+      "warnings": [
+        "No verified Commercial Value Asset: the non-commercial reason to call is omitted. Do not cite any study or figure.",
+        "No verified, citable reference in this sector: no \"we already work with\" sentence."
+      ],
+      "requiresHumanReview": true
+    },
+    {
+      "id": "B-A-2026-11-20-c01-callback",
+      "actionId": "A-2026-11-20-c01-callback",
+      "rep": "Alex",
+      "type": "callback",
+      "account": {
+        "id": "a01",
+        "name": "Atlas Fitness Club",
+        "domain": "atlas-fitness.example",
+        "sector": "fitness",
+        "location": "Rouen",
+        "summary": "Réseau de deux salles de sport. Clients : comités d'entreprise et abonnés pro.",
+        "verdict": "oui"
+      },
+      "contact": {
+        "id": "c01",
+        "name": "Lina Martin",
+        "title": "Directrice des opérations",
+        "buyingRole": "decision_maker"
+      },
+      "potentialProblems": [
+        {
+          "key": "high_cleaning_cost",
+          "label": "Coût d'entretien élevé",
+          "evidenceId": "ev-a01-1",
+          "status": "hypothesis_to_validate_in_call"
+        },
+        {
+          "key": "large_floor_surface",
+          "label": "Grande surface au sol à entretenir",
+          "evidenceId": "ev-a01-2",
+          "status": "hypothesis_to_validate_in_call"
+        }
+      ],
+      "offer": {
+        "id": "robot-cleaning",
+        "name": "Nettoyage robotisé"
+      },
+      "history": {
+        "at": "2026-11-13T10:12:00+01:00",
+        "status": "Qualifié",
+        "summary": "a demandé un ordre de grandeur du coût d'un robot pour 900 m²"
+      },
+      "sources": [
+        {
+          "id": "src-a01-site",
+          "url": "https://atlas-fitness.example",
+          "checkedAt": "2026-11-12"
+        },
+        {
+          "id": "int-c01-1",
+          "url": "crm://ws-demo/interactions/int-c01-1"
+        }
+      ],
+      "reasonForCall": null,
+      "script": {
+        "text": "Bonjour Lina, Alex de Northbay. Comme convenu lors de notre échange du 2026-11-13, je reviens vers vous pour chiffrer un pilote sur 900 m². Est-ce que lundi ou mardi vous conviendrait pour un échange de 20 minutes ?",
+        "blocks": [
+          {
+            "k": "intro",
+            "t": "Bonjour Lina, Alex de Northbay."
+          },
+          {
+            "k": "continuity",
+            "t": "Comme convenu lors de notre échange du 2026-11-13, je reviens vers vous pour chiffrer un pilote sur 900 m²."
+          },
+          {
+            "k": "ask",
+            "t": "Est-ce que lundi ou mardi vous conviendrait pour un échange de 20 minutes ?"
+          }
+        ],
+        "estimatedSeconds": 13
+      },
+      "icebreaker": {
+        "basis": "previous_interaction",
+        "text": "Reprendre : a demandé un ordre de grandeur du coût d'un robot pour 900 m²"
+      },
+      "objections": [
+        "C'est trop cher pour nous",
+        "On a déjà un prestataire",
+        "Un robot ne fait pas les angles",
+        "Pas le moment, on verra en janvier",
+        "Envoyez-moi une documentation"
+      ],
+      "questions": [
+        "Quelle surface entretenez-vous ?",
+        "Quel est votre coût mensuel d'entretien ?",
+        "Qui valide un pilote ?"
+      ],
+      "nextAction": "Noter le résultat en une phrase dans Notes, puis /post-call-sync",
+      "warnings": [
+        "No verified Commercial Value Asset: the non-commercial reason to call is omitted. Do not cite any study or figure.",
+        "No verified, citable reference in this sector: no \"we already work with\" sentence."
+      ],
+      "requiresHumanReview": true
+    },
+    {
+      "id": "B-A-2026-11-20-c17-prepare_meeting",
+      "actionId": "A-2026-11-20-c17-prepare_meeting",
+      "rep": "Sam",
+      "type": "prepare_meeting",
+      "account": {
+        "id": "a03",
+        "name": "Galerie Marée",
+        "domain": "maree-retail.example",
+        "sector": "retail",
+        "location": "Le Havre",
+        "summary": "Gestionnaire d'une galerie commerciale. Clients : enseignes locataires.",
+        "verdict": "oui"
+      },
+      "contact": {
+        "id": "c17",
+        "name": "Eva Lambert",
+        "title": "Responsable CRM",
+        "buyingRole": "decision_maker"
+      },
+      "potentialProblems": [
+        {
+          "key": "manual_follow_up",
+          "label": "Relances commerciales manuelles",
+          "evidenceId": "ev-a03-1",
+          "status": "hypothesis_to_validate_in_call"
+        },
+        {
+          "key": "lead_leakage",
+          "label": "Demandes entrantes non traitées",
+          "evidenceId": "ev-a03-2",
+          "status": "hypothesis_to_validate_in_call"
+        }
+      ],
+      "offer": {
+        "id": "crm-automation",
+        "name": "CRM et automatisation des relances"
+      },
+      "history": null,
+      "sources": [
+        {
+          "id": "src-a03-site",
+          "url": "https://maree-retail.example",
+          "checkedAt": "2026-11-14"
+        }
+      ],
+      "reasonForCall": null,
+      "script": {
+        "text": "Bonjour, je suis Sam de Northbay. Vous êtes bien Eva, responsable crm chez Galerie Marée ? Très bien, je m'adresse à la bonne personne. On installe un CRM simple qui relance vos demandes à votre place. Je souhaiterais prendre 20 minutes avec vous pour regarder comment vos demandes sont suivies aujourd'hui. Vous êtes disponible lundi ou mardi ?",
+        "blocks": [
+          {
+            "k": "intro",
+            "t": "Bonjour, je suis Sam de Northbay."
+          },
+          {
+            "k": "identity_check",
+            "t": "Vous êtes bien Eva, responsable crm chez Galerie Marée ?"
+          },
+          {
+            "k": "legitimacy",
+            "t": "Très bien, je m'adresse à la bonne personne."
+          },
+          {
+            "k": "what_we_do",
+            "t": "On installe un CRM simple qui relance vos demandes à votre place."
+          },
+          {
+            "k": "ask",
+            "t": "Je souhaiterais prendre 20 minutes avec vous pour regarder comment vos demandes sont suivies aujourd'hui. Vous êtes disponible lundi ou mardi ?"
+          }
+        ],
+        "estimatedSeconds": 19
+      },
+      "icebreaker": {
+        "basis": "verified_company_signal",
+        "text": "Actualité vérifiée : Recrutement d'un responsable commercialisation",
+        "sourceId": "src-a03-job"
+      },
+      "objections": [
+        "On a déjà un outil",
+        "Pas le temps de mettre ça en place",
+        "C'est trop cher",
+        "Mes équipes ne l'utiliseront pas",
+        "Envoyez-moi un mail"
+      ],
+      "questions": [
+        "Où arrivent vos demandes ?",
+        "Qui relance ?",
+        "Combien de demandes par mois ?"
+      ],
+      "nextAction": "Noter le résultat en une phrase dans Notes, puis /post-call-sync",
+      "warnings": [
+        "No verified Commercial Value Asset: the non-commercial reason to call is omitted. Do not cite any study or figure.",
+        "No verified, citable reference in this sector: no \"we already work with\" sentence."
+      ],
+      "requiresHumanReview": true
+    },
+    {
+      "id": "B-A-2026-11-20-c02-call",
+      "actionId": "A-2026-11-20-c02-call",
+      "rep": "Alex",
+      "type": "call",
+      "account": {
+        "id": "a01",
+        "name": "Atlas Fitness Club",
+        "domain": "atlas-fitness.example",
+        "sector": "fitness",
+        "location": "Rouen",
+        "summary": "Réseau de deux salles de sport. Clients : comités d'entreprise et abonnés pro.",
+        "verdict": "oui"
+      },
+      "contact": {
+        "id": "c02",
+        "name": "Hugo Leroy",
+        "title": "Gérant",
+        "buyingRole": "economic_buyer"
+      },
+      "potentialProblems": [
+        {
+          "key": "high_cleaning_cost",
+          "label": "Coût d'entretien élevé",
+          "evidenceId": "ev-a01-1",
+          "status": "hypothesis_to_validate_in_call"
+        },
+        {
+          "key": "large_floor_surface",
+          "label": "Grande surface au sol à entretenir",
+          "evidenceId": "ev-a01-2",
+          "status": "hypothesis_to_validate_in_call"
+        }
+      ],
+      "offer": {
+        "id": "robot-cleaning",
+        "name": "Nettoyage robotisé"
+      },
+      "history": null,
+      "sources": [
+        {
+          "id": "src-a01-site",
+          "url": "https://atlas-fitness.example",
+          "checkedAt": "2026-11-12"
+        }
+      ],
+      "reasonForCall": null,
+      "script": {
+        "text": "Bonjour, je suis Alex de Northbay. Vous êtes bien Hugo, gérant chez Atlas Fitness Club ? Très bien, je m'adresse à la bonne personne. On pilote des robots de nettoyage pour les grandes surfaces. Je souhaiterais prendre 20 minutes avec vous pour voir si un pilote a du sens. Vous êtes disponible lundi ou mardi ?",
+        "blocks": [
+          {
+            "k": "intro",
+            "t": "Bonjour, je suis Alex de Northbay."
+          },
+          {
+            "k": "identity_check",
+            "t": "Vous êtes bien Hugo, gérant chez Atlas Fitness Club ?"
+          },
+          {
+            "k": "legitimacy",
+            "t": "Très bien, je m'adresse à la bonne personne."
+          },
+          {
+            "k": "what_we_do",
+            "t": "On pilote des robots de nettoyage pour les grandes surfaces."
+          },
+          {
+            "k": "ask",
+            "t": "Je souhaiterais prendre 20 minutes avec vous pour voir si un pilote a du sens. Vous êtes disponible lundi ou mardi ?"
+          }
+        ],
+        "estimatedSeconds": 19
+      },
+      "icebreaker": {
+        "basis": "verified_company_signal",
+        "text": "Actualité vérifiée : Ouverture d'une seconde salle annoncée",
+        "sourceId": "src-a01-news"
+      },
+      "objections": [
+        "C'est trop cher pour nous",
+        "On a déjà un prestataire",
+        "Un robot ne fait pas les angles",
+        "Pas le moment, on verra en janvier",
+        "Envoyez-moi une documentation"
+      ],
+      "questions": [
+        "Quelle surface entretenez-vous ?",
+        "Quel est votre coût mensuel d'entretien ?",
+        "Qui valide un pilote ?"
+      ],
+      "nextAction": "Noter le résultat en une phrase dans Notes, puis /post-call-sync",
+      "warnings": [
+        "No verified Commercial Value Asset: the non-commercial reason to call is omitted. Do not cite any study or figure.",
+        "No verified, citable reference in this sector: no \"we already work with\" sentence."
+      ],
+      "requiresHumanReview": true
+    },
+    {
+      "id": "B-A-2026-11-20-c05-call",
+      "actionId": "A-2026-11-20-c05-call",
+      "rep": "Sam",
+      "type": "call",
+      "account": {
+        "id": "a03",
+        "name": "Galerie Marée",
+        "domain": "maree-retail.example",
+        "sector": "retail",
+        "location": "Le Havre",
+        "summary": "Gestionnaire d'une galerie commerciale. Clients : enseignes locataires.",
+        "verdict": "oui"
+      },
+      "contact": {
+        "id": "c05",
+        "name": "Noé Bernard",
+        "title": "Directeur commercial",
+        "buyingRole": "decision_maker"
+      },
+      "potentialProblems": [
+        {
+          "key": "manual_follow_up",
+          "label": "Relances commerciales manuelles",
+          "evidenceId": "ev-a03-1",
+          "status": "hypothesis_to_validate_in_call"
+        },
+        {
+          "key": "lead_leakage",
+          "label": "Demandes entrantes non traitées",
+          "evidenceId": "ev-a03-2",
+          "status": "hypothesis_to_validate_in_call"
+        }
+      ],
+      "offer": {
+        "id": "crm-automation",
+        "name": "CRM et automatisation des relances"
+      },
+      "history": null,
+      "sources": [
+        {
+          "id": "src-a03-site",
+          "url": "https://maree-retail.example",
+          "checkedAt": "2026-11-14"
+        }
+      ],
+      "reasonForCall": null,
+      "script": {
+        "text": "Bonjour, je suis Sam de Northbay. Vous êtes bien Noé, directeur commercial chez Galerie Marée ? Très bien, je m'adresse à la bonne personne. On installe un CRM simple qui relance vos demandes à votre place. Je souhaiterais prendre 20 minutes avec vous pour regarder comment vos demandes sont suivies aujourd'hui. Vous êtes disponible lundi ou mardi ?",
+        "blocks": [
+          {
+            "k": "intro",
+            "t": "Bonjour, je suis Sam de Northbay."
+          },
+          {
+            "k": "identity_check",
+            "t": "Vous êtes bien Noé, directeur commercial chez Galerie Marée ?"
+          },
+          {
+            "k": "legitimacy",
+            "t": "Très bien, je m'adresse à la bonne personne."
+          },
+          {
+            "k": "what_we_do",
+            "t": "On installe un CRM simple qui relance vos demandes à votre place."
+          },
+          {
+            "k": "ask",
+            "t": "Je souhaiterais prendre 20 minutes avec vous pour regarder comment vos demandes sont suivies aujourd'hui. Vous êtes disponible lundi ou mardi ?"
+          }
+        ],
+        "estimatedSeconds": 19
+      },
+      "icebreaker": {
+        "basis": "verified_company_signal",
+        "text": "Actualité vérifiée : Recrutement d'un responsable commercialisation",
+        "sourceId": "src-a03-job"
+      },
+      "objections": [
+        "On a déjà un outil",
+        "Pas le temps de mettre ça en place",
+        "C'est trop cher",
+        "Mes équipes ne l'utiliseront pas",
+        "Envoyez-moi un mail"
+      ],
+      "questions": [
+        "Où arrivent vos demandes ?",
+        "Qui relance ?",
+        "Combien de demandes par mois ?"
+      ],
+      "nextAction": "Noter le résultat en une phrase dans Notes, puis /post-call-sync",
+      "warnings": [
+        "No verified Commercial Value Asset: the non-commercial reason to call is omitted. Do not cite any study or figure.",
+        "No verified, citable reference in this sector: no \"we already work with\" sentence."
+      ],
+      "requiresHumanReview": true
+    },
+    {
+      "id": "B-A-2026-11-20-c09-call",
+      "actionId": "A-2026-11-20-c09-call",
+      "rep": "Jordan",
+      "type": "call",
+      "account": {
+        "id": "a05",
+        "name": "Boulangerie du Port",
+        "domain": "boulangerie-port.example",
+        "sector": "local_shop",
+        "location": "Le Havre",
+        "summary": "Boulangerie artisanale. Clients : restaurants et entreprises (plateaux).",
+        "verdict": "oui"
+      },
+      "contact": {
+        "id": "c09",
+        "name": "Marc Dubois",
+        "title": "Gérant",
+        "buyingRole": "economic_buyer"
+      },
+      "potentialProblems": [
+        {
+          "key": "low_google_reviews",
+          "label": "Peu d'avis Google",
+          "evidenceId": "ev-a05-1",
+          "status": "hypothesis_to_validate_in_call"
+        }
+      ],
+      "offer": {
+        "id": "review-cards",
+        "name": "Cartes NFC d'avis Google"
+      },
+      "history": null,
+      "sources": [
+        {
+          "id": "src-a05-gmaps",
+          "url": "https://maps.example/boulangerie-port",
+          "checkedAt": "2026-11-15"
+        }
+      ],
+      "reasonForCall": "[DÉMO FICTIVE] Comptage des avis Google de 1 284 commerces",
+      "script": {
+        "text": "Bonjour, je suis Jordan de Northbay. Vous êtes bien Marc, gérant chez Boulangerie du Port ? Très bien, je m'adresse à la bonne personne. On fait des cartes NFC qui envoient vos clients vers vos avis Google. [DÉMO] On vient de compter les avis Google de 1 284 commerces du Havre. On travaille déjà avec Studio Démo. Je souhaiterais prendre 20 minutes avec vous pour vous montrer le résultat. Vous êtes disponible lundi ou mardi ?",
+        "blocks": [
+          {
+            "k": "intro",
+            "t": "Bonjour, je suis Jordan de Northbay."
+          },
+          {
+            "k": "identity_check",
+            "t": "Vous êtes bien Marc, gérant chez Boulangerie du Port ?"
+          },
+          {
+            "k": "legitimacy",
+            "t": "Très bien, je m'adresse à la bonne personne."
+          },
+          {
+            "k": "what_we_do",
+            "t": "On fait des cartes NFC qui envoient vos clients vers vos avis Google."
+          },
+          {
+            "k": "reason_to_call",
+            "t": "[DÉMO] On vient de compter les avis Google de 1 284 commerces du Havre."
+          },
+          {
+            "k": "social_proof",
+            "t": "On travaille déjà avec Studio Démo."
+          },
+          {
+            "k": "ask",
+            "t": "Je souhaiterais prendre 20 minutes avec vous pour vous montrer le résultat. Vous êtes disponible lundi ou mardi ?"
+          }
+        ],
+        "estimatedSeconds": 25
+      },
+      "icebreaker": {
+        "basis": "neutral",
+        "text": "Ouverture neutre : vérifier l'identité puis présenter la raison de l'appel."
+      },
+      "objections": [
+        "On a déjà beaucoup d'avis",
+        "Les clients ne laissent pas d'avis",
+        "Pas de budget",
+        "Je n'ai pas le temps",
+        "Envoyez-moi le lien"
+      ],
+      "questions": [
+        "Combien d'avis recevez-vous par mois ?",
+        "Qui répond aux avis ?",
+        "Avez-vous plusieurs points de vente ?"
+      ],
+      "nextAction": "Noter le résultat en une phrase dans Notes, puis /post-call-sync",
+      "warnings": [],
+      "requiresHumanReview": true
+    },
+    {
+      "id": "B-A-2026-11-20-c11-reactivate",
+      "actionId": "A-2026-11-20-c11-reactivate",
+      "rep": "Jordan",
+      "type": "reactivate",
+      "account": {
+        "id": "a13",
+        "name": "Pain & Co — Le Havre Centre",
+        "domain": "pain-multi.example",
+        "sector": "local_shop",
+        "location": "Le Havre",
+        "summary": "Réseau de boulangeries. Clients : entreprises (petits-déjeuners) et collectivités.",
+        "verdict": "oui"
+      },
+      "contact": {
+        "id": "c11",
+        "name": "Nadia Perrin",
+        "title": "Gérante",
+        "buyingRole": "economic_buyer"
+      },
+      "potentialProblems": [
+        {
+          "key": "low_google_reviews",
+          "label": "Peu d'avis Google",
+          "evidenceId": "ev-a13-1",
+          "status": "hypothesis_to_validate_in_call"
+        }
+      ],
+      "offer": {
+        "id": "review-cards",
+        "name": "Cartes NFC d'avis Google"
+      },
+      "history": {
+        "at": "2026-06-02T10:00:00+02:00",
+        "status": "Qualifié",
+        "summary": "intéressée après la saison, a demandé de revenir à l'automne"
+      },
+      "sources": [
+        {
+          "id": "src-a13",
+          "url": "https://pain-multi.example",
+          "checkedAt": "2026-11-11"
+        }
+      ],
+      "reasonForCall": "[DÉMO FICTIVE] Comptage des avis Google de 1 284 commerces",
+      "script": {
+        "text": "Bonjour Nadia, Jordan de Northbay. Comme convenu lors de notre échange du 2026-06-02, je reviens vers vous. Est-ce que lundi ou mardi vous conviendrait pour un échange de 20 minutes ?",
+        "blocks": [
+          {
+            "k": "intro",
+            "t": "Bonjour Nadia, Jordan de Northbay."
+          },
+          {
+            "k": "continuity",
+            "t": "Comme convenu lors de notre échange du 2026-06-02, je reviens vers vous."
+          },
+          {
+            "k": "ask",
+            "t": "Est-ce que lundi ou mardi vous conviendrait pour un échange de 20 minutes ?"
+          }
+        ],
+        "estimatedSeconds": 10
+      },
+      "icebreaker": {
+        "basis": "previous_interaction",
+        "text": "Reprendre : intéressée après la saison, a demandé de revenir à l'automne"
+      },
+      "objections": [
+        "On a déjà beaucoup d'avis",
+        "Les clients ne laissent pas d'avis",
+        "Pas de budget",
+        "Je n'ai pas le temps",
+        "Envoyez-moi le lien"
+      ],
+      "questions": [
+        "Combien d'avis recevez-vous par mois ?",
+        "Qui répond aux avis ?",
+        "Avez-vous plusieurs points de vente ?"
+      ],
+      "nextAction": "Noter le résultat en une phrase dans Notes, puis /post-call-sync",
+      "warnings": [],
+      "requiresHumanReview": true
+    }
+  ],
+  "assignments": [
+    {
+      "actionId": "A-2026-11-20-c08-followup_email",
+      "type": "followup_email",
+      "contactId": "c08",
+      "accountId": "a04",
+      "offerId": "facility-care",
+      "repId": "r-sam",
+      "repName": "Sam",
+      "minutes": 10,
+      "promised": true,
+      "dueAtMs": 1795014000000,
+      "priority": 88.52,
+      "priorityParts": [
+        {
+          "factor": "opportunity",
+          "value": 76.3,
+          "weight": 0.55,
+          "points": 41.97
+        },
+        {
+          "factor": "sales_match",
+          "value": 88.5,
+          "weight": 0.3,
+          "points": 26.55
+        },
+        {
+          "factor": "promised_follow_up",
+          "value": 1,
+          "weight": 15,
+          "points": 15
+        },
+        {
+          "factor": "overdue",
+          "value": 1,
+          "weight": 5,
+          "points": 5
+        },
+        {
+          "factor": "goal_gap_new_calls",
+          "value": 0,
+          "weight": 5,
+          "points": 0
+        }
+      ],
+      "salesMatch": {
+        "score": 88.5,
+        "parts": [
+          {
+            "factor": "offer_expertise",
+            "value": 90,
+            "weight": 0.55,
+            "points": 49.5
+          },
+          {
+            "factor": "industry_expertise",
+            "value": 85,
+            "weight": 0.3,
+            "points": 25.5
+          },
+          {
+            "factor": "declared_task_preference",
+            "value": 90,
+            "weight": 0.15,
+            "points": 13.5,
+            "note": "declared by rep"
+          }
+        ]
+      },
+      "opportunity": {
+        "score": 76.3,
+        "parts": [
+          {
+            "factor": "icp_fit",
+            "value": 78,
+            "weight": 0.45,
+            "points": 35.1
+          },
+          {
+            "factor": "persona_fit",
+            "value": 90,
+            "weight": 0.25,
+            "points": 22.5
+          },
+          {
+            "factor": "intent_timing",
+            "value": 62.33,
+            "weight": 0.3,
+            "points": 18.7,
+            "signals": [
+              {
+                "type": "contract_renewal",
+                "points": 32.33,
+                "sourceId": "src-a04-call"
+              },
+              {
+                "type": "promised_follow_up",
+                "points": 30,
+                "sourceId": "int-c08-1"
+              }
+            ],
+            "ignored": []
+          }
+        ],
+        "missing": [],
+        "dataCompleteness": 1,
+        "note": null
+      },
+      "alternatives": [],
+      "constraintsRejected": [
+        {
+          "repId": "r-alex",
+          "why": "owned_by_other_rep"
+        },
+        {
+          "repId": "r-jordan",
+          "why": "offer_expertise_below_min"
+        }
+      ],
+      "overridable": true
+    },
+    {
+      "actionId": "A-2026-11-20-c01-callback",
+      "type": "callback",
+      "contactId": "c01",
+      "accountId": "a01",
+      "offerId": "robot-cleaning",
+      "repId": "r-alex",
+      "repName": "Alex",
+      "minutes": 15,
+      "promised": true,
+      "dueAtMs": 1795161600000,
+      "priority": 85.59,
+      "priorityParts": [
+        {
+          "factor": "opportunity",
+          "value": 79.48,
+          "weight": 0.55,
+          "points": 43.71
+        },
+        {
+          "factor": "sales_match",
+          "value": 89.6,
+          "weight": 0.3,
+          "points": 26.88
+        },
+        {
+          "factor": "promised_follow_up",
+          "value": 1,
+          "weight": 15,
+          "points": 15
+        },
+        {
+          "factor": "overdue",
+          "value": 0,
+          "weight": 5,
+          "points": 0
+        },
+        {
+          "factor": "goal_gap_new_calls",
+          "value": 0,
+          "weight": 5,
+          "points": 0
+        }
+      ],
+      "salesMatch": {
+        "score": 89.6,
+        "parts": [
+          {
+            "factor": "offer_expertise",
+            "value": 92,
+            "weight": 0.55,
+            "points": 50.6
+          },
+          {
+            "factor": "industry_expertise",
+            "value": 90,
+            "weight": 0.3,
+            "points": 27
+          },
+          {
+            "factor": "declared_task_preference",
+            "value": 80,
+            "weight": 0.15,
+            "points": 12,
+            "note": "declared by rep"
+          }
+        ]
+      },
+      "opportunity": {
+        "score": 79.48,
+        "parts": [
+          {
+            "factor": "icp_fit",
+            "value": 92,
+            "weight": 0.45,
+            "points": 41.4
+          },
+          {
+            "factor": "persona_fit",
+            "value": 85,
+            "weight": 0.25,
+            "points": 21.25
+          },
+          {
+            "factor": "intent_timing",
+            "value": 56.09,
+            "weight": 0.3,
+            "points": 16.83,
+            "signals": [
+              {
+                "type": "new_site",
+                "points": 26.09,
+                "sourceId": "src-a01-news"
+              },
+              {
+                "type": "promised_follow_up",
+                "points": 30,
+                "sourceId": "int-c01-1"
+              }
+            ],
+            "ignored": []
+          }
+        ],
+        "missing": [],
+        "dataCompleteness": 1,
+        "note": null
+      },
+      "alternatives": [],
+      "constraintsRejected": [
+        {
+          "repId": "r-sam",
+          "why": "owned_by_other_rep"
+        },
+        {
+          "repId": "r-jordan",
+          "why": "offer_expertise_below_min"
+        }
+      ],
+      "overridable": true
+    },
+    {
+      "actionId": "A-2026-11-20-c17-prepare_meeting",
+      "type": "prepare_meeting",
+      "contactId": "c17",
+      "accountId": "a03",
+      "offerId": "crm-automation",
+      "repId": "r-sam",
+      "repName": "Sam",
+      "minutes": 20,
+      "promised": false,
+      "dueAtMs": null,
+      "priority": 61.32,
+      "priorityParts": [
+        {
+          "factor": "opportunity",
+          "value": 65.12,
+          "weight": 0.55,
+          "points": 35.82
+        },
+        {
+          "factor": "sales_match",
+          "value": 85,
+          "weight": 0.3,
+          "points": 25.5
+        },
+        {
+          "factor": "promised_follow_up",
+          "value": 0,
+          "weight": 15,
+          "points": 0
+        },
+        {
+          "factor": "overdue",
+          "value": 0,
+          "weight": 5,
+          "points": 0
+        },
+        {
+          "factor": "goal_gap_new_calls",
+          "value": 0,
+          "weight": 5,
+          "points": 0
+        }
+      ],
+      "salesMatch": {
+        "score": 85,
+        "parts": [
+          {
+            "factor": "offer_expertise",
+            "value": 85,
+            "weight": 0.55,
+            "points": 46.75
+          },
+          {
+            "factor": "industry_expertise",
+            "value": 90,
+            "weight": 0.3,
+            "points": 27
+          },
+          {
+            "factor": "declared_task_preference",
+            "value": 75,
+            "weight": 0.15,
+            "points": 11.25,
+            "note": "declared by rep"
+          }
+        ]
+      },
+      "opportunity": {
+        "score": 65.12,
+        "parts": [
+          {
+            "factor": "icp_fit",
+            "value": 85,
+            "weight": 0.45,
+            "points": 38.25
+          },
+          {
+            "factor": "persona_fit",
+            "value": 85,
+            "weight": 0.25,
+            "points": 21.25
+          },
+          {
+            "factor": "intent_timing",
+            "value": 18.73,
+            "weight": 0.3,
+            "points": 5.62,
+            "signals": [
+              {
+                "type": "hiring",
+                "points": 18.73,
+                "sourceId": "src-a03-job"
+              }
+            ],
+            "ignored": [
+              {
+                "type": "funding",
+                "reason": "unverified"
+              }
+            ]
+          }
+        ],
+        "missing": [],
+        "dataCompleteness": 1,
+        "note": null
+      },
+      "alternatives": [],
+      "constraintsRejected": [
+        {
+          "repId": "r-alex",
+          "why": "offer_expertise_below_min"
+        },
+        {
+          "repId": "r-jordan",
+          "why": "complexity"
+        }
+      ],
+      "overridable": true
+    },
+    {
+      "actionId": "A-2026-11-20-c02-call",
+      "type": "call",
+      "contactId": "c02",
+      "accountId": "a01",
+      "offerId": "robot-cleaning",
+      "repId": "r-alex",
+      "repName": "Alex",
+      "minutes": 15,
+      "promised": false,
+      "dueAtMs": null,
+      "priority": 68.55,
+      "priorityParts": [
+        {
+          "factor": "opportunity",
+          "value": 71.73,
+          "weight": 0.55,
+          "points": 39.45
+        },
+        {
+          "factor": "sales_match",
+          "value": 90.35,
+          "weight": 0.3,
+          "points": 27.1
+        },
+        {
+          "factor": "promised_follow_up",
+          "value": 0,
+          "weight": 15,
+          "points": 0
+        },
+        {
+          "factor": "overdue",
+          "value": 0,
+          "weight": 5,
+          "points": 0
+        },
+        {
+          "factor": "goal_gap_new_calls",
+          "value": 0.4,
+          "weight": 5,
+          "points": 2
+        }
+      ],
+      "salesMatch": {
+        "score": 90.35,
+        "parts": [
+          {
+            "factor": "offer_expertise",
+            "value": 92,
+            "weight": 0.55,
+            "points": 50.6
+          },
+          {
+            "factor": "industry_expertise",
+            "value": 90,
+            "weight": 0.3,
+            "points": 27
+          },
+          {
+            "factor": "declared_task_preference",
+            "value": 85,
+            "weight": 0.15,
+            "points": 12.75,
+            "note": "declared by rep"
+          }
+        ]
+      },
+      "opportunity": {
+        "score": 71.73,
+        "parts": [
+          {
+            "factor": "icp_fit",
+            "value": 92,
+            "weight": 0.45,
+            "points": 41.4
+          },
+          {
+            "factor": "persona_fit",
+            "value": 90,
+            "weight": 0.25,
+            "points": 22.5
+          },
+          {
+            "factor": "intent_timing",
+            "value": 26.09,
+            "weight": 0.3,
+            "points": 7.83,
+            "signals": [
+              {
+                "type": "new_site",
+                "points": 26.09,
+                "sourceId": "src-a01-news"
+              }
+            ],
+            "ignored": []
+          }
+        ],
+        "missing": [],
+        "dataCompleteness": 1,
+        "note": null
+      },
+      "alternatives": [
+        {
+          "repId": "r-sam",
+          "priority": 61.95
+        }
+      ],
+      "constraintsRejected": [
+        {
+          "repId": "r-jordan",
+          "why": "offer_expertise_below_min"
+        }
+      ],
+      "overridable": true
+    },
+    {
+      "actionId": "A-2026-11-20-c05-call",
+      "type": "call",
+      "contactId": "c05",
+      "accountId": "a03",
+      "offerId": "crm-automation",
+      "repId": "r-sam",
+      "repName": "Sam",
+      "minutes": 15,
+      "promised": false,
+      "dueAtMs": null,
+      "priority": 64.32,
+      "priorityParts": [
+        {
+          "factor": "opportunity",
+          "value": 65.12,
+          "weight": 0.55,
+          "points": 35.82
+        },
+        {
+          "factor": "sales_match",
+          "value": 82.75,
+          "weight": 0.3,
+          "points": 24.83
+        },
+        {
+          "factor": "promised_follow_up",
+          "value": 0,
+          "weight": 15,
+          "points": 0
+        },
+        {
+          "factor": "overdue",
+          "value": 0,
+          "weight": 5,
+          "points": 0
+        },
+        {
+          "factor": "goal_gap_new_calls",
+          "value": 0.73,
+          "weight": 5,
+          "points": 3.67
+        }
+      ],
+      "salesMatch": {
+        "score": 82.75,
+        "parts": [
+          {
+            "factor": "offer_expertise",
+            "value": 85,
+            "weight": 0.55,
+            "points": 46.75
+          },
+          {
+            "factor": "industry_expertise",
+            "value": 90,
+            "weight": 0.3,
+            "points": 27
+          },
+          {
+            "factor": "declared_task_preference",
+            "value": 60,
+            "weight": 0.15,
+            "points": 9,
+            "note": "declared by rep"
+          }
+        ]
+      },
+      "opportunity": {
+        "score": 65.12,
+        "parts": [
+          {
+            "factor": "icp_fit",
+            "value": 85,
+            "weight": 0.45,
+            "points": 38.25
+          },
+          {
+            "factor": "persona_fit",
+            "value": 85,
+            "weight": 0.25,
+            "points": 21.25
+          },
+          {
+            "factor": "intent_timing",
+            "value": 18.73,
+            "weight": 0.3,
+            "points": 5.62,
+            "signals": [
+              {
+                "type": "hiring",
+                "points": 18.73,
+                "sourceId": "src-a03-job"
+              }
+            ],
+            "ignored": [
+              {
+                "type": "funding",
+                "reason": "unverified"
+              }
+            ]
+          }
+        ],
+        "missing": [],
+        "dataCompleteness": 1,
+        "note": null
+      },
+      "alternatives": [],
+      "constraintsRejected": [
+        {
+          "repId": "r-alex",
+          "why": "offer_expertise_below_min"
+        },
+        {
+          "repId": "r-jordan",
+          "why": "complexity"
+        }
+      ],
+      "overridable": true
+    },
+    {
+      "actionId": "A-2026-11-20-c09-call",
+      "type": "call",
+      "contactId": "c09",
+      "accountId": "a05",
+      "offerId": "review-cards",
+      "repId": "r-jordan",
+      "repName": "Jordan",
+      "minutes": 15,
+      "promised": false,
+      "dueAtMs": null,
+      "priority": 64.39,
+      "priorityParts": [
+        {
+          "factor": "opportunity",
+          "value": 62.1,
+          "weight": 0.55,
+          "points": 34.16
+        },
+        {
+          "factor": "sales_match",
+          "value": 85.75,
+          "weight": 0.3,
+          "points": 25.73
+        },
+        {
+          "factor": "promised_follow_up",
+          "value": 0,
+          "weight": 15,
+          "points": 0
+        },
+        {
+          "factor": "overdue",
+          "value": 0,
+          "weight": 5,
+          "points": 0
+        },
+        {
+          "factor": "goal_gap_new_calls",
+          "value": 0.9,
+          "weight": 5,
+          "points": 4.5
+        }
+      ],
+      "salesMatch": {
+        "score": 85.75,
+        "parts": [
+          {
+            "factor": "offer_expertise",
+            "value": 85,
+            "weight": 0.55,
+            "points": 46.75
+          },
+          {
+            "factor": "industry_expertise",
+            "value": 85,
+            "weight": 0.3,
+            "points": 25.5
+          },
+          {
+            "factor": "declared_task_preference",
+            "value": 90,
+            "weight": 0.15,
+            "points": 13.5,
+            "note": "declared by rep"
+          }
+        ]
+      },
+      "opportunity": {
+        "score": 62.1,
+        "parts": [
+          {
+            "factor": "icp_fit",
+            "value": 88,
+            "weight": 0.45,
+            "points": 39.6
+          },
+          {
+            "factor": "persona_fit",
+            "value": 90,
+            "weight": 0.25,
+            "points": 22.5
+          },
+          {
+            "factor": "intent_timing",
+            "value": null,
+            "weight": 0.3,
+            "points": 0,
+            "signals": [],
+            "ignored": []
+          }
+        ],
+        "missing": [
+          "intent_timing"
+        ],
+        "dataCompleteness": 0.67,
+        "note": "Missing components contribute 0 and are flagged: absence of signal is not evidence of low intent."
+      },
+      "alternatives": [
+        {
+          "repId": "r-sam",
+          "priority": 61.38
+        },
+        {
+          "repId": "r-alex",
+          "priority": 54.84
+        }
+      ],
+      "constraintsRejected": [],
+      "overridable": true
+    },
+    {
+      "actionId": "A-2026-11-20-c11-reactivate",
+      "type": "reactivate",
+      "contactId": "c11",
+      "accountId": "a13",
+      "offerId": "review-cards",
+      "repId": "r-jordan",
+      "repName": "Jordan",
+      "minutes": 15,
+      "promised": false,
+      "dueAtMs": null,
+      "priority": 55.57,
+      "priorityParts": [
+        {
+          "factor": "opportunity",
+          "value": 56.7,
+          "weight": 0.55,
+          "points": 31.19
+        },
+        {
+          "factor": "sales_match",
+          "value": 81.25,
+          "weight": 0.3,
+          "points": 24.38
+        },
+        {
+          "factor": "promised_follow_up",
+          "value": 0,
+          "weight": 15,
+          "points": 0
+        },
+        {
+          "factor": "overdue",
+          "value": 0,
+          "weight": 5,
+          "points": 0
+        },
+        {
+          "factor": "goal_gap_new_calls",
+          "value": 0,
+          "weight": 5,
+          "points": 0
+        }
+      ],
+      "salesMatch": {
+        "score": 81.25,
+        "parts": [
+          {
+            "factor": "offer_expertise",
+            "value": 85,
+            "weight": 0.55,
+            "points": 46.75
+          },
+          {
+            "factor": "industry_expertise",
+            "value": 85,
+            "weight": 0.3,
+            "points": 25.5
+          },
+          {
+            "factor": "declared_task_preference",
+            "value": 60,
+            "weight": 0.15,
+            "points": 9,
+            "note": "declared by rep"
+          }
+        ]
+      },
+      "opportunity": {
+        "score": 56.7,
+        "parts": [
+          {
+            "factor": "icp_fit",
+            "value": 76,
+            "weight": 0.45,
+            "points": 34.2
+          },
+          {
+            "factor": "persona_fit",
+            "value": 90,
+            "weight": 0.25,
+            "points": 22.5
+          },
+          {
+            "factor": "intent_timing",
+            "value": null,
+            "weight": 0.3,
+            "points": 0,
+            "signals": [],
+            "ignored": []
+          }
+        ],
+        "missing": [
+          "intent_timing"
+        ],
+        "dataCompleteness": 0.67,
+        "note": "Missing components contribute 0 and are flagged: absence of signal is not evidence of low intent."
+      },
+      "alternatives": [
+        {
+          "repId": "r-sam",
+          "priority": 55.19
+        },
+        {
+          "repId": "r-alex",
+          "priority": 49.64
+        }
+      ],
+      "constraintsRejected": [],
+      "overridable": true
+    }
+  ],
+  "escalations": [
+    {
+      "actionId": "A-2026-11-20-c23-callback",
+      "contactId": "c23",
+      "type": "callback",
+      "reason": "no_eligible_rep",
+      "constraints": [
+        {
+          "repId": "r-alex",
+          "why": "owned_by_other_rep"
+        },
+        {
+          "repId": "r-sam",
+          "why": "owned_by_other_rep"
+        },
+        {
+          "repId": "r-jordan",
+          "why": "offer_expertise_below_min"
+        }
+      ],
+      "severity": "high",
+      "message": "Promised follow-up cannot be placed today. Manager decision required, never silently dropped."
+    }
+  ],
+  "unassigned": [],
+  "repLoad": [
+    {
+      "id": "r-alex",
+      "name": "Alex",
+      "available": true,
+      "capacityMinutes": 120,
+      "usedMinutes": 30
+    },
+    {
+      "id": "r-sam",
+      "name": "Sam",
+      "available": true,
+      "capacityMinutes": 90,
+      "usedMinutes": 45
+    },
+    {
+      "id": "r-jordan",
+      "name": "Jordan",
+      "available": true,
+      "capacityMinutes": 60,
+      "usedMinutes": 30
+    }
+  ],
+  "actions": [
+    {
+      "id": "A-2026-11-20-c01-callback",
+      "type": "callback",
+      "reason": "due_today",
+      "contactId": "c01",
+      "accountId": "a01",
+      "offerId": "robot-cleaning",
+      "offerName": "Nettoyage robotisé",
+      "complexity": 2,
+      "dueAtMs": 1795161600000,
+      "ownerId": "r-alex",
+      "language": "fr",
+      "opportunityScore": 79.48,
+      "missing": [],
+      "timing": {
+        "promisedAt": "2026-11-20T09:00:00+01:00",
+        "status": "due_today",
+        "inSeason": true,
+        "renewalWithin90Days": null,
+        "businessHours": "08:00-18:00 Europe/Paris"
+      }
+    },
+    {
+      "id": "A-2026-11-20-c02-call",
+      "type": "call",
+      "reason": "opportunity_above_threshold",
+      "contactId": "c02",
+      "accountId": "a01",
+      "offerId": "robot-cleaning",
+      "offerName": "Nettoyage robotisé",
+      "complexity": 1,
+      "dueAtMs": null,
+      "ownerId": null,
+      "language": "fr",
+      "opportunityScore": 71.73,
+      "missing": [],
+      "timing": {
+        "promisedAt": null,
+        "status": "open",
+        "inSeason": true,
+        "renewalWithin90Days": null,
+        "businessHours": "08:00-18:00 Europe/Paris"
+      }
+    },
+    {
+      "id": "A-2026-11-20-c04-hold",
+      "type": "hold",
+      "reason": "attempt_limit_reached",
+      "contactId": "c04",
+      "accountId": "a02",
+      "offerId": "robot-cleaning",
+      "offerName": "Nettoyage robotisé",
+      "complexity": 1,
+      "dueAtMs": null,
+      "ownerId": null,
+      "language": "fr",
+      "opportunityScore": 58.5,
+      "missing": [
+        "intent_timing"
+      ],
+      "timing": {
+        "promisedAt": null,
+        "status": "open",
+        "inSeason": true,
+        "renewalWithin90Days": null,
+        "businessHours": "08:00-18:00 Europe/Paris"
+      }
+    },
+    {
+      "id": "A-2026-11-20-c15-enrich",
+      "type": "enrich",
+      "reason": "awaiting quote Q-mobile_enrichment-ufrvc3 (approval_required)",
+      "contactId": "c15",
+      "accountId": "a02",
+      "offerId": "robot-cleaning",
+      "offerName": "Nettoyage robotisé",
+      "complexity": 1,
+      "dueAtMs": null,
+      "ownerId": null,
+      "language": "fr",
+      "opportunityScore": 57.25,
+      "missing": [
+        "intent_timing"
+      ],
+      "timing": {
+        "promisedAt": null,
+        "status": "open",
+        "inSeason": true,
+        "renewalWithin90Days": null,
+        "businessHours": "08:00-18:00 Europe/Paris"
+      }
+    },
+    {
+      "id": "A-2026-11-20-c05-call",
+      "type": "call",
+      "reason": "opportunity_above_threshold",
+      "contactId": "c05",
+      "accountId": "a03",
+      "offerId": "crm-automation",
+      "offerName": "CRM et automatisation des relances",
+      "complexity": 2,
+      "dueAtMs": null,
+      "ownerId": null,
+      "language": "fr",
+      "opportunityScore": 65.12,
+      "missing": [],
+      "timing": {
+        "promisedAt": null,
+        "status": "open",
+        "inSeason": null,
+        "renewalWithin90Days": null,
+        "businessHours": "08:00-18:00 Europe/Paris"
+      }
+    },
+    {
+      "id": "A-2026-11-20-c17-prepare_meeting",
+      "type": "prepare_meeting",
+      "reason": "meeting 2026-11-21T09:00:00Z",
+      "contactId": "c17",
+      "accountId": "a03",
+      "offerId": "crm-automation",
+      "offerName": "CRM et automatisation des relances",
+      "complexity": 2,
+      "dueAtMs": null,
+      "ownerId": null,
+      "language": "fr",
+      "opportunityScore": 65.12,
+      "missing": [],
+      "timing": {
+        "promisedAt": null,
+        "status": "open",
+        "inSeason": null,
+        "renewalWithin90Days": null,
+        "businessHours": "08:00-18:00 Europe/Paris"
+      }
+    },
+    {
+      "id": "A-2026-11-20-c08-followup_email",
+      "type": "followup_email",
+      "reason": "overdue_promise",
+      "contactId": "c08",
+      "accountId": "a04",
+      "offerId": "facility-care",
+      "offerName": "Entretien professionnel",
+      "complexity": 2,
+      "dueAtMs": 1795014000000,
+      "ownerId": "r-sam",
+      "language": "fr",
+      "opportunityScore": 76.3,
+      "missing": [],
+      "timing": {
+        "promisedAt": "2026-11-18T16:00:00+01:00",
+        "status": "overdue_promise",
+        "inSeason": null,
+        "renewalWithin90Days": true,
+        "businessHours": "08:00-18:00 Europe/Paris"
+      }
+    },
+    {
+      "id": "A-2026-11-20-c09-call",
+      "type": "call",
+      "reason": "opportunity_above_threshold",
+      "contactId": "c09",
+      "accountId": "a05",
+      "offerId": "review-cards",
+      "offerName": "Cartes NFC d'avis Google",
+      "complexity": 1,
+      "dueAtMs": null,
+      "ownerId": null,
+      "language": "fr",
+      "opportunityScore": 62.1,
+      "missing": [
+        "intent_timing"
+      ],
+      "timing": {
+        "promisedAt": null,
+        "status": "open",
+        "inSeason": null,
+        "renewalWithin90Days": null,
+        "businessHours": "08:00-18:00 Europe/Paris"
+      }
+    },
+    {
+      "id": "A-2026-11-20-c16-qualify",
+      "type": "qualify",
+      "reason": "previous_enrichment_failed_manual_research",
+      "contactId": "c16",
+      "accountId": "a05",
+      "offerId": "review-cards",
+      "offerName": "Cartes NFC d'avis Google",
+      "complexity": 1,
+      "dueAtMs": null,
+      "ownerId": null,
+      "language": "fr",
+      "opportunityScore": 54.6,
+      "missing": [
+        "intent_timing"
+      ],
+      "timing": {
+        "promisedAt": null,
+        "status": "open",
+        "inSeason": null,
+        "renewalWithin90Days": null,
+        "businessHours": "08:00-18:00 Europe/Paris"
+      }
+    },
+    {
+      "id": "A-2026-11-20-c23-callback",
+      "type": "callback",
+      "reason": "due_today",
+      "contactId": "c23",
+      "accountId": "a06",
+      "offerId": "robot-cleaning",
+      "offerName": "Nettoyage robotisé",
+      "complexity": 1,
+      "dueAtMs": 1795168800000,
+      "ownerId": "r-jordan",
+      "language": "fr",
+      "opportunityScore": 67.15,
+      "missing": [],
+      "timing": {
+        "promisedAt": "2026-11-20T11:00:00+01:00",
+        "status": "due_today",
+        "inSeason": true,
+        "renewalWithin90Days": null,
+        "businessHours": "08:00-18:00 Europe/Paris"
+      }
+    },
+    {
+      "id": "A-2026-11-20-c10-propose_offer",
+      "type": "propose_offer",
+      "reason": "cross_sell_suggestion_requires_validation",
+      "contactId": "c10",
+      "accountId": "a06",
+      "offerId": "review-cards",
+      "offerName": "Cartes NFC d'avis Google",
+      "complexity": 1,
+      "dueAtMs": null,
+      "ownerId": null,
+      "language": "fr",
+      "opportunityScore": 59.4,
+      "missing": [
+        "intent_timing"
+      ],
+      "timing": {
+        "promisedAt": null,
+        "status": "open",
+        "inSeason": null,
+        "renewalWithin90Days": null,
+        "businessHours": "08:00-18:00 Europe/Paris"
+      }
+    },
+    {
+      "id": "A-2026-11-20-c22-hold",
+      "type": "hold",
+      "reason": "promised for 2026-11-25T10:00:00+01:00",
+      "contactId": "c22",
+      "accountId": "a13",
+      "offerId": "review-cards",
+      "offerName": "Cartes NFC d'avis Google",
+      "complexity": 1,
+      "dueAtMs": 1795597200000,
+      "ownerId": null,
+      "language": "fr",
+      "opportunityScore": 56.7,
+      "missing": [
+        "intent_timing"
+      ],
+      "timing": {
+        "promisedAt": "2026-11-25T10:00:00+01:00",
+        "status": "future_promise",
+        "inSeason": null,
+        "renewalWithin90Days": null,
+        "businessHours": "08:00-18:00 Europe/Paris"
+      }
+    },
+    {
+      "id": "A-2026-11-20-c11-reactivate",
+      "type": "reactivate",
+      "reason": "dormant_qualified_contact",
+      "contactId": "c11",
+      "accountId": "a13",
+      "offerId": "review-cards",
+      "offerName": "Cartes NFC d'avis Google",
+      "complexity": 1,
+      "dueAtMs": null,
+      "ownerId": null,
+      "language": "fr",
+      "opportunityScore": 56.7,
+      "missing": [
+        "intent_timing"
+      ],
+      "timing": {
+        "promisedAt": null,
+        "status": "open",
+        "inSeason": null,
+        "renewalWithin90Days": null,
+        "businessHours": "08:00-18:00 Europe/Paris"
+      }
+    },
+    {
+      "id": "A-2026-11-20-c12-do_not_contact",
+      "type": "do_not_contact",
+      "reason": "opt_out",
+      "contactId": "c12",
+      "accountId": "a07",
+      "opportunityScore": null,
+      "missing": []
+    }
+  ],
+  "offerMatches": [
+    {
+      "contactId": "c01",
+      "accountId": "a01",
+      "bestOfferId": "robot-cleaning",
+      "reason": "continuity_with_promised_follow_up",
+      "fits": [
+        {
+          "offerId": "robot-cleaning",
+          "score": 100,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 1,
+              "weight": 0.5,
+              "points": 50,
+              "note": "matched: high_cleaning_cost, large_floor_surface"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [
+            "high_cleaning_cost",
+            "large_floor_surface"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "facility-care",
+          "score": 75,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0.5,
+              "weight": 0.5,
+              "points": 25,
+              "note": "matched: high_cleaning_cost"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [
+            "high_cleaning_cost"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "review-cards",
+          "score": 30,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 0,
+              "weight": 0.2,
+              "points": 0,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "crm-automation",
+          "score": 20,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        }
+      ],
+      "crossSell": [
+        {
+          "offerId": "facility-care",
+          "score": 75,
+          "status": "suggestion_requires_validation"
+        }
+      ]
+    },
+    {
+      "contactId": "c02",
+      "accountId": "a01",
+      "bestOfferId": "robot-cleaning",
+      "reason": "highest_fit_above_threshold",
+      "fits": [
+        {
+          "offerId": "robot-cleaning",
+          "score": 100,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 1,
+              "weight": 0.5,
+              "points": 50,
+              "note": "matched: high_cleaning_cost, large_floor_surface"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [
+            "high_cleaning_cost",
+            "large_floor_surface"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "facility-care",
+          "score": 75,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0.5,
+              "weight": 0.5,
+              "points": 25,
+              "note": "matched: high_cleaning_cost"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [
+            "high_cleaning_cost"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "review-cards",
+          "score": 50,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "crm-automation",
+          "score": 20,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        }
+      ],
+      "crossSell": [
+        {
+          "offerId": "facility-care",
+          "score": 75,
+          "status": "suggestion_requires_validation"
+        }
+      ]
+    },
+    {
+      "contactId": "c04",
+      "accountId": "a02",
+      "bestOfferId": "robot-cleaning",
+      "reason": "highest_fit_above_threshold",
+      "fits": [
+        {
+          "offerId": "robot-cleaning",
+          "score": 75,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0.5,
+              "weight": 0.5,
+              "points": 25,
+              "note": "matched: night_cleaning_gaps"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [
+            "night_cleaning_gaps"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "facility-care",
+          "score": 50,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "review-cards",
+          "score": 50,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "crm-automation",
+          "score": 20,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        }
+      ],
+      "crossSell": []
+    },
+    {
+      "contactId": "c15",
+      "accountId": "a02",
+      "bestOfferId": "robot-cleaning",
+      "reason": "highest_fit_above_threshold",
+      "fits": [
+        {
+          "offerId": "robot-cleaning",
+          "score": 75,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0.5,
+              "weight": 0.5,
+              "points": 25,
+              "note": "matched: night_cleaning_gaps"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [
+            "night_cleaning_gaps"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "facility-care",
+          "score": 50,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "review-cards",
+          "score": 30,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 0,
+              "weight": 0.2,
+              "points": 0,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "crm-automation",
+          "score": 20,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        }
+      ],
+      "crossSell": []
+    },
+    {
+      "contactId": "c05",
+      "accountId": "a03",
+      "bestOfferId": "crm-automation",
+      "reason": "highest_fit_above_threshold",
+      "fits": [
+        {
+          "offerId": "crm-automation",
+          "score": 100,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 1,
+              "weight": 0.5,
+              "points": 50,
+              "note": "matched: manual_follow_up, lead_leakage"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [
+            "manual_follow_up",
+            "lead_leakage"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "facility-care",
+          "score": 50,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "robot-cleaning",
+          "score": 50,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "review-cards",
+          "score": 0,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 0,
+              "weight": 0.2,
+              "points": 0,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        }
+      ],
+      "crossSell": []
+    },
+    {
+      "contactId": "c17",
+      "accountId": "a03",
+      "bestOfferId": "crm-automation",
+      "reason": "highest_fit_above_threshold",
+      "fits": [
+        {
+          "offerId": "crm-automation",
+          "score": 100,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 1,
+              "weight": 0.5,
+              "points": 50,
+              "note": "matched: manual_follow_up, lead_leakage"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [
+            "manual_follow_up",
+            "lead_leakage"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "facility-care",
+          "score": 50,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "robot-cleaning",
+          "score": 50,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "review-cards",
+          "score": 0,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 0,
+              "weight": 0.2,
+              "points": 0,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        }
+      ],
+      "crossSell": []
+    },
+    {
+      "contactId": "c08",
+      "accountId": "a04",
+      "bestOfferId": "facility-care",
+      "reason": "continuity_with_promised_follow_up",
+      "fits": [
+        {
+          "offerId": "facility-care",
+          "score": 75,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0.5,
+              "weight": 0.5,
+              "points": 25,
+              "note": "matched: cleaning_quality_complaints"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [
+            "cleaning_quality_complaints"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "crm-automation",
+          "score": 50,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "robot-cleaning",
+          "score": 50,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "review-cards",
+          "score": 20,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        }
+      ],
+      "crossSell": []
+    },
+    {
+      "contactId": "c09",
+      "accountId": "a05",
+      "bestOfferId": "review-cards",
+      "reason": "highest_fit_above_threshold",
+      "fits": [
+        {
+          "offerId": "review-cards",
+          "score": 75,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0.5,
+              "weight": 0.5,
+              "points": 25,
+              "note": "matched: low_google_reviews"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [
+            "low_google_reviews"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "crm-automation",
+          "score": 50,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "facility-care",
+          "score": 20,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "robot-cleaning",
+          "score": 20,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        }
+      ],
+      "crossSell": []
+    },
+    {
+      "contactId": "c16",
+      "accountId": "a05",
+      "bestOfferId": "review-cards",
+      "reason": "highest_fit_above_threshold",
+      "fits": [
+        {
+          "offerId": "review-cards",
+          "score": 75,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0.5,
+              "weight": 0.5,
+              "points": 25,
+              "note": "matched: low_google_reviews"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "champion"
+            }
+          ],
+          "matchedProblems": [
+            "low_google_reviews"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "crm-automation",
+          "score": 30,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 0,
+              "weight": 0.2,
+              "points": 0,
+              "note": "champion"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "facility-care",
+          "score": 20,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "champion"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "robot-cleaning",
+          "score": 0,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 0,
+              "weight": 0.2,
+              "points": 0,
+              "note": "champion"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        }
+      ],
+      "crossSell": []
+    },
+    {
+      "contactId": "c23",
+      "accountId": "a06",
+      "bestOfferId": "robot-cleaning",
+      "reason": "continuity_with_promised_follow_up",
+      "fits": [
+        {
+          "offerId": "facility-care",
+          "score": 75,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0.5,
+              "weight": 0.5,
+              "points": 25,
+              "note": "matched: textile_hygiene"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [
+            "textile_hygiene"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "review-cards",
+          "score": 55,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0.5,
+              "weight": 0.5,
+              "points": 25,
+              "note": "matched: low_google_reviews"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 0,
+              "weight": 0.2,
+              "points": 0,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [
+            "low_google_reviews"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "crm-automation",
+          "score": 50,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "robot-cleaning",
+          "score": 20,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "decision_maker"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        }
+      ],
+      "crossSell": [
+        {
+          "offerId": "review-cards",
+          "score": 55,
+          "status": "suggestion_requires_validation"
+        },
+        {
+          "offerId": "crm-automation",
+          "score": 50,
+          "status": "suggestion_requires_validation"
+        }
+      ]
+    },
+    {
+      "contactId": "c10",
+      "accountId": "a06",
+      "bestOfferId": "review-cards",
+      "reason": "highest_fit_above_threshold",
+      "fits": [
+        {
+          "offerId": "facility-care",
+          "score": 75,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0.5,
+              "weight": 0.5,
+              "points": 25,
+              "note": "matched: textile_hygiene"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [
+            "textile_hygiene"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "review-cards",
+          "score": 75,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0.5,
+              "weight": 0.5,
+              "points": 25,
+              "note": "matched: low_google_reviews"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [
+            "low_google_reviews"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "crm-automation",
+          "score": 50,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "robot-cleaning",
+          "score": 20,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        }
+      ],
+      "crossSell": [
+        {
+          "offerId": "crm-automation",
+          "score": 50,
+          "status": "suggestion_requires_validation"
+        }
+      ]
+    },
+    {
+      "contactId": "c22",
+      "accountId": "a13",
+      "bestOfferId": "review-cards",
+      "reason": "continuity_with_promised_follow_up",
+      "fits": [
+        {
+          "offerId": "review-cards",
+          "score": 75,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0.5,
+              "weight": 0.5,
+              "points": 25,
+              "note": "matched: low_google_reviews"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [
+            "low_google_reviews"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "crm-automation",
+          "score": 50,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "facility-care",
+          "score": 20,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "robot-cleaning",
+          "score": 20,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        }
+      ],
+      "crossSell": []
+    },
+    {
+      "contactId": "c11",
+      "accountId": "a13",
+      "bestOfferId": "review-cards",
+      "reason": "highest_fit_above_threshold",
+      "fits": [
+        {
+          "offerId": "review-cards",
+          "score": 75,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0.5,
+              "weight": 0.5,
+              "points": 25,
+              "note": "matched: low_google_reviews"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [
+            "low_google_reviews"
+          ],
+          "missing": []
+        },
+        {
+          "offerId": "crm-automation",
+          "score": 50,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 1,
+              "weight": 0.3,
+              "points": 30
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "facility-care",
+          "score": 20,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        },
+        {
+          "offerId": "robot-cleaning",
+          "score": 20,
+          "parts": [
+            {
+              "factor": "problem_fit",
+              "value": 0,
+              "weight": 0.5,
+              "points": 0,
+              "note": "matched: none"
+            },
+            {
+              "factor": "sector_fit",
+              "value": 0,
+              "weight": 0.3,
+              "points": 0
+            },
+            {
+              "factor": "persona_fit",
+              "value": 1,
+              "weight": 0.2,
+              "points": 20,
+              "note": "economic_buyer"
+            }
+          ],
+          "matchedProblems": [],
+          "missing": []
+        }
+      ],
+      "crossSell": []
+    }
+  ],
+  "quotes": [
+    {
+      "id": "Q-contact_extraction-6gibk5",
+      "kind": "contact_extraction",
+      "provider": "mock-contact-source",
+      "billing": "per_result (to verify)",
+      "targetIds": [
+        "a15"
+      ],
+      "targets": 1,
+      "units": 2,
+      "unitCents": 2,
+      "maxCostCents": 4,
+      "balanceCents": 2000,
+      "expectedReturn": {
+        "value": 1,
+        "basis": "hypothesis: 0.6 hit rate, not a provider count"
+      },
+      "state": "approval_required",
+      "executionAllowed": false,
+      "countVerifiedWithProvider": false
+    },
+    {
+      "id": "Q-mobile_enrichment-ufrvc3",
+      "kind": "mobile_enrichment",
+      "provider": "mock-phone-source",
+      "billing": "per_result (to verify)",
+      "targetIds": [
+        "c15"
+      ],
+      "targets": 1,
+      "units": 1,
+      "unitCents": 60,
+      "maxCostCents": 60,
+      "balanceCents": 12000,
+      "expectedReturn": {
+        "value": 1,
+        "basis": "hypothesis: 0.5 hit rate, not a provider count"
+      },
+      "state": "approval_required",
+      "executionAllowed": false,
+      "countVerifiedWithProvider": false
+    }
+  ],
+  "enrichmentSkipped": [
+    {
+      "id": "a16",
+      "kind": "contact_extraction",
+      "reason": "previous_failure_not_repaid"
+    },
+    {
+      "id": "c16",
+      "kind": "mobile_enrichment",
+      "reason": "previous_failure_not_repaid"
+    }
+  ],
+  "phoneReview": [
+    {
+      "id": "c17",
+      "reason": "foreign_number_returned"
+    }
+  ],
+  "waterfall": [
+    {
+      "id": "c01",
+      "level": "L4_reachable",
+      "missing": []
+    },
+    {
+      "id": "c02",
+      "level": "L4_reachable",
+      "missing": []
+    },
+    {
+      "id": "c04",
+      "level": "L4_reachable",
+      "missing": []
+    },
+    {
+      "id": "c15",
+      "level": "L3_qualified_contact",
+      "missing": [
+        "phone"
+      ]
+    },
+    {
+      "id": "c05",
+      "level": "L4_reachable",
+      "missing": []
+    },
+    {
+      "id": "c17",
+      "level": "L4_reachable",
+      "missing": []
+    },
+    {
+      "id": "c08",
+      "level": "L4_reachable",
+      "missing": []
+    },
+    {
+      "id": "c09",
+      "level": "L4_reachable",
+      "missing": []
+    },
+    {
+      "id": "c16",
+      "level": "L3_qualified_contact",
+      "missing": [
+        "phone"
+      ]
+    },
+    {
+      "id": "c23",
+      "level": "L4_reachable",
+      "missing": []
+    },
+    {
+      "id": "c10",
+      "level": "L4_reachable",
+      "missing": []
+    },
+    {
+      "id": "c22",
+      "level": "L4_reachable",
+      "missing": []
+    },
+    {
+      "id": "c11",
+      "level": "L4_reachable",
+      "missing": []
+    }
+  ],
+  "accounts": {
+    "eligible": [
+      "a01",
+      "a02",
+      "a03",
+      "a04",
+      "a05",
+      "a06",
+      "a07",
+      "a13",
+      "a15",
+      "a16"
+    ],
+    "validation": [
+      {
+        "id": "a09",
+        "name": "Inconnu SARL",
+        "reason": "verdict_inconnu",
+        "verdict": "inconnu"
+      },
+      {
+        "id": "a10",
+        "name": "Commerce Indirect",
+        "reason": "verdict_indirect_separate_lane",
+        "verdict": "indirect"
+      },
+      {
+        "id": "a14",
+        "name": "Pain & Co — Rouen Gare",
+        "reason": "awaiting_human_review",
+        "verdict": "oui"
+      },
+      {
+        "id": "a19",
+        "name": "En Attente de Revue",
+        "reason": "awaiting_human_review",
+        "verdict": "oui"
+      }
+    ],
+    "excluded": [
+      {
+        "id": "a08",
+        "name": "Concurrent Nettoyage",
+        "reason": "competitor",
+        "verdict": "oui"
+      },
+      {
+        "id": "a11",
+        "name": "Hors Cible Industrie",
+        "reason": "verdict_non",
+        "verdict": "non"
+      },
+      {
+        "id": "a17",
+        "name": "Score Faible",
+        "reason": "icp_fit_below_threshold",
+        "verdict": "oui"
+      },
+      {
+        "id": "a18",
+        "name": "Studio B2C",
+        "reason": "b2c_only",
+        "verdict": "oui"
+      }
+    ],
+    "duplicates": [
+      {
+        "id": "a12",
+        "duplicateOf": "a01",
+        "key": "domain"
+      }
+    ],
+    "firstBatchReview": null
+  },
+  "contacts": {
+    "selected": [
+      {
+        "id": "c01",
+        "accountId": "a01",
+        "buyingRole": "decision_maker"
+      },
+      {
+        "id": "c02",
+        "accountId": "a01",
+        "buyingRole": "economic_buyer"
+      },
+      {
+        "id": "c04",
+        "accountId": "a02",
+        "buyingRole": "economic_buyer"
+      },
+      {
+        "id": "c15",
+        "accountId": "a02",
+        "buyingRole": "decision_maker"
+      },
+      {
+        "id": "c05",
+        "accountId": "a03",
+        "buyingRole": "decision_maker"
+      },
+      {
+        "id": "c17",
+        "accountId": "a03",
+        "buyingRole": "decision_maker"
+      },
+      {
+        "id": "c08",
+        "accountId": "a04",
+        "buyingRole": "economic_buyer"
+      },
+      {
+        "id": "c09",
+        "accountId": "a05",
+        "buyingRole": "economic_buyer"
+      },
+      {
+        "id": "c16",
+        "accountId": "a05",
+        "buyingRole": "champion"
+      },
+      {
+        "id": "c23",
+        "accountId": "a06",
+        "buyingRole": "decision_maker"
+      },
+      {
+        "id": "c10",
+        "accountId": "a06",
+        "buyingRole": "economic_buyer"
+      },
+      {
+        "id": "c22",
+        "accountId": "a13",
+        "buyingRole": "economic_buyer"
+      },
+      {
+        "id": "c11",
+        "accountId": "a13",
+        "buyingRole": "economic_buyer"
+      }
+    ],
+    "rejected": [
+      {
+        "id": "c03",
+        "reason": "title_excluded"
+      },
+      {
+        "id": "c06",
+        "reason": "duplicate_contact"
+      },
+      {
+        "id": "c07",
+        "reason": "contact_cap_per_account"
+      }
+    ],
+    "suppressed": [
+      {
+        "id": "c12",
+        "accountId": "a07",
+        "reason": "opt_out"
+      }
+    ]
+  },
+  "metrics": {
+    "importedAccounts": 19,
+    "duplicateAccounts": 1,
+    "icpFitRate": {
+      "value": 0.5556,
+      "numerator": "eligible accounts",
+      "denominator": "imported minus duplicates"
+    },
+    "validationQueue": 4,
+    "contactCoverage": {
+      "value": 0.7,
+      "numerator": "eligible accounts with ≥1 selected contact",
+      "denominator": "eligible accounts"
+    },
+    "reachableContacts": 11,
+    "pendingQuoteMaxCents": 64,
+    "actualSpendCents": 0,
+    "plannedActions": 7,
+    "promisedFollowUpsPlaced": 2,
+    "promisedFollowUpsEscalated": 1,
+    "note": "Process metrics only. Conversion metrics need real outcomes (see sql/kpis.sql). No RUBICON performance has been measured."
+  },
+  "trace": [
+    {
+      "stage": "L1_normalize",
+      "imported": 19,
+      "kept": 18,
+      "duplicates": 1
+    },
+    {
+      "stage": "L2_account_qualification",
+      "eligible": 10,
+      "validation": 4,
+      "excluded": 4
+    },
+    {
+      "stage": "L3_contact_qualification",
+      "selected": 13,
+      "rejected": 3,
+      "suppressed": 1
+    },
+    {
+      "stage": "L4_enrichment_plan",
+      "extractionTargets": 1,
+      "mobileTargets": 1,
+      "skipped": 2,
+      "phoneReview": 1,
+      "spendCents": 0
+    },
+    {
+      "stage": "MATCH_offers",
+      "matched": 13,
+      "noFit": 0,
+      "crossSellSuggestions": 5
+    },
+    {
+      "stage": "NBA",
+      "callback": 2,
+      "call": 3,
+      "hold": 2,
+      "enrich": 1,
+      "prepare_meeting": 1,
+      "followup_email": 1,
+      "qualify": 1,
+      "propose_offer": 1,
+      "reactivate": 1,
+      "do_not_contact": 1
+    },
+    {
+      "stage": "ALLOCATE",
+      "assigned": 7,
+      "escalations": 1,
+      "unassigned": 0,
+      "method": "deterministic greedy heuristic (not a global optimum)"
+    },
+    {
+      "stage": "ROADMAP",
+      "reps": 3,
+      "briefs": 7
+    }
+  ],
+  "warnings": [],
+  "guarantees": {
+    "externalCalls": 0,
+    "externalWrites": 0,
+    "spendCents": 0,
+    "messagesSent": 0,
+    "humanApprovalRequiredFor": [
+      "spend",
+      "messages",
+      "calls",
+      "CRM writes",
+      "scoring rule changes"
+    ]
+  },
+  "roadmapMarkdown": "# RUBICON · Daily Roadmap · 2026-11-20\n\nMode: **mock** · rules 1.0.0 · engine 1.0.0\n\n## Alex — 30/120 min\n\n| Heure | Bloc | Action | Contact | Entreprise | Pourquoi |\n|---|---|---|---|---|---|\n| 08:00 | 1 · Relances promises | callback | Lina Martin | Atlas Fitness Club | promis aujourd'hui à 09:00 · P 85.59 |\n| 09:00 | 3 · Bloc prospection 1 | call | Hugo Leroy | Atlas Fitness Club | O 71.73 · M 90.35 · P 68.55 |\n| 09:15 | 4 · Clôture | post_call_notes |  |  | Notes courtes puis /post-call-sync |\n\n## Sam — 45/90 min · ⚠️ 1 relance(s) en retard\n\n| Heure | Bloc | Action | Contact | Entreprise | Pourquoi |\n|---|---|---|---|---|---|\n| 08:00 | 1 · Relances promises | followup_email | Victor Faure | Bureaux Quai Ouest | promis le 2026-11-18 à 16:00 · P 88.52 |\n| 08:10 | 2 · Préparation rendez-vous | prepare_meeting | Eva Lambert | Galerie Marée | O 65.12 · M 85 · P 61.32 |\n| 09:00 | 3 · Bloc prospection 1 | call | Noé Bernard | Galerie Marée | O 65.12 · M 82.75 · P 64.32 |\n| 09:15 | 4 · Clôture | post_call_notes |  |  | Notes courtes puis /post-call-sync |\n\n## Jordan — 30/60 min\n\n| Heure | Bloc | Action | Contact | Entreprise | Pourquoi |\n|---|---|---|---|---|---|\n| 09:00 | 3 · Bloc prospection 1 | call | Marc Dubois | Boulangerie du Port | O 62.1 · M 85.75 · P 64.39 · manque intent_timing |\n| 09:15 | 3 · Bloc prospection 1 | reactivate | Nadia Perrin | Pain & Co — Le Havre Centre | O 56.7 · M 81.25 · P 55.57 · manque intent_timing |\n| 09:30 | 4 · Clôture | post_call_notes |  |  | Notes courtes puis /post-call-sync |\n\n## ⚠️ Escalades manager\n\n- c23 · callback · no_eligible_rep\n\n## 🔎 À valider par un responsable\n\n- c16 · qualify · previous_enrichment_failed_manual_research\n- c10 · propose_offer · cross_sell_suggestion_requires_validation\n- 4 compte(s) en file de validation (inconnu, partiel, indirect, non revus)\n- Devis Q-contact_extraction-6gibk5 · contact_extraction · 1 cible(s) · max 0.04 € · approval_required\n- Devis Q-mobile_enrichment-ufrvc3 · mobile_enrichment · 1 cible(s) · max 0.60 € · approval_required\n\n_Recommandations explicables et modifiables par un responsable. Aucune action n'est exécutée automatiquement._"
+}

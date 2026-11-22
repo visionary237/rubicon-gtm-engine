@@ -1,0 +1,934 @@
+{
+  "$comment": "100% synthetic. Companies, people, numbers and domains are fictional (.example). Each record documents the edge case it exercises.",
+  "accounts": [
+    {
+      "id": "a01",
+      "workspaceId": "ws-demo",
+      "name": "Atlas Fitness Club",
+      "domain": "https://www.atlas-fitness.example",
+      "sector": "fitness",
+      "location": "Rouen",
+      "size": 14,
+      "relevantTeamSize": 6,
+      "customerType": "b2b",
+      "summary": "Réseau de deux salles de sport. Clients : comités d'entreprise et abonnés pro.",
+      "sellsTo": "entreprises (forfaits salariés)",
+      "verdict": "oui",
+      "icpFit": 92,
+      "problems": [
+        {
+          "key": "high_cleaning_cost",
+          "evidenceId": "ev-a01-1"
+        },
+        {
+          "key": "large_floor_surface",
+          "evidenceId": "ev-a01-2"
+        }
+      ],
+      "signals": [
+        {
+          "type": "new_site",
+          "label": "Ouverture d'une seconde salle annoncée",
+          "date": "2026-10-20",
+          "verified": true,
+          "sourceId": "src-a01-news"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-a01-site",
+          "url": "https://atlas-fitness.example",
+          "checkedAt": "2026-11-12"
+        }
+      ],
+      "verifiedAt": "2026-11-12",
+      "_case": "nominal, due callback, two contacts"
+    },
+    {
+      "id": "a02",
+      "workspaceId": "ws-demo",
+      "name": "Horizon Sport",
+      "domain": "horizon-sport.example",
+      "sector": "fitness",
+      "location": "Caen",
+      "size": 8,
+      "relevantTeamSize": 4,
+      "customerType": "b2b",
+      "summary": "Salle de sport indépendante. Clients : entreprises locales (offres salariés).",
+      "verdict": "oui, en partie",
+      "icpFit": 80,
+      "problems": [
+        {
+          "key": "night_cleaning_gaps",
+          "evidenceId": "ev-a02-1"
+        }
+      ],
+      "signals": [
+        {
+          "type": "hiring",
+          "label": "Offre d'emploi agent d'entretien",
+          "date": "2025-01-10",
+          "verified": true,
+          "sourceId": "src-a02-job"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-a02-site",
+          "url": "https://horizon-sport.example",
+          "checkedAt": "2026-11-10"
+        }
+      ],
+      "_case": "verdict oui partiel, expired signal, attempt limit, missing phone"
+    },
+    {
+      "id": "a03",
+      "workspaceId": "ws-demo",
+      "name": "Galerie Marée",
+      "domain": "maree-retail.example",
+      "sector": "retail",
+      "location": "Le Havre",
+      "size": 60,
+      "relevantTeamSize": 15,
+      "customerType": "b2b",
+      "summary": "Gestionnaire d'une galerie commerciale. Clients : enseignes locataires.",
+      "verdict": "oui",
+      "icpFit": 85,
+      "problems": [
+        {
+          "key": "manual_follow_up",
+          "evidenceId": "ev-a03-1"
+        },
+        {
+          "key": "lead_leakage",
+          "evidenceId": "ev-a03-2"
+        }
+      ],
+      "signals": [
+        {
+          "type": "hiring",
+          "label": "Recrutement d'un responsable commercialisation",
+          "date": "2026-11-05",
+          "verified": true,
+          "sourceId": "src-a03-job"
+        },
+        {
+          "type": "funding",
+          "label": "Rumeur de levée",
+          "date": "2026-11-01",
+          "verified": false
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-a03-site",
+          "url": "https://maree-retail.example",
+          "checkedAt": "2026-11-14"
+        }
+      ],
+      "_case": "team 10-30 (decision maker first), unverified signal ignored, foreign number, meeting tomorrow"
+    },
+    {
+      "id": "a04",
+      "workspaceId": "ws-demo",
+      "name": "Bureaux Quai Ouest",
+      "domain": "quai-ouest.example",
+      "sector": "offices",
+      "location": "Le Havre",
+      "size": 120,
+      "relevantTeamSize": 40,
+      "customerType": "b2b",
+      "summary": "Centre d'affaires et location de bureaux. Clients : PME et indépendants.",
+      "verdict": "oui",
+      "icpFit": 78,
+      "problems": [
+        {
+          "key": "cleaning_quality_complaints",
+          "evidenceId": "ev-a04-1"
+        }
+      ],
+      "contractRenewalDate": "2027-01-31",
+      "signals": [
+        {
+          "type": "contract_renewal",
+          "label": "Contrat d'entretien à renouveler fin janvier",
+          "date": "2026-11-02",
+          "verified": true,
+          "sourceId": "src-a04-call"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-a04-site",
+          "url": "https://quai-ouest.example",
+          "checkedAt": "2026-11-09"
+        }
+      ],
+      "_case": "large team (1 contact cap), overdue promised email"
+    },
+    {
+      "id": "a05",
+      "workspaceId": "ws-demo",
+      "name": "Boulangerie du Port",
+      "domain": "boulangerie-port.example",
+      "sector": "local_shop",
+      "location": "Le Havre",
+      "size": 6,
+      "relevantTeamSize": 3,
+      "customerType": "b2b",
+      "summary": "Boulangerie artisanale. Clients : restaurants et entreprises (plateaux).",
+      "verdict": "oui",
+      "icpFit": 88,
+      "problems": [
+        {
+          "key": "low_google_reviews",
+          "evidenceId": "ev-a05-1"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-a05-gmaps",
+          "url": "https://maps.example/boulangerie-port",
+          "checkedAt": "2026-11-15"
+        }
+      ],
+      "_case": "verified asset and proof → full script; prior mobile failure not repaid"
+    },
+    {
+      "id": "a06",
+      "workspaceId": "ws-demo",
+      "name": "Hôtel Falaise",
+      "domain": "hotel-falaise.example",
+      "sector": "hospitality",
+      "location": "Étretat",
+      "size": 25,
+      "relevantTeamSize": 12,
+      "customerType": "b2b",
+      "summary": "Hôtel 4 étoiles avec séminaires. Clients : entreprises (séminaires) et agences.",
+      "verdict": "oui",
+      "icpFit": 82,
+      "isCustomer": true,
+      "ownedOfferIds": [
+        "facility-care"
+      ],
+      "problems": [
+        {
+          "key": "low_google_reviews",
+          "evidenceId": "ev-a06-1"
+        },
+        {
+          "key": "textile_hygiene",
+          "evidenceId": "ev-a06-2"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-a06-crm",
+          "url": "crm://ws-demo/accounts/a06",
+          "checkedAt": "2026-11-18"
+        }
+      ],
+      "_case": "existing customer → cross-sell suggestion; promise owned by a rep lacking expertise → escalation"
+    },
+    {
+      "id": "a07",
+      "workspaceId": "ws-demo",
+      "name": "Opposition SA",
+      "domain": "opposition.example",
+      "sector": "retail",
+      "location": "Rouen",
+      "size": 20,
+      "relevantTeamSize": 5,
+      "customerType": "b2b",
+      "summary": "Négoce de fournitures. Clients : commerces.",
+      "verdict": "oui",
+      "icpFit": 90,
+      "sources": [
+        {
+          "id": "src-a07",
+          "url": "https://opposition.example",
+          "checkedAt": "2026-11-01"
+        }
+      ],
+      "_case": "only contact opted out → suppressed, never quoted"
+    },
+    {
+      "id": "a08",
+      "workspaceId": "ws-demo",
+      "name": "Concurrent Nettoyage",
+      "domain": "concurrent-nettoyage.example",
+      "sector": "offices",
+      "verdict": "oui",
+      "icpFit": 90,
+      "competitor": true,
+      "summary": "Entreprise de nettoyage. Clients : bureaux.",
+      "sources": [
+        {
+          "id": "src-a08",
+          "url": "https://concurrent-nettoyage.example",
+          "checkedAt": "2026-11-01"
+        }
+      ],
+      "_case": "competitor excluded"
+    },
+    {
+      "id": "a09",
+      "workspaceId": "ws-demo",
+      "name": "Inconnu SARL",
+      "domain": "inconnu.example",
+      "sector": "retail",
+      "verdict": "INCONNU",
+      "summary": "INCONNU",
+      "_case": "unknown goes to validation, not to rejection"
+    },
+    {
+      "id": "a10",
+      "workspaceId": "ws-demo",
+      "name": "Commerce Indirect",
+      "domain": "indirect.example",
+      "sector": "retail",
+      "verdict": "indirect",
+      "icpFit": 70,
+      "summary": "Grossiste. Clients : centrales d'achat.",
+      "sources": [
+        {
+          "id": "src-a10",
+          "url": "https://indirect.example",
+          "checkedAt": "2026-11-01"
+        }
+      ],
+      "_case": "indirect verdict → separate human lane"
+    },
+    {
+      "id": "a11",
+      "workspaceId": "ws-demo",
+      "name": "Hors Cible Industrie",
+      "domain": "hors-cible.example",
+      "sector": "industry",
+      "verdict": "non",
+      "icpFit": 10,
+      "summary": "Fonderie. Clients : automobile.",
+      "sources": [
+        {
+          "id": "src-a11",
+          "url": "https://hors-cible.example",
+          "checkedAt": "2026-11-01"
+        }
+      ],
+      "_case": "verdict non"
+    },
+    {
+      "id": "a12",
+      "workspaceId": "ws-demo",
+      "name": "ATLAS FITNESS (doublon)",
+      "domain": "atlas-fitness.example",
+      "sector": "fitness",
+      "verdict": "oui",
+      "icpFit": 92,
+      "summary": "Doublon.",
+      "_case": "domain duplicate of a01"
+    },
+    {
+      "id": "a13",
+      "workspaceId": "ws-demo",
+      "name": "Pain & Co — Le Havre Centre",
+      "domain": "pain-multi.example",
+      "siren": "900000001",
+      "siret": "90000000100011",
+      "sector": "local_shop",
+      "location": "Le Havre",
+      "size": 9,
+      "relevantTeamSize": 8,
+      "customerType": "b2b",
+      "summary": "Réseau de boulangeries. Clients : entreprises (petits-déjeuners) et collectivités.",
+      "verdict": "oui",
+      "icpFit": 76,
+      "problems": [
+        {
+          "key": "low_google_reviews",
+          "evidenceId": "ev-a13-1"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-a13",
+          "url": "https://pain-multi.example",
+          "checkedAt": "2026-11-11"
+        }
+      ],
+      "_case": "multi-site chain: same domain, different SIRET kept; dormant contact; future promise"
+    },
+    {
+      "id": "a14",
+      "workspaceId": "ws-demo",
+      "name": "Pain & Co — Rouen Gare",
+      "domain": "pain-multi.example",
+      "siren": "900000001",
+      "siret": "90000000100029",
+      "sector": "local_shop",
+      "location": "Rouen",
+      "verdict": "oui",
+      "icpFit": 74,
+      "summary": "Point de vente du réseau Pain & Co. Clients : entreprises.",
+      "sources": [
+        {
+          "id": "src-a14",
+          "url": "https://pain-multi.example/rouen",
+          "checkedAt": "2026-11-11"
+        }
+      ],
+      "_case": "second establishment, not yet reviewed"
+    },
+    {
+      "id": "a15",
+      "workspaceId": "ws-demo",
+      "name": "Sans Contact Fitness",
+      "domain": "sans-contact.example",
+      "sector": "fitness",
+      "location": "Évreux",
+      "size": 10,
+      "relevantTeamSize": 5,
+      "verdict": "oui",
+      "icpFit": 75,
+      "summary": "Salle de sport. Clients : entreprises.",
+      "sources": [
+        {
+          "id": "src-a15",
+          "url": "https://sans-contact.example",
+          "checkedAt": "2026-11-13"
+        }
+      ],
+      "_case": "no known contact → paid extraction quote only"
+    },
+    {
+      "id": "a16",
+      "workspaceId": "ws-demo",
+      "name": "Échec Extraction",
+      "domain": "echec-extraction.example",
+      "sector": "retail",
+      "verdict": "oui",
+      "icpFit": 70,
+      "summary": "Magasin d'équipement. Clients : clubs sportifs.",
+      "sources": [
+        {
+          "id": "src-a16",
+          "url": "https://echec-extraction.example",
+          "checkedAt": "2026-11-13"
+        }
+      ],
+      "_case": "previous extraction failed → not re-quoted"
+    },
+    {
+      "id": "a17",
+      "workspaceId": "ws-demo",
+      "name": "Score Faible",
+      "domain": "faible.example",
+      "sector": "retail",
+      "verdict": "oui",
+      "icpFit": 45,
+      "summary": "Commerce. Clients : divers.",
+      "sources": [
+        {
+          "id": "src-a17",
+          "url": "https://faible.example",
+          "checkedAt": "2026-11-13"
+        }
+      ],
+      "_case": "icp fit below threshold"
+    },
+    {
+      "id": "a18",
+      "workspaceId": "ws-demo",
+      "name": "Studio B2C",
+      "domain": "studio-b2c.example",
+      "sector": "fitness",
+      "verdict": "oui",
+      "icpFit": 80,
+      "customerType": "b2c",
+      "summary": "Coaching à domicile. Clients : particuliers.",
+      "sources": [
+        {
+          "id": "src-a18",
+          "url": "https://studio-b2c.example",
+          "checkedAt": "2026-11-13"
+        }
+      ],
+      "_case": "B2C only"
+    },
+    {
+      "id": "a19",
+      "workspaceId": "ws-demo",
+      "name": "En Attente de Revue",
+      "domain": "attente.example",
+      "sector": "retail",
+      "verdict": "oui",
+      "icpFit": 80,
+      "summary": "Commerce de gros. Clients : restaurants.",
+      "sources": [
+        {
+          "id": "src-a19",
+          "url": "https://attente.example",
+          "checkedAt": "2026-11-13"
+        }
+      ],
+      "_case": "not human-approved yet"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "c01",
+      "workspaceId": "ws-demo",
+      "accountId": "a01",
+      "firstName": "Lina",
+      "lastName": "Martin",
+      "title": "Directrice des opérations",
+      "profileUrl": "https://profiles.example/lina-martin",
+      "phone": "DEMO-+33-6-00-00-00-01",
+      "phoneCountry": "FR",
+      "phoneType": "work_mobile",
+      "ownerId": "r-alex",
+      "complexity": 2,
+      "followUp": {
+        "dueAt": "2026-11-20T09:00:00+01:00",
+        "channel": "call",
+        "offerId": "robot-cleaning",
+        "promise": "chiffrer un pilote sur 900 m²",
+        "sourceId": "int-c01-1"
+      },
+      "lastInteraction": {
+        "at": "2026-11-13T10:12:00+01:00",
+        "status": "Qualifié",
+        "summary": "a demandé un ordre de grandeur du coût d'un robot pour 900 m²"
+      },
+      "declaredInterests": [
+        {
+          "topic": "NBA",
+          "source": "conversation",
+          "declaredAt": "2026-11-13",
+          "consentToUse": true,
+          "sensitive": false
+        }
+      ],
+      "sources": [
+        {
+          "id": "int-c01-1",
+          "url": "crm://ws-demo/interactions/int-c01-1"
+        }
+      ],
+      "_case": "due promise + declared interest (opening only)"
+    },
+    {
+      "id": "c02",
+      "workspaceId": "ws-demo",
+      "accountId": "a01",
+      "firstName": "Hugo",
+      "lastName": "Leroy",
+      "title": "Gérant",
+      "profileUrl": "https://profiles.example/hugo-leroy",
+      "phone": "DEMO-+33-6-00-00-00-02",
+      "phoneCountry": "FR",
+      "complexity": 1,
+      "_case": "second contact within cap"
+    },
+    {
+      "id": "c03",
+      "workspaceId": "ws-demo",
+      "accountId": "a01",
+      "firstName": "Tom",
+      "lastName": "Petit",
+      "title": "Stagiaire marketing",
+      "profileUrl": "https://profiles.example/tom-petit",
+      "_case": "excluded title"
+    },
+    {
+      "id": "c04",
+      "workspaceId": "ws-demo",
+      "accountId": "a02",
+      "firstName": "Sarah",
+      "lastName": "Morel",
+      "title": "Fondatrice",
+      "profileUrl": "https://profiles.example/sarah-morel",
+      "phone": "DEMO-+33-6-00-00-00-04",
+      "phoneCountry": "FR",
+      "complexity": 1,
+      "attempts": [
+        "2026-11-14T09:10:00Z",
+        "2026-11-17T14:20:00Z",
+        "2026-11-19T10:05:00Z"
+      ],
+      "_case": "3 attempts in 7 days → hold"
+    },
+    {
+      "id": "c15",
+      "workspaceId": "ws-demo",
+      "accountId": "a02",
+      "firstName": "Julie",
+      "lastName": "Roux",
+      "title": "Directrice d'exploitation",
+      "profileUrl": "https://profiles.example/julie-roux",
+      "complexity": 1,
+      "_case": "no phone → mobile quote"
+    },
+    {
+      "id": "c05",
+      "workspaceId": "ws-demo",
+      "accountId": "a03",
+      "firstName": "Noé",
+      "lastName": "Bernard",
+      "title": "Directeur commercial",
+      "profileUrl": "https://profiles.example/noe-bernard",
+      "phone": "DEMO-+33-6-00-00-00-05",
+      "phoneCountry": "FR",
+      "complexity": 2,
+      "_case": "new call with verified hiring signal"
+    },
+    {
+      "id": "c06",
+      "workspaceId": "ws-demo",
+      "accountId": "a03",
+      "firstName": "Noe",
+      "lastName": "Bernard",
+      "title": "Directeur commercial",
+      "profileUrl": "https://www.profiles.example/noe-bernard/",
+      "_case": "same person, encoding variant → duplicate"
+    },
+    {
+      "id": "c17",
+      "workspaceId": "ws-demo",
+      "accountId": "a03",
+      "firstName": "Eva",
+      "lastName": "Lambert",
+      "title": "Responsable CRM",
+      "profileUrl": "https://profiles.example/eva-lambert",
+      "phone": "DEMO-+32-4-00-00-00-17",
+      "phoneCountry": "BE",
+      "complexity": 2,
+      "_case": "foreign number returned, but confirmed meeting tomorrow → prepare meeting"
+    },
+    {
+      "id": "c07",
+      "workspaceId": "ws-demo",
+      "accountId": "a04",
+      "firstName": "Inès",
+      "lastName": "Garnier",
+      "title": "Facility Manager",
+      "profileUrl": "https://profiles.example/ines-garnier",
+      "phone": "DEMO-+33-6-00-00-00-07",
+      "phoneCountry": "FR",
+      "_case": "large team cap → not selected"
+    },
+    {
+      "id": "c08",
+      "workspaceId": "ws-demo",
+      "accountId": "a04",
+      "firstName": "Victor",
+      "lastName": "Faure",
+      "title": "Directeur général",
+      "profileUrl": "https://profiles.example/victor-faure",
+      "phone": "DEMO-+33-6-00-00-00-08",
+      "phoneCountry": "FR",
+      "ownerId": "r-sam",
+      "complexity": 2,
+      "followUp": {
+        "dueAt": "2026-11-18T16:00:00+01:00",
+        "channel": "email",
+        "offerId": "facility-care",
+        "promise": "envoyer la grille de diagnostic d'entretien",
+        "sourceId": "int-c08-1"
+      },
+      "lastInteraction": {
+        "at": "2026-11-12T15:00:00+01:00",
+        "status": "Qualifié",
+        "summary": "contrat d'entretien à renouveler fin janvier, attend une grille de diagnostic"
+      },
+      "_case": "overdue promised email"
+    },
+    {
+      "id": "c09",
+      "workspaceId": "ws-demo",
+      "accountId": "a05",
+      "firstName": "Marc",
+      "lastName": "Dubois",
+      "title": "Gérant",
+      "profileUrl": "https://profiles.example/marc-dubois",
+      "phone": "DEMO-+33-6-00-00-00-09",
+      "phoneCountry": "FR",
+      "complexity": 1,
+      "_case": "new call, full 6-block script"
+    },
+    {
+      "id": "c16",
+      "workspaceId": "ws-demo",
+      "accountId": "a05",
+      "firstName": "Léa",
+      "lastName": "Simon",
+      "title": "Responsable boutique",
+      "profileUrl": "https://profiles.example/lea-simon",
+      "complexity": 1,
+      "_case": "mobile enrichment already failed → not repaid"
+    },
+    {
+      "id": "c10",
+      "workspaceId": "ws-demo",
+      "accountId": "a06",
+      "firstName": "Claire",
+      "lastName": "Vasseur",
+      "title": "Directrice générale",
+      "profileUrl": "https://profiles.example/claire-vasseur",
+      "phone": "DEMO-+33-6-00-00-00-10",
+      "phoneCountry": "FR",
+      "complexity": 1,
+      "lastInteraction": {
+        "at": "2026-10-01T11:00:00+02:00",
+        "status": "Client",
+        "summary": "satisfaite de l'entretien du linge"
+      },
+      "_case": "customer → cross-sell proposal (validation)"
+    },
+    {
+      "id": "c23",
+      "workspaceId": "ws-demo",
+      "accountId": "a06",
+      "firstName": "Bruno",
+      "lastName": "Caron",
+      "title": "Directeur d'exploitation",
+      "profileUrl": "https://profiles.example/bruno-caron",
+      "phone": "DEMO-+33-6-00-00-00-23",
+      "phoneCountry": "FR",
+      "ownerId": "r-jordan",
+      "complexity": 1,
+      "followUp": {
+        "dueAt": "2026-11-20T11:00:00+01:00",
+        "channel": "call",
+        "offerId": "robot-cleaning",
+        "promise": "présenter le principe d'un robot pour le hall",
+        "sourceId": "int-c23-1"
+      },
+      "_case": "promise owned by rep below expertise threshold → escalation"
+    },
+    {
+      "id": "c12",
+      "workspaceId": "ws-demo",
+      "accountId": "a07",
+      "firstName": "Alex",
+      "lastName": "Démo",
+      "title": "CEO",
+      "profileUrl": "https://profiles.example/alex-demo",
+      "phone": "DEMO-+33-6-00-00-00-12",
+      "optOut": true,
+      "_case": "opposition"
+    },
+    {
+      "id": "c11",
+      "workspaceId": "ws-demo",
+      "accountId": "a13",
+      "firstName": "Nadia",
+      "lastName": "Perrin",
+      "title": "Gérante",
+      "profileUrl": "https://profiles.example/nadia-perrin",
+      "phone": "DEMO-+33-6-00-00-00-11",
+      "phoneCountry": "FR",
+      "complexity": 1,
+      "lastInteraction": {
+        "at": "2026-06-02T10:00:00+02:00",
+        "status": "Qualifié",
+        "summary": "intéressée après la saison, a demandé de revenir à l'automne"
+      },
+      "_case": "dormant qualified → reactivate"
+    },
+    {
+      "id": "c22",
+      "workspaceId": "ws-demo",
+      "accountId": "a13",
+      "firstName": "Karim",
+      "lastName": "Haddad",
+      "title": "Gérant",
+      "profileUrl": "https://profiles.example/karim-haddad",
+      "phone": "DEMO-+33-6-00-00-00-22",
+      "phoneCountry": "FR",
+      "complexity": 1,
+      "followUp": {
+        "dueAt": "2026-11-25T10:00:00+01:00",
+        "channel": "call",
+        "offerId": "review-cards",
+        "promise": "rappeler après l'inventaire",
+        "sourceId": "int-c22-1"
+      },
+      "_case": "future promise → hold, not called today"
+    }
+  ],
+  "meetings": [
+    {
+      "id": "m-c17",
+      "contactId": "c17",
+      "confirmed": true,
+      "start": "2026-11-21T09:00:00Z",
+      "evidenceId": "cal-001"
+    }
+  ],
+  "enrichmentLog": [
+    {
+      "kind": "contact_extraction",
+      "targetId": "a16",
+      "provider": "mock-contact-source",
+      "at": "2026-11-10",
+      "result": "not_found",
+      "costCents": 0
+    },
+    {
+      "kind": "mobile_enrichment",
+      "targetId": "c16",
+      "provider": "mock-phone-source",
+      "at": "2026-11-10",
+      "result": "not_found",
+      "costCents": 0
+    }
+  ],
+  "postCall": {
+    "session": {
+      "id": "S-2026-11-20-pm",
+      "date": "2026-11-20",
+      "calledEventIds": [
+        "e01",
+        "e02",
+        "e03",
+        "e04",
+        "e05",
+        "e06",
+        "e07",
+        "e08",
+        "e11",
+        "e12"
+      ],
+      "notCalledDoNotContactEventIds": [
+        "e09"
+      ]
+    },
+    "notes": [
+      {
+        "eventId": "e01",
+        "contactId": "c01",
+        "rowFirstName": "Lina",
+        "rowLastName": "Martin",
+        "calledAt": "2026-11-20T08:05:00Z",
+        "note": "RDV confirmé mardi 10h pour le pilote"
+      },
+      {
+        "eventId": "e01",
+        "contactId": "c01",
+        "rowFirstName": "Lina",
+        "rowLastName": "Martin",
+        "calledAt": "2026-11-20T08:05:00Z",
+        "note": "RDV confirmé mardi 10h pour le pilote"
+      },
+      {
+        "eventId": "e02",
+        "contactId": "c05",
+        "rowFirstName": "Noé",
+        "rowLastName": "Bernard",
+        "calledAt": "2026-11-20T09:15:00Z",
+        "note": "messagerie, c'est bien la bonne personne"
+      },
+      {
+        "eventId": "e03",
+        "contactId": "c09",
+        "rowFirstName": "Marc",
+        "rowLastName": "Dubois",
+        "calledAt": "2026-11-20T09:30:00Z",
+        "note": "pas intéressé, déjà équipé, trop cher"
+      },
+      {
+        "eventId": "e04",
+        "contactId": "c08",
+        "rowFirstName": "Victor",
+        "rowLastName": "Faure",
+        "calledAt": "2026-11-20T08:20:00Z",
+        "note": "a demandé une plaquette par mail"
+      },
+      {
+        "eventId": "e05",
+        "contactId": "c04",
+        "rowFirstName": "Sarah",
+        "rowLastName": "Morel",
+        "calledAt": "2026-11-20T10:00:00Z",
+        "note": "en réunion, rappeler jeudi"
+      },
+      {
+        "eventId": "e06",
+        "contactId": "c10",
+        "rowFirstName": "Claire",
+        "rowLastName": "Vasseur",
+        "calledAt": "2026-11-20T10:20:00Z",
+        "note": "RDV pris jeudi 14h pour les cartes"
+      },
+      {
+        "eventId": "e07",
+        "contactId": "c22",
+        "rowFirstName": "Jean",
+        "rowLastName": "Haddad",
+        "calledAt": "2026-11-20T10:40:00Z",
+        "note": "intéressé"
+      },
+      {
+        "eventId": "e08",
+        "contactId": "c11",
+        "rowFirstName": "Nadia",
+        "rowLastName": "Perrin",
+        "calledAt": "2026-11-20T11:00:00Z",
+        "note": "ne plus me contacter, opposition"
+      },
+      {
+        "eventId": "e09",
+        "contactId": "c16",
+        "rowFirstName": "Léa",
+        "rowLastName": "Simon",
+        "calledAt": "2026-11-20T11:10:00Z",
+        "note": ""
+      },
+      {
+        "eventId": "e11",
+        "contactId": "c23",
+        "rowFirstName": "Bruno",
+        "rowLastName": "Caron",
+        "calledAt": "2026-11-20T11:20:00Z",
+        "note": "on verra"
+      },
+      {
+        "eventId": "e12",
+        "contactId": "c17",
+        "rowFirstName": "Eva",
+        "rowLastName": "Lambert",
+        "calledAt": "2026-11-20T11:30:00Z",
+        "note": "mail envoyé avec la doc"
+      }
+    ],
+    "evidence": {
+      "sentEmails": [
+        {
+          "id": "mail-001",
+          "toDomain": "maree-retail.example",
+          "at": "2026-11-20T09:40:00Z",
+          "contactId": "c05"
+        }
+      ],
+      "calendarEvents": [
+        {
+          "id": "cal-002",
+          "contactId": "c01",
+          "start": "2026-11-24T09:00:00Z"
+        }
+      ]
+    },
+    "processedEventIds": [],
+    "crm": {
+      "accounts": [
+        {
+          "key": "atlas-fitness.example",
+          "crmId": "crm-acc-001"
+        }
+      ],
+      "contacts": [],
+      "deals": []
+    }
+  }
+}

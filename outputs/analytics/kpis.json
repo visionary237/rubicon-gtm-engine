@@ -1,0 +1,185 @@
+{
+  "simulated": true,
+  "kpis": {
+    "funnel": [
+      {
+        "worked_accounts": 208,
+        "calls": 443,
+        "connected": 70,
+        "connect_rate": 0.3365,
+        "conversation_rate": 0.7,
+        "meeting_rate": 0.4286,
+        "show_rate": 0.7143,
+        "win_rate": 0.2,
+        "won_revenue_eur": 9459.0,
+        "enrichment_cost_eur": 131.78,
+        "cost_per_meeting_eur": 6.28
+      }
+    ],
+    "by_sector": [
+      {
+        "sector": "retail",
+        "n": 35,
+        "meetings": 6,
+        "meetings_per_worked_account": 0.1714,
+        "won_revenue_eur": 2526.0
+      },
+      {
+        "sector": "offices",
+        "n": 38,
+        "meetings": 6,
+        "meetings_per_worked_account": 0.1579,
+        "won_revenue_eur": 4216.0
+      },
+      {
+        "sector": "hospitality",
+        "n": 47,
+        "meetings": 5,
+        "meetings_per_worked_account": 0.1064,
+        "won_revenue_eur": 0.0
+      },
+      {
+        "sector": "fitness",
+        "n": 42,
+        "meetings": 2,
+        "meetings_per_worked_account": 0.0476,
+        "won_revenue_eur": 0.0
+      },
+      {
+        "sector": "local_shop",
+        "n": 46,
+        "meetings": 2,
+        "meetings_per_worked_account": 0.0435,
+        "won_revenue_eur": 2717.0
+      }
+    ],
+    "by_offer": [
+      {
+        "offer_id": "crm-automation",
+        "n": 35,
+        "meetings": 6,
+        "meetings_per_worked_account": 0.1714,
+        "won": 1
+      },
+      {
+        "offer_id": "facility-care",
+        "n": 38,
+        "meetings": 6,
+        "meetings_per_worked_account": 0.1579,
+        "won": 1
+      },
+      {
+        "offer_id": "review-cards",
+        "n": 93,
+        "meetings": 7,
+        "meetings_per_worked_account": 0.0753,
+        "won": 1
+      },
+      {
+        "offer_id": "robot-cleaning",
+        "n": 42,
+        "meetings": 2,
+        "meetings_per_worked_account": 0.0476,
+        "won": 0
+      }
+    ],
+    "by_source": [
+      {
+        "source": "export-b",
+        "n": 65,
+        "connect_rate": 0.4154,
+        "cost_per_meeting_eur": 6.87
+      },
+      {
+        "source": "export-a",
+        "n": 80,
+        "connect_rate": 0.3125,
+        "cost_per_meeting_eur": 10.14
+      },
+      {
+        "source": "network",
+        "n": 63,
+        "connect_rate": 0.2857,
+        "cost_per_meeting_eur": 3.98
+      }
+    ],
+    "by_rep": [
+      {
+        "rep_id": "r-alex",
+        "n": 77,
+        "conversations": 19,
+        "meetings": 8
+      },
+      {
+        "rep_id": "r-jordan",
+        "n": 63,
+        "conversations": 16,
+        "meetings": 8
+      },
+      {
+        "rep_id": "r-sam",
+        "n": 68,
+        "conversations": 14,
+        "meetings": 5
+      }
+    ],
+    "objections": [
+      {
+        "objection": "decision_elsewhere",
+        "n": 9
+      },
+      {
+        "objection": "price",
+        "n": 8
+      },
+      {
+        "objection": "incumbent",
+        "n": 7
+      },
+      {
+        "objection": "send_doc",
+        "n": 3
+      },
+      {
+        "objection": "timing",
+        "n": 1
+      }
+    ],
+    "loss_reasons": [
+      {
+        "loss_reason": "Sans réponse",
+        "n": 5
+      },
+      {
+        "loss_reason": "Pas le moment",
+        "n": 4
+      },
+      {
+        "loss_reason": "Trop cher",
+        "n": 2
+      },
+      {
+        "loss_reason": "Pas assez bien",
+        "n": 1
+      }
+    ]
+  },
+  "hypotheses": [
+    {
+      "observation": "retail books 17.1% meetings per worked account vs local_shop 4.3%.",
+      "overlap": "intervals overlap: not distinguishable yet",
+      "experiment": "Run the next two batches with a 60/40 split toward retail and compare meetings/worked account with the same script and rep allocation.",
+      "rule_change": "none until the experiment is reviewed"
+    },
+    {
+      "observation": "Most frequent objection: decision_elsewhere (9).",
+      "experiment": "Draft a two-sentence answer, A/B it across reps for two weeks, measure meetings/conversation.",
+      "rule_change": "none"
+    },
+    {
+      "observation": "Correlation is not causation: sectors also differ by rep allocation, list source and timing.",
+      "experiment": "Hold rep and source constant when comparing verticals.",
+      "rule_change": "none"
+    }
+  ]
+}

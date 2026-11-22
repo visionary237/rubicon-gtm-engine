@@ -1,0 +1,17 @@
+# secrets
+.env
+.env.*
+!.env.example
+credentials/
+*.key
+*token*.json
+# private workspaces (real companies, real prospects): never public
+workspaces/*
+!workspaces/README.md
+!workspaces/_template/
+!workspaces/_template/**
+# runtime
+node_modules/
+outputs/analytics/*.db
+*.log
+.DS_Store

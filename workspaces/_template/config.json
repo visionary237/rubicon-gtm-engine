@@ -1,0 +1,501 @@
+{
+  "$comment": "RUBICON demo configuration. Fictional company, synthetic data. Every weight is a configurable hypothesis, not a validated result.",
+  "workspace": {
+    "id": "ws-demo",
+    "name": "Northbay Group (fictional)",
+    "companyName": "Northbay",
+    "country": "FR",
+    "language": "fr",
+    "timezone": "Europe/Paris"
+  },
+  "mode": "mock",
+  "runAt": "2026-11-20T07:00:00Z",
+  "ruleVersion": "1.0.0",
+  "weights": {
+    "opportunity": {
+      "icpFit": 0.45,
+      "personaFit": 0.25,
+      "intentTiming": 0.3
+    },
+    "salesMatch": {
+      "offerExpertise": 0.55,
+      "industryExpertise": 0.3,
+      "taskPreference": 0.15
+    },
+    "priority": {
+      "opportunity": 0.55,
+      "salesMatch": 0.3,
+      "dueBonus": 15,
+      "overdueBonus": 5,
+      "goalGapBonus": 5
+    },
+    "offerFit": {
+      "problem": 0.5,
+      "sector": 0.3,
+      "persona": 0.2
+    }
+  },
+  "thresholds": {
+    "minIcpFit": 60,
+    "minOfferFit": 50,
+    "minOfferExpertise": 60,
+    "minOpportunityScore": 45,
+    "maxContactsPerAccount": 2,
+    "largeTeamThreshold": 30,
+    "largeTeamContactCap": 1,
+    "maxAttempts": 3,
+    "attemptWindowDays": 7,
+    "reactivationDays": 90,
+    "firstBatchReviewSize": 50
+  },
+  "personaScores": {
+    "economic_buyer": 90,
+    "decision_maker": 85,
+    "champion": 60,
+    "end_user": 40,
+    "gatekeeper": 20
+  },
+  "signals": {
+    "maxAgeDays": 120,
+    "weights": {
+      "expressed_interest": 40,
+      "promised_follow_up": 30,
+      "contract_renewal": 35,
+      "new_site": 30,
+      "hiring": 20,
+      "funding": 20,
+      "negative_review_trend": 25,
+      "sector_event": 10
+    }
+  },
+  "schedule": {
+    "dayStart": "08:00",
+    "outboundStart": "09:00",
+    "dayEnd": "18:00",
+    "prospectingBlockMinutes": 60,
+    "recoveryBlockMinutes": 10,
+    "speechWordsPerSecond": 3.0,
+    "durations": {
+      "callback": 15,
+      "new_call": 15,
+      "followup_email": 10,
+      "prepare_meeting": 20
+    },
+    "$speechComment": "Estimate calibrated on the 25-second Scalon reference script (~3 words/s). The real check stays: read it aloud and time it."
+  },
+  "budget": {
+    "currency": "EUR",
+    "providers": {
+      "contact_extraction": {
+        "provider": "mock-contact-source",
+        "billing": "per_result (to verify)",
+        "unitCents": 2,
+        "balanceCents": 2000,
+        "expectedHitRate": 0.6
+      },
+      "mobile_enrichment": {
+        "provider": "mock-phone-source",
+        "billing": "per_result (to verify)",
+        "unitCents": 60,
+        "balanceCents": 12000,
+        "expectedHitRate": 0.5
+      }
+    }
+  },
+  "approvals": {
+    "accountReviewDone": true,
+    "approvedAccountIds": [
+      "a01",
+      "a02",
+      "a03",
+      "a04",
+      "a05",
+      "a06",
+      "a07",
+      "a13",
+      "a15",
+      "a16",
+      "a17"
+    ],
+    "approvedQuoteIds": []
+  },
+  "dictionary": {
+    "$comment": "Format example for a fictional multi-offer company. Never reuse as a real configuration: /outbound-setup builds yours.",
+    "ranks": {
+      "economic_buyer": [
+        "directeur general",
+        "directrice generale",
+        "gerant",
+        "gerante",
+        "fondateur",
+        "fondatrice",
+        "cofondateur",
+        "cofondatrice",
+        "president",
+        "presidente",
+        "ceo",
+        "founder",
+        "owner"
+      ],
+      "decision_maker": [
+        "directeur des operations",
+        "directrice des operations",
+        "coo",
+        "directeur commercial",
+        "directrice commerciale",
+        "head of sales",
+        "responsable exploitation",
+        "responsable crm",
+        "revops manager",
+        "directeur d'exploitation",
+        "directrice d'exploitation"
+      ],
+      "champion": [
+        "facility manager",
+        "responsable entretien",
+        "responsable de salle",
+        "responsable boutique",
+        "responsable services generaux"
+      ]
+    },
+    "exclude": [
+      "stagiaire",
+      "alternant",
+      "alternante",
+      "apprenti",
+      "assistant",
+      "assistante",
+      "intern",
+      "commercial terrain",
+      "technico-commercial"
+    ],
+    "excludeGeo": [
+      "- uk",
+      "- germany",
+      "- belgique",
+      "united kingdom"
+    ],
+    "disabledRoles": []
+  },
+  "problemLabels": {
+    "high_cleaning_cost": "Coût d'entretien élevé",
+    "large_floor_surface": "Grande surface au sol à entretenir",
+    "night_cleaning_gaps": "Créneaux de nettoyage hors ouverture difficiles à couvrir",
+    "cleaning_quality_complaints": "Plaintes sur la qualité d'entretien",
+    "textile_hygiene": "Hygiène du linge et des textiles",
+    "manual_follow_up": "Relances commerciales manuelles",
+    "lead_leakage": "Demandes entrantes non traitées",
+    "no_crm": "Pas de CRM structuré",
+    "low_google_reviews": "Peu d'avis Google",
+    "weak_local_visibility": "Faible visibilité locale"
+  },
+  "offers": [
+    {
+      "id": "robot-cleaning",
+      "name": "Nettoyage robotisé",
+      "category": "facility-tech",
+      "active": true,
+      "oneLiner": "On pilote des robots de nettoyage pour les grandes surfaces.",
+      "meetingPurpose": "voir si un pilote a du sens",
+      "problemsSolved": [
+        "high_cleaning_cost",
+        "large_floor_surface",
+        "night_cleaning_gaps"
+      ],
+      "icpSectors": [
+        "fitness",
+        "retail",
+        "offices"
+      ],
+      "personas": [
+        "economic_buyer",
+        "decision_maker"
+      ],
+      "priceEUR": null,
+      "marginPct": null,
+      "salesCycleDays": 45,
+      "seasonalityMonths": [
+        1,
+        2,
+        9,
+        10,
+        11
+      ],
+      "complementary": [
+        "facility-care"
+      ],
+      "socialProof": [],
+      "assets": [
+        {
+          "title": "Audit des coûts d'entretien (brouillon)",
+          "status": "draft",
+          "verified": false
+        }
+      ],
+      "objections": [
+        "C'est trop cher pour nous",
+        "On a déjà un prestataire",
+        "Un robot ne fait pas les angles",
+        "Pas le moment, on verra en janvier",
+        "Envoyez-moi une documentation"
+      ],
+      "discoveryQuestions": [
+        "Quelle surface entretenez-vous ?",
+        "Quel est votre coût mensuel d'entretien ?",
+        "Qui valide un pilote ?"
+      ]
+    },
+    {
+      "id": "facility-care",
+      "name": "Entretien professionnel",
+      "category": "services",
+      "active": true,
+      "oneLiner": "On entretient des locaux pros avec un contrôle qualité mensuel.",
+      "meetingPurpose": "faire le point sur votre entretien actuel",
+      "problemsSolved": [
+        "cleaning_quality_complaints",
+        "high_cleaning_cost",
+        "textile_hygiene"
+      ],
+      "icpSectors": [
+        "fitness",
+        "hospitality",
+        "offices",
+        "retail"
+      ],
+      "personas": [
+        "economic_buyer",
+        "decision_maker",
+        "champion"
+      ],
+      "priceEUR": null,
+      "marginPct": null,
+      "salesCycleDays": 30,
+      "complementary": [
+        "robot-cleaning"
+      ],
+      "socialProof": [],
+      "assets": [],
+      "objections": [
+        "Notre contrat court jusqu'à l'été",
+        "C'est le siège qui décide",
+        "Nos équipes font le ménage",
+        "C'est trop cher",
+        "Envoyez une plaquette"
+      ],
+      "discoveryQuestions": [
+        "Quels espaces sont concernés ?",
+        "Quelle fréquence ?",
+        "Quand échoit votre contrat ?"
+      ]
+    },
+    {
+      "id": "crm-automation",
+      "name": "CRM et automatisation des relances",
+      "category": "growth",
+      "active": true,
+      "oneLiner": "On installe un CRM simple qui relance vos demandes à votre place.",
+      "meetingPurpose": "regarder comment vos demandes sont suivies aujourd'hui",
+      "problemsSolved": [
+        "manual_follow_up",
+        "lead_leakage",
+        "no_crm"
+      ],
+      "icpSectors": [
+        "retail",
+        "offices",
+        "hospitality",
+        "local_shop"
+      ],
+      "personas": [
+        "decision_maker",
+        "economic_buyer"
+      ],
+      "priceEUR": null,
+      "marginPct": null,
+      "salesCycleDays": 21,
+      "complementary": [
+        "review-cards"
+      ],
+      "socialProof": [],
+      "assets": [],
+      "objections": [
+        "On a déjà un outil",
+        "Pas le temps de mettre ça en place",
+        "C'est trop cher",
+        "Mes équipes ne l'utiliseront pas",
+        "Envoyez-moi un mail"
+      ],
+      "discoveryQuestions": [
+        "Où arrivent vos demandes ?",
+        "Qui relance ?",
+        "Combien de demandes par mois ?"
+      ]
+    },
+    {
+      "id": "review-cards",
+      "name": "Cartes NFC d'avis Google",
+      "category": "local-marketing",
+      "active": true,
+      "oneLiner": "On fait des cartes NFC qui envoient vos clients vers vos avis Google.",
+      "meetingPurpose": "vous montrer le résultat",
+      "problemsSolved": [
+        "low_google_reviews",
+        "weak_local_visibility"
+      ],
+      "icpSectors": [
+        "local_shop",
+        "hospitality",
+        "fitness"
+      ],
+      "personas": [
+        "economic_buyer",
+        "champion"
+      ],
+      "priceEUR": null,
+      "marginPct": null,
+      "salesCycleDays": 7,
+      "complementary": [
+        "crm-automation"
+      ],
+      "socialProof": [
+        {
+          "name": "Studio Démo",
+          "verified": true,
+          "citationAllowed": true,
+          "demoFixture": true,
+          "sectors": [
+            "local_shop"
+          ]
+        }
+      ],
+      "assets": [
+        {
+          "title": "[DÉMO FICTIVE] Comptage des avis Google de 1 284 commerces",
+          "status": "approved",
+          "verified": true,
+          "demoFixture": true,
+          "callReason": "[DÉMO] On vient de compter les avis Google de 1 284 commerces du Havre."
+        }
+      ],
+      "objections": [
+        "On a déjà beaucoup d'avis",
+        "Les clients ne laissent pas d'avis",
+        "Pas de budget",
+        "Je n'ai pas le temps",
+        "Envoyez-moi le lien"
+      ],
+      "discoveryQuestions": [
+        "Combien d'avis recevez-vous par mois ?",
+        "Qui répond aux avis ?",
+        "Avez-vous plusieurs points de vente ?"
+      ]
+    }
+  ],
+  "reps": [
+    {
+      "id": "r-alex",
+      "name": "Alex",
+      "level": "senior",
+      "languages": [
+        "fr",
+        "en"
+      ],
+      "available": true,
+      "capacityMinutes": 120,
+      "maxComplexity": 3,
+      "offerExpertise": {
+        "robot-cleaning": 92,
+        "facility-care": 80,
+        "crm-automation": 50,
+        "review-cards": 60
+      },
+      "industryExpertise": {
+        "fitness": 90,
+        "retail": 70,
+        "offices": 75,
+        "hospitality": 60,
+        "local_shop": 55
+      },
+      "taskPreferences": {
+        "callback": 80,
+        "new_call": 85,
+        "followup_email": 60,
+        "prepare_meeting": 80
+      },
+      "objectives": {
+        "qualifiedConversationsTarget": 20,
+        "qualifiedConversationsDone": 12
+      }
+    },
+    {
+      "id": "r-sam",
+      "name": "Sam",
+      "level": "medium",
+      "languages": [
+        "fr"
+      ],
+      "available": true,
+      "capacityMinutes": 90,
+      "maxComplexity": 2,
+      "offerExpertise": {
+        "robot-cleaning": 65,
+        "facility-care": 90,
+        "crm-automation": 85,
+        "review-cards": 80
+      },
+      "industryExpertise": {
+        "fitness": 60,
+        "retail": 90,
+        "offices": 85,
+        "hospitality": 80,
+        "local_shop": 85
+      },
+      "taskPreferences": {
+        "callback": 70,
+        "new_call": 60,
+        "followup_email": 90,
+        "prepare_meeting": 75
+      },
+      "objectives": {
+        "qualifiedConversationsTarget": 15,
+        "qualifiedConversationsDone": 4
+      }
+    },
+    {
+      "id": "r-jordan",
+      "name": "Jordan",
+      "level": "junior",
+      "languages": [
+        "fr"
+      ],
+      "available": true,
+      "capacityMinutes": 60,
+      "maxComplexity": 1,
+      "prefersBlockMinutes": 45,
+      "offerExpertise": {
+        "robot-cleaning": 40,
+        "facility-care": 55,
+        "crm-automation": 60,
+        "review-cards": 85
+      },
+      "industryExpertise": {
+        "fitness": 50,
+        "retail": 65,
+        "offices": 50,
+        "hospitality": 70,
+        "local_shop": 85
+      },
+      "taskPreferences": {
+        "callback": 60,
+        "new_call": 90,
+        "followup_email": 55,
+        "prepare_meeting": 50
+      },
+      "objectives": {
+        "qualifiedConversationsTarget": 10,
+        "qualifiedConversationsDone": 1
+      }
+    }
+  ]
+}

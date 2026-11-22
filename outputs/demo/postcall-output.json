@@ -1,0 +1,277 @@
+{
+  "mode": "mock",
+  "sessionId": "S-2026-11-20-pm",
+  "patches": [
+    {
+      "eventId": "e01",
+      "contactId": "c01",
+      "status": "Réponse positive",
+      "intent": "meeting",
+      "callsIncrement": 1,
+      "lastCallAt": "2026-11-20T08:05:00Z",
+      "lastContactAt": "2026-11-20T08:05:00Z",
+      "appendNote": "RDV confirmé mardi 10h pour le pilote",
+      "nextAction": {
+        "type": "prepare_meeting",
+        "dueDate": "2026-11-24"
+      },
+      "suppression": null
+    },
+    {
+      "eventId": "e02",
+      "contactId": "c05",
+      "status": "Qualifié",
+      "intent": "no_answer",
+      "callsIncrement": 1,
+      "lastCallAt": "2026-11-20T09:15:00Z",
+      "lastContactAt": "2026-11-20T09:40:00Z",
+      "appendNote": "messagerie, c'est bien la bonne personne",
+      "nextAction": {
+        "type": "follow_up",
+        "dueDate": "2026-11-23"
+      },
+      "suppression": null
+    },
+    {
+      "eventId": "e03",
+      "contactId": "c09",
+      "status": "Réponse négative",
+      "intent": "negative",
+      "callsIncrement": 1,
+      "lastCallAt": "2026-11-20T09:30:00Z",
+      "lastContactAt": "2026-11-20T09:30:00Z",
+      "appendNote": "pas intéressé, déjà équipé, trop cher",
+      "nextAction": null,
+      "suppression": null
+    },
+    {
+      "eventId": "e04",
+      "contactId": "c08",
+      "status": "Qualifié",
+      "intent": "asks_email",
+      "callsIncrement": 1,
+      "lastCallAt": "2026-11-20T08:20:00Z",
+      "lastContactAt": "2026-11-20T08:20:00Z",
+      "appendNote": "a demandé une plaquette par mail",
+      "nextAction": {
+        "type": "send_requested_email",
+        "dueDate": "2026-11-23"
+      },
+      "suppression": null
+    },
+    {
+      "eventId": "e05",
+      "contactId": "c04",
+      "status": "Rappeler",
+      "intent": "callback_requested",
+      "callsIncrement": 1,
+      "lastCallAt": "2026-11-20T10:00:00Z",
+      "lastContactAt": "2026-11-20T10:00:00Z",
+      "appendNote": "en réunion, rappeler jeudi",
+      "nextAction": {
+        "type": "callback",
+        "dueDate": "2026-11-26",
+        "promised": true
+      },
+      "suppression": null
+    },
+    {
+      "eventId": "e06",
+      "contactId": "c10",
+      "status": "Rappeler",
+      "intent": "meeting",
+      "callsIncrement": 1,
+      "lastCallAt": "2026-11-20T10:20:00Z",
+      "lastContactAt": "2026-11-20T10:20:00Z",
+      "appendNote": "RDV pris jeudi 14h pour les cartes | RDV annoncé sans événement agenda : pas de deal",
+      "nextAction": {
+        "type": "verify_meeting_with_rep",
+        "dueDate": "2026-11-23",
+        "promised": false
+      },
+      "suppression": null
+    },
+    {
+      "eventId": "e08",
+      "contactId": "c11",
+      "status": "Ne pas contacter",
+      "intent": "opt_out",
+      "callsIncrement": 1,
+      "lastCallAt": "2026-11-20T11:00:00Z",
+      "lastContactAt": "2026-11-20T11:00:00Z",
+      "appendNote": "ne plus me contacter, opposition",
+      "nextAction": null,
+      "suppression": {
+        "scope": "contact",
+        "reason": "prospect_opposition",
+        "durable": true
+      }
+    },
+    {
+      "eventId": "e09",
+      "contactId": "c16",
+      "status": "Ne pas contacter",
+      "callsIncrement": 0,
+      "lastCallAt": null,
+      "appendNote": null,
+      "suppression": {
+        "scope": "contact",
+        "reason": "user_marked_not_to_contact"
+      }
+    }
+  ],
+  "crmOps": [
+    {
+      "order": 1,
+      "entity": "account",
+      "key": "atlas-fitness.example",
+      "op": "link_existing",
+      "crmId": "crm-acc-001"
+    },
+    {
+      "order": 2,
+      "entity": "contact",
+      "key": "profiles.example/lina-martin",
+      "op": "create",
+      "crmId": null,
+      "fields": {
+        "state": "Qualifié",
+        "lastContact": "2026-11-20",
+        "comment": "RDV confirmé mardi 10h pour le pilote"
+      }
+    },
+    {
+      "order": 3,
+      "entity": "deal",
+      "key": "a01:robot-cleaning",
+      "op": "create",
+      "fields": {
+        "stage": "1. Prise de besoin prévue",
+        "meetingId": "cal-002"
+      }
+    },
+    {
+      "order": 1,
+      "entity": "account",
+      "key": "maree-retail.example",
+      "op": "create",
+      "crmId": null
+    },
+    {
+      "order": 2,
+      "entity": "contact",
+      "key": "profiles.example/noe-bernard",
+      "op": "create",
+      "crmId": null,
+      "fields": {
+        "state": "Qualifié",
+        "lastContact": "2026-11-20",
+        "comment": "messagerie, c'est bien la bonne personne"
+      }
+    },
+    {
+      "order": 1,
+      "entity": "account",
+      "key": "quai-ouest.example",
+      "op": "create",
+      "crmId": null
+    },
+    {
+      "order": 2,
+      "entity": "contact",
+      "key": "profiles.example/victor-faure",
+      "op": "create",
+      "crmId": null,
+      "fields": {
+        "state": "Qualifié",
+        "lastContact": "2026-11-20",
+        "comment": "a demandé une plaquette par mail"
+      }
+    }
+  ],
+  "validationQueue": [
+    {
+      "eventId": "e11",
+      "contactId": "c23",
+      "reason": "ambiguous_note",
+      "note": "on verra"
+    },
+    {
+      "eventId": "e12",
+      "contactId": "c17",
+      "reason": "confirm_email_sent"
+    }
+  ],
+  "contradictions": [
+    {
+      "eventId": "e02",
+      "contactId": "c05",
+      "type": "email_sent_not_in_note",
+      "resolution": "sent email prevails"
+    },
+    {
+      "eventId": "e06",
+      "contactId": "c10",
+      "type": "meeting_claimed_no_calendar_event"
+    },
+    {
+      "eventId": "e12",
+      "contactId": "c17",
+      "type": "email_claimed_not_in_sent_box"
+    }
+  ],
+  "rejected": [
+    {
+      "eventId": "e07",
+      "contactId": "c22",
+      "reason": "identity_mismatch",
+      "expected": "Karim Haddad",
+      "found": "Jean Haddad"
+    }
+  ],
+  "skipped": [
+    {
+      "eventId": "e01",
+      "reason": "already_processed"
+    }
+  ],
+  "objections": [
+    {
+      "contactId": "c09",
+      "offerId": null,
+      "objections": [
+        "price",
+        "incumbent"
+      ]
+    }
+  ],
+  "processedEventIds": [
+    "e01",
+    "e02",
+    "e03",
+    "e04",
+    "e05",
+    "e06",
+    "e08",
+    "e09",
+    "e11",
+    "e12"
+  ],
+  "writesPerformed": 0,
+  "requiresAuthorization": true,
+  "summary": {
+    "notes": 12,
+    "patched": 8,
+    "toValidate": 2,
+    "contradictions": 3,
+    "rejectedByIdentityGuard": 1,
+    "dealsProposed": 1
+  },
+  "crmWrite": {
+    "mode": "mock",
+    "writeId": "W-S-2026-11-20-pm",
+    "wouldWrite": 15,
+    "writesPerformed": 0,
+    "note": "Approve by adding this writeId to approvals.approvedWriteIds and running in live mode with an implemented CRM adapter."
+  }
+}

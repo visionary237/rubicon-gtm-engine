@@ -1,0 +1,2576 @@
+{
+  "data": {
+    "version": 1,
+    "startData": {},
+    "resultData": {
+      "runData": {
+        "Manual Trigger": [
+          {
+            "startTime": 1795095183760,
+            "executionIndex": 0,
+            "source": [],
+            "hints": [],
+            "executionTime": 0,
+            "executionStatus": "success",
+            "data": {
+              "main": [
+                [
+                  {
+                    "json": {},
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+        "01 · Session notes & evidence (mock)": [
+          {
+            "startTime": 1795095183761,
+            "executionIndex": 1,
+            "source": [
+              {
+                "previousNode": "Manual Trigger"
+              }
+            ],
+            "hints": [
+              {
+                "message": "To make sure expressions after this node work, return the input items that produced each output item. <a target=\"_blank\" href=\"https://docs.n8n.io/data/data-mapping/data-item-linking/item-linking-code-node/\">More info</a>",
+                "location": "outputPane"
+              }
+            ],
+            "executionTime": 48,
+            "executionStatus": "success",
+            "data": {
+              "main": [
+                [
+                  {
+                    "json": {
+                      "config": {
+                        "$comment": "RUBICON demo configuration. Fictional company, synthetic data. Every weight is a configurable hypothesis, not a validated result.",
+                        "workspace": {
+                          "id": "ws-demo",
+                          "name": "Northbay Group (fictional)",
+                          "companyName": "Northbay",
+                          "country": "FR",
+                          "language": "fr",
+                          "timezone": "Europe/Paris"
+                        },
+                        "mode": "mock",
+                        "runAt": "2026-11-20T07:00:00Z",
+                        "ruleVersion": "1.0.0",
+                        "weights": {
+                          "opportunity": {
+                            "icpFit": 0.45,
+                            "personaFit": 0.25,
+                            "intentTiming": 0.3
+                          },
+                          "salesMatch": {
+                            "offerExpertise": 0.55,
+                            "industryExpertise": 0.3,
+                            "taskPreference": 0.15
+                          },
+                          "priority": {
+                            "opportunity": 0.55,
+                            "salesMatch": 0.3,
+                            "dueBonus": 15,
+                            "overdueBonus": 5,
+                            "goalGapBonus": 5
+                          },
+                          "offerFit": {
+                            "problem": 0.5,
+                            "sector": 0.3,
+                            "persona": 0.2
+                          }
+                        },
+                        "thresholds": {
+                          "minIcpFit": 60,
+                          "minOfferFit": 50,
+                          "minOfferExpertise": 60,
+                          "minOpportunityScore": 45,
+                          "maxContactsPerAccount": 2,
+                          "largeTeamThreshold": 30,
+                          "largeTeamContactCap": 1,
+                          "maxAttempts": 3,
+                          "attemptWindowDays": 7,
+                          "reactivationDays": 90,
+                          "firstBatchReviewSize": 50
+                        },
+                        "personaScores": {
+                          "economic_buyer": 90,
+                          "decision_maker": 85,
+                          "champion": 60,
+                          "end_user": 40,
+                          "gatekeeper": 20
+                        },
+                        "signals": {
+                          "maxAgeDays": 120,
+                          "weights": {
+                            "expressed_interest": 40,
+                            "promised_follow_up": 30,
+                            "contract_renewal": 35,
+                            "new_site": 30,
+                            "hiring": 20,
+                            "funding": 20,
+                            "negative_review_trend": 25,
+                            "sector_event": 10
+                          }
+                        },
+                        "schedule": {
+                          "dayStart": "08:00",
+                          "outboundStart": "09:00",
+                          "dayEnd": "18:00",
+                          "prospectingBlockMinutes": 60,
+                          "recoveryBlockMinutes": 10,
+                          "speechWordsPerSecond": 3,
+                          "durations": {
+                            "callback": 15,
+                            "new_call": 15,
+                            "followup_email": 10,
+                            "prepare_meeting": 20
+                          },
+                          "$speechComment": "Estimate calibrated on the 25-second Scalon reference script (~3 words/s). The real check stays: read it aloud and time it."
+                        },
+                        "budget": {
+                          "currency": "EUR",
+                          "providers": {
+                            "contact_extraction": {
+                              "provider": "mock-contact-source",
+                              "billing": "per_result (to verify)",
+                              "unitCents": 2,
+                              "balanceCents": 2000,
+                              "expectedHitRate": 0.6
+                            },
+                            "mobile_enrichment": {
+                              "provider": "mock-phone-source",
+                              "billing": "per_result (to verify)",
+                              "unitCents": 60,
+                              "balanceCents": 12000,
+                              "expectedHitRate": 0.5
+                            }
+                          }
+                        },
+                        "approvals": {
+                          "accountReviewDone": true,
+                          "approvedAccountIds": [
+                            "a01",
+                            "a02",
+                            "a03",
+                            "a04",
+                            "a05",
+                            "a06",
+                            "a07",
+                            "a13",
+                            "a15",
+                            "a16",
+                            "a17"
+                          ],
+                          "approvedQuoteIds": []
+                        },
+                        "dictionary": {
+                          "$comment": "Format example for a fictional multi-offer company. Never reuse as a real configuration: /outbound-setup builds yours.",
+                          "ranks": {
+                            "economic_buyer": [
+                              "directeur general",
+                              "directrice generale",
+                              "gerant",
+                              "gerante",
+                              "fondateur",
+                              "fondatrice",
+                              "cofondateur",
+                              "cofondatrice",
+                              "president",
+                              "presidente",
+                              "ceo",
+                              "founder",
+                              "owner"
+                            ],
+                            "decision_maker": [
+                              "directeur des operations",
+                              "directrice des operations",
+                              "coo",
+                              "directeur commercial",
+                              "directrice commerciale",
+                              "head of sales",
+                              "responsable exploitation",
+                              "responsable crm",
+                              "revops manager",
+                              "directeur d'exploitation",
+                              "directrice d'exploitation"
+                            ],
+                            "champion": [
+                              "facility manager",
+                              "responsable entretien",
+                              "responsable de salle",
+                              "responsable boutique",
+                              "responsable services generaux"
+                            ]
+                          },
+                          "exclude": [
+                            "stagiaire",
+                            "alternant",
+                            "alternante",
+                            "apprenti",
+                            "assistant",
+                            "assistante",
+                            "intern",
+                            "commercial terrain",
+                            "technico-commercial"
+                          ],
+                          "excludeGeo": [
+                            "- uk",
+                            "- germany",
+                            "- belgique",
+                            "united kingdom"
+                          ],
+                          "disabledRoles": []
+                        },
+                        "problemLabels": {
+                          "high_cleaning_cost": "Coût d'entretien élevé",
+                          "large_floor_surface": "Grande surface au sol à entretenir",
+                          "night_cleaning_gaps": "Créneaux de nettoyage hors ouverture difficiles à couvrir",
+                          "cleaning_quality_complaints": "Plaintes sur la qualité d'entretien",
+                          "textile_hygiene": "Hygiène du linge et des textiles",
+                          "manual_follow_up": "Relances commerciales manuelles",
+                          "lead_leakage": "Demandes entrantes non traitées",
+                          "no_crm": "Pas de CRM structuré",
+                          "low_google_reviews": "Peu d'avis Google",
+                          "weak_local_visibility": "Faible visibilité locale"
+                        },
+                        "offers": [
+                          {
+                            "id": "robot-cleaning",
+                            "name": "Nettoyage robotisé",
+                            "category": "facility-tech",
+                            "active": true,
+                            "oneLiner": "On pilote des robots de nettoyage pour les grandes surfaces.",
+                            "meetingPurpose": "voir si un pilote a du sens",
+                            "problemsSolved": [
+                              "high_cleaning_cost",
+                              "large_floor_surface",
+                              "night_cleaning_gaps"
+                            ],
+                            "icpSectors": [
+                              "fitness",
+                              "retail",
+                              "offices"
+                            ],
+                            "personas": [
+                              "economic_buyer",
+                              "decision_maker"
+                            ],
+                            "priceEUR": null,
+                            "marginPct": null,
+                            "salesCycleDays": 45,
+                            "seasonalityMonths": [
+                              1,
+                              2,
+                              9,
+                              10,
+                              11
+                            ],
+                            "complementary": [
+                              "facility-care"
+                            ],
+                            "socialProof": [],
+                            "assets": [
+                              {
+                                "title": "Audit des coûts d'entretien (brouillon)",
+                                "status": "draft",
+                                "verified": false
+                              }
+                            ],
+                            "objections": [
+                              "C'est trop cher pour nous",
+                              "On a déjà un prestataire",
+                              "Un robot ne fait pas les angles",
+                              "Pas le moment, on verra en janvier",
+                              "Envoyez-moi une documentation"
+                            ],
+                            "discoveryQuestions": [
+                              "Quelle surface entretenez-vous ?",
+                              "Quel est votre coût mensuel d'entretien ?",
+                              "Qui valide un pilote ?"
+                            ]
+                          },
+                          {
+                            "id": "facility-care",
+                            "name": "Entretien professionnel",
+                            "category": "services",
+                            "active": true,
+                            "oneLiner": "On entretient des locaux pros avec un contrôle qualité mensuel.",
+                            "meetingPurpose": "faire le point sur votre entretien actuel",
+                            "problemsSolved": [
+                              "cleaning_quality_complaints",
+                              "high_cleaning_cost",
+                              "textile_hygiene"
+                            ],
+                            "icpSectors": [
+                              "fitness",
+                              "hospitality",
+                              "offices",
+                              "retail"
+                            ],
+                            "personas": [
+                              "economic_buyer",
+                              "decision_maker",
+                              "champion"
+                            ],
+                            "priceEUR": null,
+                            "marginPct": null,
+                            "salesCycleDays": 30,
+                            "complementary": [
+                              "robot-cleaning"
+                            ],
+                            "socialProof": [],
+                            "assets": [],
+                            "objections": [
+                              "Notre contrat court jusqu'à l'été",
+                              "C'est le siège qui décide",
+                              "Nos équipes font le ménage",
+                              "C'est trop cher",
+                              "Envoyez une plaquette"
+                            ],
+                            "discoveryQuestions": [
+                              "Quels espaces sont concernés ?",
+                              "Quelle fréquence ?",
+                              "Quand échoit votre contrat ?"
+                            ]
+                          },
+                          {
+                            "id": "crm-automation",
+                            "name": "CRM et automatisation des relances",
+                            "category": "growth",
+                            "active": true,
+                            "oneLiner": "On installe un CRM simple qui relance vos demandes à votre place.",
+                            "meetingPurpose": "regarder comment vos demandes sont suivies aujourd'hui",
+                            "problemsSolved": [
+                              "manual_follow_up",
+                              "lead_leakage",
+                              "no_crm"
+                            ],
+                            "icpSectors": [
+                              "retail",
+                              "offices",
+                              "hospitality",
+                              "local_shop"
+                            ],
+                            "personas": [
+                              "decision_maker",
+                              "economic_buyer"
+                            ],
+                            "priceEUR": null,
+                            "marginPct": null,
+                            "salesCycleDays": 21,
+                            "complementary": [
+                              "review-cards"
+                            ],
+                            "socialProof": [],
+                            "assets": [],
+                            "objections": [
+                              "On a déjà un outil",
+                              "Pas le temps de mettre ça en place",
+                              "C'est trop cher",
+                              "Mes équipes ne l'utiliseront pas",
+                              "Envoyez-moi un mail"
+                            ],
+                            "discoveryQuestions": [
+                              "Où arrivent vos demandes ?",
+                              "Qui relance ?",
+                              "Combien de demandes par mois ?"
+                            ]
+                          },
+                          {
+                            "id": "review-cards",
+                            "name": "Cartes NFC d'avis Google",
+                            "category": "local-marketing",
+                            "active": true,
+                            "oneLiner": "On fait des cartes NFC qui envoient vos clients vers vos avis Google.",
+                            "meetingPurpose": "vous montrer le résultat",
+                            "problemsSolved": [
+                              "low_google_reviews",
+                              "weak_local_visibility"
+                            ],
+                            "icpSectors": [
+                              "local_shop",
+                              "hospitality",
+                              "fitness"
+                            ],
+                            "personas": [
+                              "economic_buyer",
+                              "champion"
+                            ],
+                            "priceEUR": null,
+                            "marginPct": null,
+                            "salesCycleDays": 7,
+                            "complementary": [
+                              "crm-automation"
+                            ],
+                            "socialProof": [
+                              {
+                                "name": "Studio Démo",
+                                "verified": true,
+                                "citationAllowed": true,
+                                "demoFixture": true,
+                                "sectors": [
+                                  "local_shop"
+                                ]
+                              }
+                            ],
+                            "assets": [
+                              {
+                                "title": "[DÉMO FICTIVE] Comptage des avis Google de 1 284 commerces",
+                                "status": "approved",
+                                "verified": true,
+                                "demoFixture": true,
+                                "callReason": "[DÉMO] On vient de compter les avis Google de 1 284 commerces du Havre."
+                              }
+                            ],
+                            "objections": [
+                              "On a déjà beaucoup d'avis",
+                              "Les clients ne laissent pas d'avis",
+                              "Pas de budget",
+                              "Je n'ai pas le temps",
+                              "Envoyez-moi le lien"
+                            ],
+                            "discoveryQuestions": [
+                              "Combien d'avis recevez-vous par mois ?",
+                              "Qui répond aux avis ?",
+                              "Avez-vous plusieurs points de vente ?"
+                            ]
+                          }
+                        ],
+                        "reps": [
+                          {
+                            "id": "r-alex",
+                            "name": "Alex",
+                            "level": "senior",
+                            "languages": [
+                              "fr",
+                              "en"
+                            ],
+                            "available": true,
+                            "capacityMinutes": 120,
+                            "maxComplexity": 3,
+                            "offerExpertise": {
+                              "robot-cleaning": 92,
+                              "facility-care": 80,
+                              "crm-automation": 50,
+                              "review-cards": 60
+                            },
+                            "industryExpertise": {
+                              "fitness": 90,
+                              "retail": 70,
+                              "offices": 75,
+                              "hospitality": 60,
+                              "local_shop": 55
+                            },
+                            "taskPreferences": {
+                              "callback": 80,
+                              "new_call": 85,
+                              "followup_email": 60,
+                              "prepare_meeting": 80
+                            },
+                            "objectives": {
+                              "qualifiedConversationsTarget": 20,
+                              "qualifiedConversationsDone": 12
+                            }
+                          },
+                          {
+                            "id": "r-sam",
+                            "name": "Sam",
+                            "level": "medium",
+                            "languages": [
+                              "fr"
+                            ],
+                            "available": true,
+                            "capacityMinutes": 90,
+                            "maxComplexity": 2,
+                            "offerExpertise": {
+                              "robot-cleaning": 65,
+                              "facility-care": 90,
+                              "crm-automation": 85,
+                              "review-cards": 80
+                            },
+                            "industryExpertise": {
+                              "fitness": 60,
+                              "retail": 90,
+                              "offices": 85,
+                              "hospitality": 80,
+                              "local_shop": 85
+                            },
+                            "taskPreferences": {
+                              "callback": 70,
+                              "new_call": 60,
+                              "followup_email": 90,
+                              "prepare_meeting": 75
+                            },
+                            "objectives": {
+                              "qualifiedConversationsTarget": 15,
+                              "qualifiedConversationsDone": 4
+                            }
+                          },
+                          {
+                            "id": "r-jordan",
+                            "name": "Jordan",
+                            "level": "junior",
+                            "languages": [
+                              "fr"
+                            ],
+                            "available": true,
+                            "capacityMinutes": 60,
+                            "maxComplexity": 1,
+                            "prefersBlockMinutes": 45,
+                            "offerExpertise": {
+                              "robot-cleaning": 40,
+                              "facility-care": 55,
+                              "crm-automation": 60,
+                              "review-cards": 85
+                            },
+                            "industryExpertise": {
+                              "fitness": 50,
+                              "retail": 65,
+                              "offices": 50,
+                              "hospitality": 70,
+                              "local_shop": 85
+                            },
+                            "taskPreferences": {
+                              "callback": 60,
+                              "new_call": 90,
+                              "followup_email": 55,
+                              "prepare_meeting": 50
+                            },
+                            "objectives": {
+                              "qualifiedConversationsTarget": 10,
+                              "qualifiedConversationsDone": 1
+                            }
+                          }
+                        ]
+                      },
+                      "data": {
+                        "contacts": [
+                          {
+                            "id": "c01",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a01",
+                            "firstName": "Lina",
+                            "lastName": "Martin",
+                            "title": "Directrice des opérations",
+                            "profileUrl": "https://profiles.example/lina-martin",
+                            "phone": "DEMO-+33-6-00-00-00-01",
+                            "phoneCountry": "FR",
+                            "phoneType": "work_mobile",
+                            "ownerId": "r-alex",
+                            "complexity": 2,
+                            "followUp": {
+                              "dueAt": "2026-11-20T09:00:00+01:00",
+                              "channel": "call",
+                              "offerId": "robot-cleaning",
+                              "promise": "chiffrer un pilote sur 900 m²",
+                              "sourceId": "int-c01-1"
+                            },
+                            "lastInteraction": {
+                              "at": "2026-11-13T10:12:00+01:00",
+                              "status": "Qualifié",
+                              "summary": "a demandé un ordre de grandeur du coût d'un robot pour 900 m²"
+                            },
+                            "declaredInterests": [
+                              {
+                                "topic": "NBA",
+                                "source": "conversation",
+                                "declaredAt": "2026-11-13",
+                                "consentToUse": true,
+                                "sensitive": false
+                              }
+                            ],
+                            "sources": [
+                              {
+                                "id": "int-c01-1",
+                                "url": "crm://ws-demo/interactions/int-c01-1"
+                              }
+                            ],
+                            "_case": "due promise + declared interest (opening only)"
+                          },
+                          {
+                            "id": "c02",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a01",
+                            "firstName": "Hugo",
+                            "lastName": "Leroy",
+                            "title": "Gérant",
+                            "profileUrl": "https://profiles.example/hugo-leroy",
+                            "phone": "DEMO-+33-6-00-00-00-02",
+                            "phoneCountry": "FR",
+                            "complexity": 1,
+                            "_case": "second contact within cap"
+                          },
+                          {
+                            "id": "c03",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a01",
+                            "firstName": "Tom",
+                            "lastName": "Petit",
+                            "title": "Stagiaire marketing",
+                            "profileUrl": "https://profiles.example/tom-petit",
+                            "_case": "excluded title"
+                          },
+                          {
+                            "id": "c04",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a02",
+                            "firstName": "Sarah",
+                            "lastName": "Morel",
+                            "title": "Fondatrice",
+                            "profileUrl": "https://profiles.example/sarah-morel",
+                            "phone": "DEMO-+33-6-00-00-00-04",
+                            "phoneCountry": "FR",
+                            "complexity": 1,
+                            "attempts": [
+                              "2026-11-14T09:10:00Z",
+                              "2026-11-17T14:20:00Z",
+                              "2026-11-19T10:05:00Z"
+                            ],
+                            "_case": "3 attempts in 7 days → hold"
+                          },
+                          {
+                            "id": "c15",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a02",
+                            "firstName": "Julie",
+                            "lastName": "Roux",
+                            "title": "Directrice d'exploitation",
+                            "profileUrl": "https://profiles.example/julie-roux",
+                            "complexity": 1,
+                            "_case": "no phone → mobile quote"
+                          },
+                          {
+                            "id": "c05",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a03",
+                            "firstName": "Noé",
+                            "lastName": "Bernard",
+                            "title": "Directeur commercial",
+                            "profileUrl": "https://profiles.example/noe-bernard",
+                            "phone": "DEMO-+33-6-00-00-00-05",
+                            "phoneCountry": "FR",
+                            "complexity": 2,
+                            "_case": "new call with verified hiring signal"
+                          },
+                          {
+                            "id": "c06",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a03",
+                            "firstName": "Noe",
+                            "lastName": "Bernard",
+                            "title": "Directeur commercial",
+                            "profileUrl": "https://www.profiles.example/noe-bernard/",
+                            "_case": "same person, encoding variant → duplicate"
+                          },
+                          {
+                            "id": "c17",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a03",
+                            "firstName": "Eva",
+                            "lastName": "Lambert",
+                            "title": "Responsable CRM",
+                            "profileUrl": "https://profiles.example/eva-lambert",
+                            "phone": "DEMO-+32-4-00-00-00-17",
+                            "phoneCountry": "BE",
+                            "complexity": 2,
+                            "_case": "foreign number returned, but confirmed meeting tomorrow → prepare meeting"
+                          },
+                          {
+                            "id": "c07",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a04",
+                            "firstName": "Inès",
+                            "lastName": "Garnier",
+                            "title": "Facility Manager",
+                            "profileUrl": "https://profiles.example/ines-garnier",
+                            "phone": "DEMO-+33-6-00-00-00-07",
+                            "phoneCountry": "FR",
+                            "_case": "large team cap → not selected"
+                          },
+                          {
+                            "id": "c08",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a04",
+                            "firstName": "Victor",
+                            "lastName": "Faure",
+                            "title": "Directeur général",
+                            "profileUrl": "https://profiles.example/victor-faure",
+                            "phone": "DEMO-+33-6-00-00-00-08",
+                            "phoneCountry": "FR",
+                            "ownerId": "r-sam",
+                            "complexity": 2,
+                            "followUp": {
+                              "dueAt": "2026-11-18T16:00:00+01:00",
+                              "channel": "email",
+                              "offerId": "facility-care",
+                              "promise": "envoyer la grille de diagnostic d'entretien",
+                              "sourceId": "int-c08-1"
+                            },
+                            "lastInteraction": {
+                              "at": "2026-11-12T15:00:00+01:00",
+                              "status": "Qualifié",
+                              "summary": "contrat d'entretien à renouveler fin janvier, attend une grille de diagnostic"
+                            },
+                            "_case": "overdue promised email"
+                          },
+                          {
+                            "id": "c09",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a05",
+                            "firstName": "Marc",
+                            "lastName": "Dubois",
+                            "title": "Gérant",
+                            "profileUrl": "https://profiles.example/marc-dubois",
+                            "phone": "DEMO-+33-6-00-00-00-09",
+                            "phoneCountry": "FR",
+                            "complexity": 1,
+                            "_case": "new call, full 6-block script"
+                          },
+                          {
+                            "id": "c16",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a05",
+                            "firstName": "Léa",
+                            "lastName": "Simon",
+                            "title": "Responsable boutique",
+                            "profileUrl": "https://profiles.example/lea-simon",
+                            "complexity": 1,
+                            "_case": "mobile enrichment already failed → not repaid"
+                          },
+                          {
+                            "id": "c10",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a06",
+                            "firstName": "Claire",
+                            "lastName": "Vasseur",
+                            "title": "Directrice générale",
+                            "profileUrl": "https://profiles.example/claire-vasseur",
+                            "phone": "DEMO-+33-6-00-00-00-10",
+                            "phoneCountry": "FR",
+                            "complexity": 1,
+                            "lastInteraction": {
+                              "at": "2026-10-01T11:00:00+02:00",
+                              "status": "Client",
+                              "summary": "satisfaite de l'entretien du linge"
+                            },
+                            "_case": "customer → cross-sell proposal (validation)"
+                          },
+                          {
+                            "id": "c23",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a06",
+                            "firstName": "Bruno",
+                            "lastName": "Caron",
+                            "title": "Directeur d'exploitation",
+                            "profileUrl": "https://profiles.example/bruno-caron",
+                            "phone": "DEMO-+33-6-00-00-00-23",
+                            "phoneCountry": "FR",
+                            "ownerId": "r-jordan",
+                            "complexity": 1,
+                            "followUp": {
+                              "dueAt": "2026-11-20T11:00:00+01:00",
+                              "channel": "call",
+                              "offerId": "robot-cleaning",
+                              "promise": "présenter le principe d'un robot pour le hall",
+                              "sourceId": "int-c23-1"
+                            },
+                            "_case": "promise owned by rep below expertise threshold → escalation"
+                          },
+                          {
+                            "id": "c12",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a07",
+                            "firstName": "Alex",
+                            "lastName": "Démo",
+                            "title": "CEO",
+                            "profileUrl": "https://profiles.example/alex-demo",
+                            "phone": "DEMO-+33-6-00-00-00-12",
+                            "optOut": true,
+                            "_case": "opposition"
+                          },
+                          {
+                            "id": "c11",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a13",
+                            "firstName": "Nadia",
+                            "lastName": "Perrin",
+                            "title": "Gérante",
+                            "profileUrl": "https://profiles.example/nadia-perrin",
+                            "phone": "DEMO-+33-6-00-00-00-11",
+                            "phoneCountry": "FR",
+                            "complexity": 1,
+                            "lastInteraction": {
+                              "at": "2026-06-02T10:00:00+02:00",
+                              "status": "Qualifié",
+                              "summary": "intéressée après la saison, a demandé de revenir à l'automne"
+                            },
+                            "_case": "dormant qualified → reactivate"
+                          },
+                          {
+                            "id": "c22",
+                            "workspaceId": "ws-demo",
+                            "accountId": "a13",
+                            "firstName": "Karim",
+                            "lastName": "Haddad",
+                            "title": "Gérant",
+                            "profileUrl": "https://profiles.example/karim-haddad",
+                            "phone": "DEMO-+33-6-00-00-00-22",
+                            "phoneCountry": "FR",
+                            "complexity": 1,
+                            "followUp": {
+                              "dueAt": "2026-11-25T10:00:00+01:00",
+                              "channel": "call",
+                              "offerId": "review-cards",
+                              "promise": "rappeler après l'inventaire",
+                              "sourceId": "int-c22-1"
+                            },
+                            "_case": "future promise → hold, not called today"
+                          }
+                        ],
+                        "accounts": [
+                          {
+                            "id": "a01",
+                            "workspaceId": "ws-demo",
+                            "name": "Atlas Fitness Club",
+                            "domain": "https://www.atlas-fitness.example",
+                            "sector": "fitness",
+                            "location": "Rouen",
+                            "size": 14,
+                            "relevantTeamSize": 6,
+                            "customerType": "b2b",
+                            "summary": "Réseau de deux salles de sport. Clients : comités d'entreprise et abonnés pro.",
+                            "sellsTo": "entreprises (forfaits salariés)",
+                            "verdict": "oui",
+                            "icpFit": 92,
+                            "problems": [
+                              {
+                                "key": "high_cleaning_cost",
+                                "evidenceId": "ev-a01-1"
+                              },
+                              {
+                                "key": "large_floor_surface",
+                                "evidenceId": "ev-a01-2"
+                              }
+                            ],
+                            "signals": [
+                              {
+                                "type": "new_site",
+                                "label": "Ouverture d'une seconde salle annoncée",
+                                "date": "2026-10-20",
+                                "verified": true,
+                                "sourceId": "src-a01-news"
+                              }
+                            ],
+                            "sources": [
+                              {
+                                "id": "src-a01-site",
+                                "url": "https://atlas-fitness.example",
+                                "checkedAt": "2026-11-12"
+                              }
+                            ],
+                            "verifiedAt": "2026-11-12",
+                            "_case": "nominal, due callback, two contacts"
+                          },
+                          {
+                            "id": "a02",
+                            "workspaceId": "ws-demo",
+                            "name": "Horizon Sport",
+                            "domain": "horizon-sport.example",
+                            "sector": "fitness",
+                            "location": "Caen",
+                            "size": 8,
+                            "relevantTeamSize": 4,
+                            "customerType": "b2b",
+                            "summary": "Salle de sport indépendante. Clients : entreprises locales (offres salariés).",
+                            "verdict": "oui, en partie",
+                            "icpFit": 80,
+                            "problems": [
+                              {
+                                "key": "night_cleaning_gaps",
+                                "evidenceId": "ev-a02-1"
+                              }
+                            ],
+                            "signals": [
+                              {
+                                "type": "hiring",
+                                "label": "Offre d'emploi agent d'entretien",
+                                "date": "2025-01-10",
+                                "verified": true,
+                                "sourceId": "src-a02-job"
+                              }
+                            ],
+                            "sources": [
+                              {
+                                "id": "src-a02-site",
+                                "url": "https://horizon-sport.example",
+                                "checkedAt": "2026-11-10"
+                              }
+                            ],
+                            "_case": "verdict oui partiel, expired signal, attempt limit, missing phone"
+                          },
+                          {
+                            "id": "a03",
+                            "workspaceId": "ws-demo",
+                            "name": "Galerie Marée",
+                            "domain": "maree-retail.example",
+                            "sector": "retail",
+                            "location": "Le Havre",
+                            "size": 60,
+                            "relevantTeamSize": 15,
+                            "customerType": "b2b",
+                            "summary": "Gestionnaire d'une galerie commerciale. Clients : enseignes locataires.",
+                            "verdict": "oui",
+                            "icpFit": 85,
+                            "problems": [
+                              {
+                                "key": "manual_follow_up",
+                                "evidenceId": "ev-a03-1"
+                              },
+                              {
+                                "key": "lead_leakage",
+                                "evidenceId": "ev-a03-2"
+                              }
+                            ],
+                            "signals": [
+                              {
+                                "type": "hiring",
+                                "label": "Recrutement d'un responsable commercialisation",
+                                "date": "2026-11-05",
+                                "verified": true,
+                                "sourceId": "src-a03-job"
+                              },
+                              {
+                                "type": "funding",
+                                "label": "Rumeur de levée",
+                                "date": "2026-11-01",
+                                "verified": false
+                              }
+                            ],
+                            "sources": [
+                              {
+                                "id": "src-a03-site",
+                                "url": "https://maree-retail.example",
+                                "checkedAt": "2026-11-14"
+                              }
+                            ],
+                            "_case": "team 10-30 (decision maker first), unverified signal ignored, foreign number, meeting tomorrow"
+                          },
+                          {
+                            "id": "a04",
+                            "workspaceId": "ws-demo",
+                            "name": "Bureaux Quai Ouest",
+                            "domain": "quai-ouest.example",
+                            "sector": "offices",
+                            "location": "Le Havre",
+                            "size": 120,
+                            "relevantTeamSize": 40,
+                            "customerType": "b2b",
+                            "summary": "Centre d'affaires et location de bureaux. Clients : PME et indépendants.",
+                            "verdict": "oui",
+                            "icpFit": 78,
+                            "problems": [
+                              {
+                                "key": "cleaning_quality_complaints",
+                                "evidenceId": "ev-a04-1"
+                              }
+                            ],
+                            "contractRenewalDate": "2027-01-31",
+                            "signals": [
+                              {
+                                "type": "contract_renewal",
+                                "label": "Contrat d'entretien à renouveler fin janvier",
+                                "date": "2026-11-02",
+                                "verified": true,
+                                "sourceId": "src-a04-call"
+                              }
+                            ],
+                            "sources": [
+                              {
+                                "id": "src-a04-site",
+                                "url": "https://quai-ouest.example",
+                                "checkedAt": "2026-11-09"
+                              }
+                            ],
+                            "_case": "large team (1 contact cap), overdue promised email"
+                          },
+                          {
+                            "id": "a05",
+                            "workspaceId": "ws-demo",
+                            "name": "Boulangerie du Port",
+                            "domain": "boulangerie-port.example",
+                            "sector": "local_shop",
+                            "location": "Le Havre",
+                            "size": 6,
+                            "relevantTeamSize": 3,
+                            "customerType": "b2b",
+                            "summary": "Boulangerie artisanale. Clients : restaurants et entreprises (plateaux).",
+                            "verdict": "oui",
+                            "icpFit": 88,
+                            "problems": [
+                              {
+                                "key": "low_google_reviews",
+                                "evidenceId": "ev-a05-1"
+                              }
+                            ],
+                            "sources": [
+                              {
+                                "id": "src-a05-gmaps",
+                                "url": "https://maps.example/boulangerie-port",
+                                "checkedAt": "2026-11-15"
+                              }
+                            ],
+                            "_case": "verified asset and proof → full script; prior mobile failure not repaid"
+                          },
+                          {
+                            "id": "a06",
+                            "workspaceId": "ws-demo",
+                            "name": "Hôtel Falaise",
+                            "domain": "hotel-falaise.example",
+                            "sector": "hospitality",
+                            "location": "Étretat",
+                            "size": 25,
+                            "relevantTeamSize": 12,
+                            "customerType": "b2b",
+                            "summary": "Hôtel 4 étoiles avec séminaires. Clients : entreprises (séminaires) et agences.",
+                            "verdict": "oui",
+                            "icpFit": 82,
+                            "isCustomer": true,
+                            "ownedOfferIds": [
+                              "facility-care"
+                            ],
+                            "problems": [
+                              {
+                                "key": "low_google_reviews",
+                                "evidenceId": "ev-a06-1"
+                              },
+                              {
+                                "key": "textile_hygiene",
+                                "evidenceId": "ev-a06-2"
+                              }
+                            ],
+                            "sources": [
+                              {
+                                "id": "src-a06-crm",
+                                "url": "crm://ws-demo/accounts/a06",
+                                "checkedAt": "2026-11-18"
+                              }
+                            ],
+                            "_case": "existing customer → cross-sell suggestion; promise owned by a rep lacking expertise → escalation"
+                          },
+                          {
+                            "id": "a07",
+                            "workspaceId": "ws-demo",
+                            "name": "Opposition SA",
+                            "domain": "opposition.example",
+                            "sector": "retail",
+                            "location": "Rouen",
+                            "size": 20,
+                            "relevantTeamSize": 5,
+                            "customerType": "b2b",
+                            "summary": "Négoce de fournitures. Clients : commerces.",
+                            "verdict": "oui",
+                            "icpFit": 90,
+                            "sources": [
+                              {
+                                "id": "src-a07",
+                                "url": "https://opposition.example",
+                                "checkedAt": "2026-11-01"
+                              }
+                            ],
+                            "_case": "only contact opted out → suppressed, never quoted"
+                          },
+                          {
+                            "id": "a08",
+                            "workspaceId": "ws-demo",
+                            "name": "Concurrent Nettoyage",
+                            "domain": "concurrent-nettoyage.example",
+                            "sector": "offices",
+                            "verdict": "oui",
+                            "icpFit": 90,
+                            "competitor": true,
+                            "summary": "Entreprise de nettoyage. Clients : bureaux.",
+                            "sources": [
+                              {
+                                "id": "src-a08",
+                                "url": "https://concurrent-nettoyage.example",
+                                "checkedAt": "2026-11-01"
+                              }
+                            ],
+                            "_case": "competitor excluded"
+                          },
+                          {
+                            "id": "a09",
+                            "workspaceId": "ws-demo",
+                            "name": "Inconnu SARL",
+                            "domain": "inconnu.example",
+                            "sector": "retail",
+                            "verdict": "INCONNU",
+                            "summary": "INCONNU",
+                            "_case": "unknown goes to validation, not to rejection"
+                          },
+                          {
+                            "id": "a10",
+                            "workspaceId": "ws-demo",
+                            "name": "Commerce Indirect",
+                            "domain": "indirect.example",
+                            "sector": "retail",
+                            "verdict": "indirect",
+                            "icpFit": 70,
+                            "summary": "Grossiste. Clients : centrales d'achat.",
+                            "sources": [
+                              {
+                                "id": "src-a10",
+                                "url": "https://indirect.example",
+                                "checkedAt": "2026-11-01"
+                              }
+                            ],
+                            "_case": "indirect verdict → separate human lane"
+                          },
+                          {
+                            "id": "a11",
+                            "workspaceId": "ws-demo",
+                            "name": "Hors Cible Industrie",
+                            "domain": "hors-cible.example",
+                            "sector": "industry",
+                            "verdict": "non",
+                            "icpFit": 10,
+                            "summary": "Fonderie. Clients : automobile.",
+                            "sources": [
+                              {
+                                "id": "src-a11",
+                                "url": "https://hors-cible.example",
+                                "checkedAt": "2026-11-01"
+                              }
+                            ],
+                            "_case": "verdict non"
+                          },
+                          {
+                            "id": "a12",
+                            "workspaceId": "ws-demo",
+                            "name": "ATLAS FITNESS (doublon)",
+                            "domain": "atlas-fitness.example",
+                            "sector": "fitness",
+                            "verdict": "oui",
+                            "icpFit": 92,
+                            "summary": "Doublon.",
+                            "_case": "domain duplicate of a01"
+                          },
+                          {
+                            "id": "a13",
+                            "workspaceId": "ws-demo",
+                            "name": "Pain & Co — Le Havre Centre",
+                            "domain": "pain-multi.example",
+                            "siren": "900000001",
+                            "siret": "90000000100011",
+                            "sector": "local_shop",
+                            "location": "Le Havre",
+                            "size": 9,
+                            "relevantTeamSize": 8,
+                            "customerType": "b2b",
+                            "summary": "Réseau de boulangeries. Clients : entreprises (petits-déjeuners) et collectivités.",
+                            "verdict": "oui",
+                            "icpFit": 76,
+                            "problems": [
+                              {
+                                "key": "low_google_reviews",
+                                "evidenceId": "ev-a13-1"
+                              }
+                            ],
+                            "sources": [
+                              {
+                                "id": "src-a13",
+                                "url": "https://pain-multi.example",
+                                "checkedAt": "2026-11-11"
+                              }
+                            ],
+                            "_case": "multi-site chain: same domain, different SIRET kept; dormant contact; future promise"
+                          },
+                          {
+                            "id": "a14",
+                            "workspaceId": "ws-demo",
+                            "name": "Pain & Co — Rouen Gare",
+                            "domain": "pain-multi.example",
+                            "siren": "900000001",
+                            "siret": "90000000100029",
+                            "sector": "local_shop",
+                            "location": "Rouen",
+                            "verdict": "oui",
+                            "icpFit": 74,
+                            "summary": "Point de vente du réseau Pain & Co. Clients : entreprises.",
+                            "sources": [
+                              {
+                                "id": "src-a14",
+                                "url": "https://pain-multi.example/rouen",
+                                "checkedAt": "2026-11-11"
+                              }
+                            ],
+                            "_case": "second establishment, not yet reviewed"
+                          },
+                          {
+                            "id": "a15",
+                            "workspaceId": "ws-demo",
+                            "name": "Sans Contact Fitness",
+                            "domain": "sans-contact.example",
+                            "sector": "fitness",
+                            "location": "Évreux",
+                            "size": 10,
+                            "relevantTeamSize": 5,
+                            "verdict": "oui",
+                            "icpFit": 75,
+                            "summary": "Salle de sport. Clients : entreprises.",
+                            "sources": [
+                              {
+                                "id": "src-a15",
+                                "url": "https://sans-contact.example",
+                                "checkedAt": "2026-11-13"
+                              }
+                            ],
+                            "_case": "no known contact → paid extraction quote only"
+                          },
+                          {
+                            "id": "a16",
+                            "workspaceId": "ws-demo",
+                            "name": "Échec Extraction",
+                            "domain": "echec-extraction.example",
+                            "sector": "retail",
+                            "verdict": "oui",
+                            "icpFit": 70,
+                            "summary": "Magasin d'équipement. Clients : clubs sportifs.",
+                            "sources": [
+                              {
+                                "id": "src-a16",
+                                "url": "https://echec-extraction.example",
+                                "checkedAt": "2026-11-13"
+                              }
+                            ],
+                            "_case": "previous extraction failed → not re-quoted"
+                          },
+                          {
+                            "id": "a17",
+                            "workspaceId": "ws-demo",
+                            "name": "Score Faible",
+                            "domain": "faible.example",
+                            "sector": "retail",
+                            "verdict": "oui",
+                            "icpFit": 45,
+                            "summary": "Commerce. Clients : divers.",
+                            "sources": [
+                              {
+                                "id": "src-a17",
+                                "url": "https://faible.example",
+                                "checkedAt": "2026-11-13"
+                              }
+                            ],
+                            "_case": "icp fit below threshold"
+                          },
+                          {
+                            "id": "a18",
+                            "workspaceId": "ws-demo",
+                            "name": "Studio B2C",
+                            "domain": "studio-b2c.example",
+                            "sector": "fitness",
+                            "verdict": "oui",
+                            "icpFit": 80,
+                            "customerType": "b2c",
+                            "summary": "Coaching à domicile. Clients : particuliers.",
+                            "sources": [
+                              {
+                                "id": "src-a18",
+                                "url": "https://studio-b2c.example",
+                                "checkedAt": "2026-11-13"
+                              }
+                            ],
+                            "_case": "B2C only"
+                          },
+                          {
+                            "id": "a19",
+                            "workspaceId": "ws-demo",
+                            "name": "En Attente de Revue",
+                            "domain": "attente.example",
+                            "sector": "retail",
+                            "verdict": "oui",
+                            "icpFit": 80,
+                            "summary": "Commerce de gros. Clients : restaurants.",
+                            "sources": [
+                              {
+                                "id": "src-a19",
+                                "url": "https://attente.example",
+                                "checkedAt": "2026-11-13"
+                              }
+                            ],
+                            "_case": "not human-approved yet"
+                          }
+                        ],
+                        "postCall": {
+                          "session": {
+                            "id": "S-2026-11-20-pm",
+                            "date": "2026-11-20",
+                            "calledEventIds": [
+                              "e01",
+                              "e02",
+                              "e03",
+                              "e04",
+                              "e05",
+                              "e06",
+                              "e07",
+                              "e08",
+                              "e11",
+                              "e12"
+                            ],
+                            "notCalledDoNotContactEventIds": [
+                              "e09"
+                            ]
+                          },
+                          "notes": [
+                            {
+                              "eventId": "e01",
+                              "contactId": "c01",
+                              "rowFirstName": "Lina",
+                              "rowLastName": "Martin",
+                              "calledAt": "2026-11-20T08:05:00Z",
+                              "note": "RDV confirmé mardi 10h pour le pilote"
+                            },
+                            {
+                              "eventId": "e01",
+                              "contactId": "c01",
+                              "rowFirstName": "Lina",
+                              "rowLastName": "Martin",
+                              "calledAt": "2026-11-20T08:05:00Z",
+                              "note": "RDV confirmé mardi 10h pour le pilote"
+                            },
+                            {
+                              "eventId": "e02",
+                              "contactId": "c05",
+                              "rowFirstName": "Noé",
+                              "rowLastName": "Bernard",
+                              "calledAt": "2026-11-20T09:15:00Z",
+                              "note": "messagerie, c'est bien la bonne personne"
+                            },
+                            {
+                              "eventId": "e03",
+                              "contactId": "c09",
+                              "rowFirstName": "Marc",
+                              "rowLastName": "Dubois",
+                              "calledAt": "2026-11-20T09:30:00Z",
+                              "note": "pas intéressé, déjà équipé, trop cher"
+                            },
+                            {
+                              "eventId": "e04",
+                              "contactId": "c08",
+                              "rowFirstName": "Victor",
+                              "rowLastName": "Faure",
+                              "calledAt": "2026-11-20T08:20:00Z",
+                              "note": "a demandé une plaquette par mail"
+                            },
+                            {
+                              "eventId": "e05",
+                              "contactId": "c04",
+                              "rowFirstName": "Sarah",
+                              "rowLastName": "Morel",
+                              "calledAt": "2026-11-20T10:00:00Z",
+                              "note": "en réunion, rappeler jeudi"
+                            },
+                            {
+                              "eventId": "e06",
+                              "contactId": "c10",
+                              "rowFirstName": "Claire",
+                              "rowLastName": "Vasseur",
+                              "calledAt": "2026-11-20T10:20:00Z",
+                              "note": "RDV pris jeudi 14h pour les cartes"
+                            },
+                            {
+                              "eventId": "e07",
+                              "contactId": "c22",
+                              "rowFirstName": "Jean",
+                              "rowLastName": "Haddad",
+                              "calledAt": "2026-11-20T10:40:00Z",
+                              "note": "intéressé"
+                            },
+                            {
+                              "eventId": "e08",
+                              "contactId": "c11",
+                              "rowFirstName": "Nadia",
+                              "rowLastName": "Perrin",
+                              "calledAt": "2026-11-20T11:00:00Z",
+                              "note": "ne plus me contacter, opposition"
+                            },
+                            {
+                              "eventId": "e09",
+                              "contactId": "c16",
+                              "rowFirstName": "Léa",
+                              "rowLastName": "Simon",
+                              "calledAt": "2026-11-20T11:10:00Z",
+                              "note": ""
+                            },
+                            {
+                              "eventId": "e11",
+                              "contactId": "c23",
+                              "rowFirstName": "Bruno",
+                              "rowLastName": "Caron",
+                              "calledAt": "2026-11-20T11:20:00Z",
+                              "note": "on verra"
+                            },
+                            {
+                              "eventId": "e12",
+                              "contactId": "c17",
+                              "rowFirstName": "Eva",
+                              "rowLastName": "Lambert",
+                              "calledAt": "2026-11-20T11:30:00Z",
+                              "note": "mail envoyé avec la doc"
+                            }
+                          ],
+                          "evidence": {
+                            "sentEmails": [
+                              {
+                                "id": "mail-001",
+                                "toDomain": "maree-retail.example",
+                                "at": "2026-11-20T09:40:00Z",
+                                "contactId": "c05"
+                              }
+                            ],
+                            "calendarEvents": [
+                              {
+                                "id": "cal-002",
+                                "contactId": "c01",
+                                "start": "2026-11-24T09:00:00Z"
+                              }
+                            ]
+                          },
+                          "processedEventIds": [],
+                          "crm": {
+                            "accounts": [
+                              {
+                                "key": "atlas-fitness.example",
+                                "crmId": "crm-acc-001"
+                              }
+                            ],
+                            "contacts": [],
+                            "deals": []
+                          }
+                        }
+                      }
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+        "02 · Interpret notes, verify evidence, propose patches": [
+          {
+            "startTime": 1795095183809,
+            "executionIndex": 2,
+            "source": [
+              {
+                "previousNode": "01 · Session notes & evidence (mock)"
+              }
+            ],
+            "hints": [
+              {
+                "message": "To make sure expressions after this node work, return the input items that produced each output item. <a target=\"_blank\" href=\"https://docs.n8n.io/data/data-mapping/data-item-linking/item-linking-code-node/\">More info</a>",
+                "location": "outputPane"
+              }
+            ],
+            "executionTime": 76,
+            "executionStatus": "success",
+            "data": {
+              "main": [
+                [
+                  {
+                    "json": {
+                      "mode": "mock",
+                      "sessionId": "S-2026-11-20-pm",
+                      "patches": [
+                        {
+                          "eventId": "e01",
+                          "contactId": "c01",
+                          "status": "Réponse positive",
+                          "intent": "meeting",
+                          "callsIncrement": 1,
+                          "lastCallAt": "2026-11-20T08:05:00Z",
+                          "lastContactAt": "2026-11-20T08:05:00Z",
+                          "appendNote": "RDV confirmé mardi 10h pour le pilote",
+                          "nextAction": {
+                            "type": "prepare_meeting",
+                            "dueDate": "2026-11-24"
+                          },
+                          "suppression": null
+                        },
+                        {
+                          "eventId": "e02",
+                          "contactId": "c05",
+                          "status": "Qualifié",
+                          "intent": "no_answer",
+                          "callsIncrement": 1,
+                          "lastCallAt": "2026-11-20T09:15:00Z",
+                          "lastContactAt": "2026-11-20T09:40:00Z",
+                          "appendNote": "messagerie, c'est bien la bonne personne",
+                          "nextAction": {
+                            "type": "follow_up",
+                            "dueDate": "2026-11-23"
+                          },
+                          "suppression": null
+                        },
+                        {
+                          "eventId": "e03",
+                          "contactId": "c09",
+                          "status": "Réponse négative",
+                          "intent": "negative",
+                          "callsIncrement": 1,
+                          "lastCallAt": "2026-11-20T09:30:00Z",
+                          "lastContactAt": "2026-11-20T09:30:00Z",
+                          "appendNote": "pas intéressé, déjà équipé, trop cher",
+                          "nextAction": null,
+                          "suppression": null
+                        },
+                        {
+                          "eventId": "e04",
+                          "contactId": "c08",
+                          "status": "Qualifié",
+                          "intent": "asks_email",
+                          "callsIncrement": 1,
+                          "lastCallAt": "2026-11-20T08:20:00Z",
+                          "lastContactAt": "2026-11-20T08:20:00Z",
+                          "appendNote": "a demandé une plaquette par mail",
+                          "nextAction": {
+                            "type": "send_requested_email",
+                            "dueDate": "2026-11-23"
+                          },
+                          "suppression": null
+                        },
+                        {
+                          "eventId": "e05",
+                          "contactId": "c04",
+                          "status": "Rappeler",
+                          "intent": "callback_requested",
+                          "callsIncrement": 1,
+                          "lastCallAt": "2026-11-20T10:00:00Z",
+                          "lastContactAt": "2026-11-20T10:00:00Z",
+                          "appendNote": "en réunion, rappeler jeudi",
+                          "nextAction": {
+                            "type": "callback",
+                            "dueDate": "2026-11-26",
+                            "promised": true
+                          },
+                          "suppression": null
+                        },
+                        {
+                          "eventId": "e06",
+                          "contactId": "c10",
+                          "status": "Rappeler",
+                          "intent": "meeting",
+                          "callsIncrement": 1,
+                          "lastCallAt": "2026-11-20T10:20:00Z",
+                          "lastContactAt": "2026-11-20T10:20:00Z",
+                          "appendNote": "RDV pris jeudi 14h pour les cartes | RDV annoncé sans événement agenda : pas de deal",
+                          "nextAction": {
+                            "type": "verify_meeting_with_rep",
+                            "dueDate": "2026-11-23",
+                            "promised": false
+                          },
+                          "suppression": null
+                        },
+                        {
+                          "eventId": "e08",
+                          "contactId": "c11",
+                          "status": "Ne pas contacter",
+                          "intent": "opt_out",
+                          "callsIncrement": 1,
+                          "lastCallAt": "2026-11-20T11:00:00Z",
+                          "lastContactAt": "2026-11-20T11:00:00Z",
+                          "appendNote": "ne plus me contacter, opposition",
+                          "nextAction": null,
+                          "suppression": {
+                            "scope": "contact",
+                            "reason": "prospect_opposition",
+                            "durable": true
+                          }
+                        },
+                        {
+                          "eventId": "e09",
+                          "contactId": "c16",
+                          "status": "Ne pas contacter",
+                          "callsIncrement": 0,
+                          "lastCallAt": null,
+                          "appendNote": null,
+                          "suppression": {
+                            "scope": "contact",
+                            "reason": "user_marked_not_to_contact"
+                          }
+                        }
+                      ],
+                      "crmOps": [
+                        {
+                          "order": 1,
+                          "entity": "account",
+                          "key": "",
+                          "op": "create",
+                          "crmId": null
+                        },
+                        {
+                          "order": 2,
+                          "entity": "contact",
+                          "key": "lina|martin|",
+                          "op": "create",
+                          "crmId": null,
+                          "fields": {
+                            "state": "Qualifié",
+                            "lastContact": "2026-11-20",
+                            "comment": "RDV confirmé mardi 10h pour le pilote"
+                          }
+                        },
+                        {
+                          "order": 3,
+                          "entity": "deal",
+                          "key": "a01:robot-cleaning",
+                          "op": "create",
+                          "fields": {
+                            "stage": "1. Prise de besoin prévue",
+                            "meetingId": "cal-002"
+                          }
+                        },
+                        {
+                          "order": 1,
+                          "entity": "account",
+                          "key": "",
+                          "op": "create",
+                          "crmId": null
+                        },
+                        {
+                          "order": 2,
+                          "entity": "contact",
+                          "key": "noe|bernard|",
+                          "op": "create",
+                          "crmId": null,
+                          "fields": {
+                            "state": "Qualifié",
+                            "lastContact": "2026-11-20",
+                            "comment": "messagerie, c'est bien la bonne personne"
+                          }
+                        },
+                        {
+                          "order": 1,
+                          "entity": "account",
+                          "key": "",
+                          "op": "create",
+                          "crmId": null
+                        },
+                        {
+                          "order": 2,
+                          "entity": "contact",
+                          "key": "victor|faure|",
+                          "op": "create",
+                          "crmId": null,
+                          "fields": {
+                            "state": "Qualifié",
+                            "lastContact": "2026-11-20",
+                            "comment": "a demandé une plaquette par mail"
+                          }
+                        }
+                      ],
+                      "validationQueue": [
+                        {
+                          "eventId": "e11",
+                          "contactId": "c23",
+                          "reason": "ambiguous_note",
+                          "note": "on verra"
+                        },
+                        {
+                          "eventId": "e12",
+                          "contactId": "c17",
+                          "reason": "confirm_email_sent"
+                        }
+                      ],
+                      "contradictions": [
+                        {
+                          "eventId": "e02",
+                          "contactId": "c05",
+                          "type": "email_sent_not_in_note",
+                          "resolution": "sent email prevails"
+                        },
+                        {
+                          "eventId": "e06",
+                          "contactId": "c10",
+                          "type": "meeting_claimed_no_calendar_event"
+                        },
+                        {
+                          "eventId": "e12",
+                          "contactId": "c17",
+                          "type": "email_claimed_not_in_sent_box"
+                        }
+                      ],
+                      "rejected": [
+                        {
+                          "eventId": "e07",
+                          "contactId": "c22",
+                          "reason": "identity_mismatch",
+                          "expected": "Karim Haddad",
+                          "found": "Jean Haddad"
+                        }
+                      ],
+                      "skipped": [
+                        {
+                          "eventId": "e01",
+                          "reason": "already_processed"
+                        }
+                      ],
+                      "objections": [
+                        {
+                          "contactId": "c09",
+                          "offerId": null,
+                          "objections": [
+                            "price",
+                            "incumbent"
+                          ]
+                        }
+                      ],
+                      "processedEventIds": [
+                        "e01",
+                        "e02",
+                        "e03",
+                        "e04",
+                        "e05",
+                        "e06",
+                        "e08",
+                        "e09",
+                        "e11",
+                        "e12"
+                      ],
+                      "writesPerformed": 0,
+                      "requiresAuthorization": true,
+                      "summary": {
+                        "notes": 12,
+                        "patched": 8,
+                        "toValidate": 2,
+                        "contradictions": 3,
+                        "rejectedByIdentityGuard": 1,
+                        "dealsProposed": 1
+                      }
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+        "03 · Split for human review": [
+          {
+            "startTime": 1795095183885,
+            "executionIndex": 3,
+            "source": [
+              {
+                "previousNode": "02 · Interpret notes, verify evidence, propose patches"
+              }
+            ],
+            "hints": [
+              {
+                "message": "To make sure expressions after this node work, return the input items that produced each output item. <a target=\"_blank\" href=\"https://docs.n8n.io/data/data-mapping/data-item-linking/item-linking-code-node/\">More info</a>",
+                "location": "outputPane"
+              }
+            ],
+            "executionTime": 29,
+            "executionStatus": "success",
+            "data": {
+              "main": [
+                [
+                  {
+                    "json": {
+                      "lane": "patch_proposal",
+                      "eventId": "e01",
+                      "contactId": "c01",
+                      "status": "Réponse positive",
+                      "intent": "meeting",
+                      "callsIncrement": 1,
+                      "lastCallAt": "2026-11-20T08:05:00Z",
+                      "lastContactAt": "2026-11-20T08:05:00Z",
+                      "appendNote": "RDV confirmé mardi 10h pour le pilote",
+                      "nextAction": {
+                        "type": "prepare_meeting",
+                        "dueDate": "2026-11-24"
+                      },
+                      "suppression": null
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "patch_proposal",
+                      "eventId": "e02",
+                      "contactId": "c05",
+                      "status": "Qualifié",
+                      "intent": "no_answer",
+                      "callsIncrement": 1,
+                      "lastCallAt": "2026-11-20T09:15:00Z",
+                      "lastContactAt": "2026-11-20T09:40:00Z",
+                      "appendNote": "messagerie, c'est bien la bonne personne",
+                      "nextAction": {
+                        "type": "follow_up",
+                        "dueDate": "2026-11-23"
+                      },
+                      "suppression": null
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "patch_proposal",
+                      "eventId": "e03",
+                      "contactId": "c09",
+                      "status": "Réponse négative",
+                      "intent": "negative",
+                      "callsIncrement": 1,
+                      "lastCallAt": "2026-11-20T09:30:00Z",
+                      "lastContactAt": "2026-11-20T09:30:00Z",
+                      "appendNote": "pas intéressé, déjà équipé, trop cher",
+                      "nextAction": null,
+                      "suppression": null
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "patch_proposal",
+                      "eventId": "e04",
+                      "contactId": "c08",
+                      "status": "Qualifié",
+                      "intent": "asks_email",
+                      "callsIncrement": 1,
+                      "lastCallAt": "2026-11-20T08:20:00Z",
+                      "lastContactAt": "2026-11-20T08:20:00Z",
+                      "appendNote": "a demandé une plaquette par mail",
+                      "nextAction": {
+                        "type": "send_requested_email",
+                        "dueDate": "2026-11-23"
+                      },
+                      "suppression": null
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "patch_proposal",
+                      "eventId": "e05",
+                      "contactId": "c04",
+                      "status": "Rappeler",
+                      "intent": "callback_requested",
+                      "callsIncrement": 1,
+                      "lastCallAt": "2026-11-20T10:00:00Z",
+                      "lastContactAt": "2026-11-20T10:00:00Z",
+                      "appendNote": "en réunion, rappeler jeudi",
+                      "nextAction": {
+                        "type": "callback",
+                        "dueDate": "2026-11-26",
+                        "promised": true
+                      },
+                      "suppression": null
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "patch_proposal",
+                      "eventId": "e06",
+                      "contactId": "c10",
+                      "status": "Rappeler",
+                      "intent": "meeting",
+                      "callsIncrement": 1,
+                      "lastCallAt": "2026-11-20T10:20:00Z",
+                      "lastContactAt": "2026-11-20T10:20:00Z",
+                      "appendNote": "RDV pris jeudi 14h pour les cartes | RDV annoncé sans événement agenda : pas de deal",
+                      "nextAction": {
+                        "type": "verify_meeting_with_rep",
+                        "dueDate": "2026-11-23",
+                        "promised": false
+                      },
+                      "suppression": null
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "patch_proposal",
+                      "eventId": "e08",
+                      "contactId": "c11",
+                      "status": "Ne pas contacter",
+                      "intent": "opt_out",
+                      "callsIncrement": 1,
+                      "lastCallAt": "2026-11-20T11:00:00Z",
+                      "lastContactAt": "2026-11-20T11:00:00Z",
+                      "appendNote": "ne plus me contacter, opposition",
+                      "nextAction": null,
+                      "suppression": {
+                        "scope": "contact",
+                        "reason": "prospect_opposition",
+                        "durable": true
+                      }
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "patch_proposal",
+                      "eventId": "e09",
+                      "contactId": "c16",
+                      "status": "Ne pas contacter",
+                      "callsIncrement": 0,
+                      "lastCallAt": null,
+                      "appendNote": null,
+                      "suppression": {
+                        "scope": "contact",
+                        "reason": "user_marked_not_to_contact"
+                      }
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "crm_operation_proposal",
+                      "order": 1,
+                      "entity": "account",
+                      "key": "",
+                      "op": "create",
+                      "crmId": null
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "crm_operation_proposal",
+                      "order": 2,
+                      "entity": "contact",
+                      "key": "lina|martin|",
+                      "op": "create",
+                      "crmId": null,
+                      "fields": {
+                        "state": "Qualifié",
+                        "lastContact": "2026-11-20",
+                        "comment": "RDV confirmé mardi 10h pour le pilote"
+                      }
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "crm_operation_proposal",
+                      "order": 3,
+                      "entity": "deal",
+                      "key": "a01:robot-cleaning",
+                      "op": "create",
+                      "fields": {
+                        "stage": "1. Prise de besoin prévue",
+                        "meetingId": "cal-002"
+                      }
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "crm_operation_proposal",
+                      "order": 1,
+                      "entity": "account",
+                      "key": "",
+                      "op": "create",
+                      "crmId": null
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "crm_operation_proposal",
+                      "order": 2,
+                      "entity": "contact",
+                      "key": "noe|bernard|",
+                      "op": "create",
+                      "crmId": null,
+                      "fields": {
+                        "state": "Qualifié",
+                        "lastContact": "2026-11-20",
+                        "comment": "messagerie, c'est bien la bonne personne"
+                      }
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "crm_operation_proposal",
+                      "order": 1,
+                      "entity": "account",
+                      "key": "",
+                      "op": "create",
+                      "crmId": null
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "crm_operation_proposal",
+                      "order": 2,
+                      "entity": "contact",
+                      "key": "victor|faure|",
+                      "op": "create",
+                      "crmId": null,
+                      "fields": {
+                        "state": "Qualifié",
+                        "lastContact": "2026-11-20",
+                        "comment": "a demandé une plaquette par mail"
+                      }
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "needs_human_validation",
+                      "eventId": "e11",
+                      "contactId": "c23",
+                      "reason": "ambiguous_note",
+                      "note": "on verra"
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "needs_human_validation",
+                      "eventId": "e12",
+                      "contactId": "c17",
+                      "reason": "confirm_email_sent"
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "contradiction",
+                      "eventId": "e02",
+                      "contactId": "c05",
+                      "type": "email_sent_not_in_note",
+                      "resolution": "sent email prevails"
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "contradiction",
+                      "eventId": "e06",
+                      "contactId": "c10",
+                      "type": "meeting_claimed_no_calendar_event"
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "contradiction",
+                      "eventId": "e12",
+                      "contactId": "c17",
+                      "type": "email_claimed_not_in_sent_box"
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "identity_guard_rejected",
+                      "eventId": "e07",
+                      "contactId": "c22",
+                      "reason": "identity_mismatch",
+                      "expected": "Karim Haddad",
+                      "found": "Jean Haddad"
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "summary",
+                      "notes": 12,
+                      "patched": 8,
+                      "toValidate": 2,
+                      "contradictions": 3,
+                      "rejectedByIdentityGuard": 1,
+                      "dealsProposed": 1,
+                      "writesPerformed": 0,
+                      "processedEventIds": [
+                        "e01",
+                        "e02",
+                        "e03",
+                        "e04",
+                        "e05",
+                        "e06",
+                        "e08",
+                        "e09",
+                        "e11",
+                        "e12"
+                      ]
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+        "04 · STOP — approval required before any write": [
+          {
+            "startTime": 1795095183914,
+            "executionIndex": 4,
+            "source": [
+              {
+                "previousNode": "03 · Split for human review"
+              }
+            ],
+            "hints": [],
+            "executionTime": 2,
+            "executionStatus": "success",
+            "data": {
+              "main": [
+                [
+                  {
+                    "json": {
+                      "lane": "patch_proposal",
+                      "eventId": "e01",
+                      "contactId": "c01",
+                      "status": "Réponse positive",
+                      "intent": "meeting",
+                      "callsIncrement": 1,
+                      "lastCallAt": "2026-11-20T08:05:00Z",
+                      "lastContactAt": "2026-11-20T08:05:00Z",
+                      "appendNote": "RDV confirmé mardi 10h pour le pilote",
+                      "nextAction": {
+                        "type": "prepare_meeting",
+                        "dueDate": "2026-11-24"
+                      },
+                      "suppression": null
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "patch_proposal",
+                      "eventId": "e02",
+                      "contactId": "c05",
+                      "status": "Qualifié",
+                      "intent": "no_answer",
+                      "callsIncrement": 1,
+                      "lastCallAt": "2026-11-20T09:15:00Z",
+                      "lastContactAt": "2026-11-20T09:40:00Z",
+                      "appendNote": "messagerie, c'est bien la bonne personne",
+                      "nextAction": {
+                        "type": "follow_up",
+                        "dueDate": "2026-11-23"
+                      },
+                      "suppression": null
+                    },
+                    "pairedItem": {
+                      "item": 1
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "patch_proposal",
+                      "eventId": "e03",
+                      "contactId": "c09",
+                      "status": "Réponse négative",
+                      "intent": "negative",
+                      "callsIncrement": 1,
+                      "lastCallAt": "2026-11-20T09:30:00Z",
+                      "lastContactAt": "2026-11-20T09:30:00Z",
+                      "appendNote": "pas intéressé, déjà équipé, trop cher",
+                      "nextAction": null,
+                      "suppression": null
+                    },
+                    "pairedItem": {
+                      "item": 2
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "patch_proposal",
+                      "eventId": "e04",
+                      "contactId": "c08",
+                      "status": "Qualifié",
+                      "intent": "asks_email",
+                      "callsIncrement": 1,
+                      "lastCallAt": "2026-11-20T08:20:00Z",
+                      "lastContactAt": "2026-11-20T08:20:00Z",
+                      "appendNote": "a demandé une plaquette par mail",
+                      "nextAction": {
+                        "type": "send_requested_email",
+                        "dueDate": "2026-11-23"
+                      },
+                      "suppression": null
+                    },
+                    "pairedItem": {
+                      "item": 3
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "patch_proposal",
+                      "eventId": "e05",
+                      "contactId": "c04",
+                      "status": "Rappeler",
+                      "intent": "callback_requested",
+                      "callsIncrement": 1,
+                      "lastCallAt": "2026-11-20T10:00:00Z",
+                      "lastContactAt": "2026-11-20T10:00:00Z",
+                      "appendNote": "en réunion, rappeler jeudi",
+                      "nextAction": {
+                        "type": "callback",
+                        "dueDate": "2026-11-26",
+                        "promised": true
+                      },
+                      "suppression": null
+                    },
+                    "pairedItem": {
+                      "item": 4
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "patch_proposal",
+                      "eventId": "e06",
+                      "contactId": "c10",
+                      "status": "Rappeler",
+                      "intent": "meeting",
+                      "callsIncrement": 1,
+                      "lastCallAt": "2026-11-20T10:20:00Z",
+                      "lastContactAt": "2026-11-20T10:20:00Z",
+                      "appendNote": "RDV pris jeudi 14h pour les cartes | RDV annoncé sans événement agenda : pas de deal",
+                      "nextAction": {
+                        "type": "verify_meeting_with_rep",
+                        "dueDate": "2026-11-23",
+                        "promised": false
+                      },
+                      "suppression": null
+                    },
+                    "pairedItem": {
+                      "item": 5
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "patch_proposal",
+                      "eventId": "e08",
+                      "contactId": "c11",
+                      "status": "Ne pas contacter",
+                      "intent": "opt_out",
+                      "callsIncrement": 1,
+                      "lastCallAt": "2026-11-20T11:00:00Z",
+                      "lastContactAt": "2026-11-20T11:00:00Z",
+                      "appendNote": "ne plus me contacter, opposition",
+                      "nextAction": null,
+                      "suppression": {
+                        "scope": "contact",
+                        "reason": "prospect_opposition",
+                        "durable": true
+                      }
+                    },
+                    "pairedItem": {
+                      "item": 6
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "patch_proposal",
+                      "eventId": "e09",
+                      "contactId": "c16",
+                      "status": "Ne pas contacter",
+                      "callsIncrement": 0,
+                      "lastCallAt": null,
+                      "appendNote": null,
+                      "suppression": {
+                        "scope": "contact",
+                        "reason": "user_marked_not_to_contact"
+                      }
+                    },
+                    "pairedItem": {
+                      "item": 7
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "crm_operation_proposal",
+                      "order": 1,
+                      "entity": "account",
+                      "key": "",
+                      "op": "create",
+                      "crmId": null
+                    },
+                    "pairedItem": {
+                      "item": 8
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "crm_operation_proposal",
+                      "order": 2,
+                      "entity": "contact",
+                      "key": "lina|martin|",
+                      "op": "create",
+                      "crmId": null,
+                      "fields": {
+                        "state": "Qualifié",
+                        "lastContact": "2026-11-20",
+                        "comment": "RDV confirmé mardi 10h pour le pilote"
+                      }
+                    },
+                    "pairedItem": {
+                      "item": 9
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "crm_operation_proposal",
+                      "order": 3,
+                      "entity": "deal",
+                      "key": "a01:robot-cleaning",
+                      "op": "create",
+                      "fields": {
+                        "stage": "1. Prise de besoin prévue",
+                        "meetingId": "cal-002"
+                      }
+                    },
+                    "pairedItem": {
+                      "item": 10
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "crm_operation_proposal",
+                      "order": 1,
+                      "entity": "account",
+                      "key": "",
+                      "op": "create",
+                      "crmId": null
+                    },
+                    "pairedItem": {
+                      "item": 11
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "crm_operation_proposal",
+                      "order": 2,
+                      "entity": "contact",
+                      "key": "noe|bernard|",
+                      "op": "create",
+                      "crmId": null,
+                      "fields": {
+                        "state": "Qualifié",
+                        "lastContact": "2026-11-20",
+                        "comment": "messagerie, c'est bien la bonne personne"
+                      }
+                    },
+                    "pairedItem": {
+                      "item": 12
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "crm_operation_proposal",
+                      "order": 1,
+                      "entity": "account",
+                      "key": "",
+                      "op": "create",
+                      "crmId": null
+                    },
+                    "pairedItem": {
+                      "item": 13
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "crm_operation_proposal",
+                      "order": 2,
+                      "entity": "contact",
+                      "key": "victor|faure|",
+                      "op": "create",
+                      "crmId": null,
+                      "fields": {
+                        "state": "Qualifié",
+                        "lastContact": "2026-11-20",
+                        "comment": "a demandé une plaquette par mail"
+                      }
+                    },
+                    "pairedItem": {
+                      "item": 14
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "needs_human_validation",
+                      "eventId": "e11",
+                      "contactId": "c23",
+                      "reason": "ambiguous_note",
+                      "note": "on verra"
+                    },
+                    "pairedItem": {
+                      "item": 15
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "needs_human_validation",
+                      "eventId": "e12",
+                      "contactId": "c17",
+                      "reason": "confirm_email_sent"
+                    },
+                    "pairedItem": {
+                      "item": 16
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "contradiction",
+                      "eventId": "e02",
+                      "contactId": "c05",
+                      "type": "email_sent_not_in_note",
+                      "resolution": "sent email prevails"
+                    },
+                    "pairedItem": {
+                      "item": 17
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "contradiction",
+                      "eventId": "e06",
+                      "contactId": "c10",
+                      "type": "meeting_claimed_no_calendar_event"
+                    },
+                    "pairedItem": {
+                      "item": 18
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "contradiction",
+                      "eventId": "e12",
+                      "contactId": "c17",
+                      "type": "email_claimed_not_in_sent_box"
+                    },
+                    "pairedItem": {
+                      "item": 19
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "identity_guard_rejected",
+                      "eventId": "e07",
+                      "contactId": "c22",
+                      "reason": "identity_mismatch",
+                      "expected": "Karim Haddad",
+                      "found": "Jean Haddad"
+                    },
+                    "pairedItem": {
+                      "item": 20
+                    }
+                  },
+                  {
+                    "json": {
+                      "lane": "summary",
+                      "notes": 12,
+                      "patched": 8,
+                      "toValidate": 2,
+                      "contradictions": 3,
+                      "rejectedByIdentityGuard": 1,
+                      "dealsProposed": 1,
+                      "writesPerformed": 0,
+                      "processedEventIds": [
+                        "e01",
+                        "e02",
+                        "e03",
+                        "e04",
+                        "e05",
+                        "e06",
+                        "e08",
+                        "e09",
+                        "e11",
+                        "e12"
+                      ]
+                    },
+                    "pairedItem": {
+                      "item": 21
+                    }
+                  }
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "lastNodeExecuted": "04 · STOP — approval required before any write"
+    },
+    "executionData": {
+      "contextData": {},
+      "nodeExecutionStack": [],
+      "metadata": {},
+      "waitingExecution": {},
+      "waitingExecutionSource": {},
+      "runtimeData": {
+        "version": 1,
+        "establishedAt": 1795095183759,
+        "source": "cli"
+      }
+    }
+  },
+  "mode": "cli",
+  "startedAt": "2026-11-19T13:33:03.755Z",
+  "stoppedAt": "2026-11-19T13:33:03.917Z",
+  "status": "success",
+  "finished": true
+}

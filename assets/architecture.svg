@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" font-family="Inter, Helvetica, Arial, sans-serif">
+  <rect width="960" height="420" fill="#0f1115"/>
+  <text x="40" y="52" fill="#f4efe6" font-size="26" font-weight="700">RUBICON</text>
+  <text x="168" y="52" fill="#b8a878" font-size="16">Stop generating leads. Start engineering revenue.</text>
+  <g font-size="14" fill="#f4efe6">
+    <g transform="translate(40,90)"><rect width="200" height="120" rx="10" fill="#1b1f27" stroke="#b8a878"/><text x="16" y="30" font-weight="700">Knowledge</text><text x="16" y="56" fill="#c9c3b8">Skills · dictionaries</text><text x="16" y="76" fill="#c9c3b8">ICP · IOP · ISP · CVA</text><text x="16" y="96" fill="#c9c3b8">field feedback</text></g>
+    <g transform="translate(270,90)"><rect width="200" height="120" rx="10" fill="#1b1f27" stroke="#b8a878"/><text x="16" y="30" font-weight="700">Intelligence</text><text x="16" y="56" fill="#c9c3b8">Claude Code</text><text x="16" y="76" fill="#c9c3b8">Claude Skills · MCP</text><text x="16" y="96" fill="#c9c3b8">research, context</text></g>
+    <g transform="translate(500,90)"><rect width="200" height="120" rx="10" fill="#1b1f27" stroke="#e8c76a" stroke-width="2"/><text x="16" y="30" font-weight="700">Decision</text><text x="16" y="56" fill="#c9c3b8">engine/rubicon.cjs</text><text x="16" y="76" fill="#c9c3b8">score · match · allocate</text><text x="16" y="96" fill="#c9c3b8">NBA · briefs · roadmap</text></g>
+    <g transform="translate(730,90)"><rect width="190" height="120" rx="10" fill="#1b1f27" stroke="#b8a878"/><text x="16" y="30" font-weight="700">Execution</text><text x="16" y="56" fill="#c9c3b8">n8n workflows</text><text x="16" y="76" fill="#c9c3b8">CRM · humans</text><text x="16" y="96" fill="#c9c3b8">after approval</text></g>
+  </g>
+  <g stroke="#b8a878" stroke-width="2" fill="none"><path d="M240 150h30M470 150h30M700 150h30"/></g>
+  <g font-size="13" fill="#f4efe6">
+    <rect x="40" y="250" width="880" height="56" rx="10" fill="#151821" stroke="#3a3f4b"/>
+    <text x="60" y="284">DISCOVER  →  UNDERSTAND  →  MATCH  →  ACTIVATE  →  EXPAND  →  LEARN  →  back to Knowledge</text>
+    <text x="40" y="346" fill="#c9c3b8">Modes: mock · dry-run · live (approved IDs only)   ·   Promises before new leads   ·   Every score explained, contestable, overridable</text>
+    <text x="40" y="376" fill="#8d8778">Demo data is fictional. Methodology credit: Outbound Blueprint (Valentin Morterol / Scalon, MIT).</text>
+  </g>
+</svg>
