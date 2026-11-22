@@ -146,7 +146,8 @@ const RUBICON = (() => {
     const eligible = [], validation = [], excluded = [];
     for (const a of s.accounts) {
       let lane = 'eligible', reason = null;
-      if (a.doNotContact) { lane = 'excluded'; reason = 'account_opposition'; }
+      if (a.registryCommercialOpposition) { lane = 'excluded'; reason = 'registry_commercial_opposition'; }
+      else if (a.doNotContact) { lane = 'excluded'; reason = 'account_opposition'; }
       else if (a.competitor) { lane = 'excluded'; reason = 'competitor'; }
       else if (a.verdict === 'non') { lane = 'excluded'; reason = 'verdict_non'; }
       else if (a.customerType === 'b2c') { lane = 'excluded'; reason = 'b2c_only'; }

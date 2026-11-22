@@ -118,6 +118,7 @@ Import by URL in n8n (menu ⋯ → *Import from URL*):
 | `daily-roadmap` | implemented | The 8 a.m. plan per rep with briefs |
 | `call-preparation` | implemented (engine briefs) · live research to come | Six-block, ~25 s script, icebreaker priority, objections |
 | `revenue-learning` | implemented on simulated data | Funnel, CIs, small-sample flags, experiments |
+| `market-sourcing` | implemented | Sector (NAF) × region / department / postcode sourcing from the free official French registry, one account per active establishment, registry opt-outs excluded |
 | `market-intelligence` | documented | Market mapping → verified CVA |
 | `icp-builder` | documented | ICP, personas, dictionaries, exclusions |
 
@@ -159,7 +160,7 @@ Workspaces · Accounts · Contacts · Offers · Sales Reps · Objectives · Camp
 
 ## Prototype results (what was actually tested)
 
-- 25 Node tests + 5 Python tests pass (`npm test`), covering qualification lanes, cost gates, failure ledger, phone checks, explainability (scores = sum of contributions), promise handling, escalation, capacity, ISP guard, workspace separation, determinism, post-call idempotency/identity/evidence, modes, and n8n parity.
+- 26 Node tests + 5 Python tests pass (`npm test`), covering qualification lanes, cost gates, failure ledger, phone checks, explainability (scores = sum of contributions), promise handling, escalation, capacity, ISP guard, workspace separation, determinism, post-call idempotency/identity/evidence, modes, and n8n parity.
 - 500 synthetic accounts are processed in about 70 ms.
 - Both workflows executed on n8n Cloud and on self-hosted n8n 1.123.99.
 - **Not** tested: live providers, real CRM writes, real conversion rates.

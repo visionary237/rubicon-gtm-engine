@@ -1,0 +1,15 @@
+{ "$comment": "Synthetic sample shaped like the public registry API response. Fictional companies.",
+  "results": [
+  { "siren": "900000011", "nom_complet": "CLUB FICTIF FORME", "nombre_etablissements_ouverts": 1, "categorie_entreprise": "PME", "opposition_diffusion_commerciale": false,
+    "dirigeants": [ { "nom": "DUPONT", "prenoms": "MARIE CLAIRE", "annee_de_naissance": "1980", "qualite": "Gérant", "type_dirigeant": "personne physique" },
+                    { "nom": "AUDIT", "prenoms": "PAUL", "qualite": "Commissaire aux comptes titulaire", "type_dirigeant": "personne physique" } ],
+    "matching_etablissements": [ { "siret": "90000001100011", "etat_administratif": "A", "activite_principale": "93.13Z", "code_postal": "76600", "region": "28", "libelle_commune": "LE HAVRE", "adresse": "1 RUE FICTIVE 76600 LE HAVRE", "liste_enseignes": ["FICTIF GYM"], "tranche_effectif_salarie": "02" } ] },
+  { "siren": "900000022", "nom_complet": "OPPOSE SAS", "nombre_etablissements_ouverts": 1, "opposition_diffusion_commerciale": true, "dirigeants": [],
+    "matching_etablissements": [ { "siret": "90000002200012", "etat_administratif": "A", "activite_principale": "93.13Z", "code_postal": "76100", "region": "28", "libelle_commune": "ROUEN", "adresse": "2 RUE FICTIVE 76100 ROUEN", "tranche_effectif_salarie": "NN" } ] },
+  { "siren": "900000033", "nom_complet": "CHAINE NATIONALE FICTIVE", "nombre_etablissements_ouverts": 120, "opposition_diffusion_commerciale": false,
+    "dirigeants": [ { "denomination": "HOLDING FICTIVE", "qualite": "Président de SAS", "type_dirigeant": "personne morale" } ],
+    "matching_etablissements": [ { "siret": "90000003300013", "etat_administratif": "A", "activite_principale": "93.13Z", "code_postal": "76290", "region": "28", "libelle_commune": "MONTIVILLIERS", "nom_commercial": "FICTIF FIT II", "tranche_effectif_salarie": "02" },
+                                 { "siret": "90000003300021", "etat_administratif": "F", "activite_principale": "93.13Z", "code_postal": "76000", "region": "28", "libelle_commune": "ROUEN" } ] },
+  { "siren": "900000044", "nom_complet": "HORS ZONE SARL", "nombre_etablissements_ouverts": 1, "opposition_diffusion_commerciale": false, "dirigeants": [],
+    "matching_etablissements": [ { "siret": "90000004400014", "etat_administratif": "A", "activite_principale": "93.13Z", "code_postal": "75017", "region": "11", "libelle_commune": "PARIS" } ] }
+]}

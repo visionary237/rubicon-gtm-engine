@@ -1,0 +1,19 @@
+{
+  "$comment": "Mapping NAF (INSEE) → RUBICON sectors. Starting point to validate: one NAF code can cover several realities (check the actual activity during qualification). Sources: INSEE NAF rév. 2 nomenclature.",
+  "sectors": {
+    "fitness":          { "naf": ["93.13Z"], "label": "Centres de culture physique (salles de sport)" },
+    "local_shop":       { "naf": ["10.71C", "10.71D", "47.11B", "47.11C", "47.29Z", "47.71Z", "47.76Z", "47.78C"], "label": "Commerces de proximité (boulangeries, alimentation, habillement, fleuristes…)" },
+    "restaurant":       { "naf": ["56.10A", "56.10C", "56.30Z"], "label": "Restauration et débits de boissons" },
+    "beauty_salon":     { "naf": ["96.02A", "96.02B"], "label": "Coiffure et soins de beauté" },
+    "garage":           { "naf": ["45.20A", "45.20B", "45.11Z"], "label": "Entretien et commerce automobile" },
+    "hospitality":      { "naf": ["55.10Z", "55.20Z", "55.30Z"], "label": "Hôtels et hébergement" },
+    "offices":          { "naf": ["68.20B", "82.11Z"], "label": "Location de bureaux, centres d'affaires" },
+    "property_management": { "naf": ["68.32A"], "label": "Administration d'immeubles (syndics)" },
+    "retail":           { "naf": ["47.19B", "47.59B", "47.64Z", "68.20B"], "label": "Commerce de détail non alimentaire, galeries" },
+    "health_practice":  { "naf": ["86.21Z", "86.22C", "86.23Z", "47.73Z"], "label": "Santé (médecins, dentistes, pharmacies) — vérifier la déontologie avant de prospecter" },
+    "cleaning_competitor": { "naf": ["81.21Z", "81.22Z"], "label": "Nettoyage (concurrents ou partenaires de Proper) — exclus par défaut" }
+  },
+  "regions": { "normandie": "28", "ile-de-france": "11", "hauts-de-france": "32", "bretagne": "53" },
+  "departements_normandie": { "calvados": "14", "eure": "27", "manche": "50", "orne": "61", "seine-maritime": "76" },
+  "tranches_effectif": { "NN": "non renseigné", "00": "0", "01": "1-2", "02": "3-5", "03": "6-9", "11": "10-19", "12": "20-49", "21": "50-99", "22": "100-199", "31": "200-249", "32": "250-499", "41": "500-999", "42": "1000-1999", "51": "2000-4999" }
+}

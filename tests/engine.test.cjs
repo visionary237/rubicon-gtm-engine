@@ -227,3 +227,23 @@ test('engine stays n8n-sandbox compatible (no structuredClone, no require, no I/
   const src = require('node:fs').readFileSync(require('node:path').join(__dirname, '../engine/rubicon.cjs'), 'utf8').replace(/\/\/.*$/gm, '').replace(/\/\*[\s\S]*?\*\//g, '');
   for (const banned of ['structuredClone(', 'require(', 'process.', 'fetch(']) assert(!src.includes(banned), banned);
 });
+
+test('registry sourcing: zone filter, closed establishments, opposition, data minimisation', () => {
+  const { execFileSync } = require('node:child_process');
+  const os = require('node:os'), path = require('node:path'), fs = require('node:fs');
+  const out = fs.mkdtempSync(path.join(os.tmpdir(), 'rubicon-src-'));
+  execFileSync('node', [path.join(__dirname, '../scripts/source-registry.cjs'), '--from-file', path.join(__dirname, 'fixtures/registry-sample.json'),
+    '--sector', 'fitness', '--departement', '76', '--workspace', 'ws-demo', '--out', out]);
+  const file = fs.readdirSync(out).find((f) => f.startsWith('sourcing-'));
+  const r = JSON.parse(fs.readFileSync(path.join(out, file), 'utf8'));
+  assert.deepEqual(r.accounts.map((a) => a.siret).sort(), ['90000001100011', '90000002200012', '90000003300013']);
+  assert(r.droppedLegalUnits.some((d) => d.siren === '900000044'));
+  assert(r.accounts.every((a) => a.verdict === 'inconnu'));
+  assert.equal(r.contacts.length, 1, 'only natural-person officers, no auditors, no legal entities');
+  assert.equal(r.contacts[0].title, 'Gérant');
+  assert(!JSON.stringify(r).includes('1980'), 'no birth data kept');
+  const cfg = structuredClone(CONFIG); cfg.approvals.approvedAccountIds = r.accounts.map((a) => a.id);
+  const o = R.runDaily({ config: cfg, data: { accounts: r.accounts, contacts: r.contacts, enrichmentLog: [] } });
+  assert(o.accounts.excluded.some((x) => x.id === 'reg-90000002200012' && x.reason === 'registry_commercial_opposition'));
+  assert(o.accounts.validation.every((x) => x.reason === 'verdict_inconnu'), 'unqualified registry accounts wait for human qualification');
+});

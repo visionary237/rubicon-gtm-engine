@@ -16,12 +16,13 @@ Priorités dans l'ordre : 1) publier l'open source, 2) prospecter pour Proper Gr
 - `config/demo/config.json` — poids, seuils, offres, dictionnaire, commerciaux **fictifs**.
 - `data/synthetic/` — `demo-small.json` (un cas limite par enregistrement, voir `_case`), `scale-500.json` et `outcomes-500.json` (générés, résultats **simulés**).
 - `sql/` + `analytics/` — SQLite et KPIs, Python stdlib. Analyse uniquement, jamais de scoring.
-- `.claude/skills/` — 10 skills. Six implémentées en priorité : outbound-setup, outbound-batch, post-call-sync, offer-matching, sales-matching, daily-roadmap.
+- `scripts/source-registry.cjs` + `knowledge/naf-sectors.json` — sourcing par secteur NAF × zone depuis l'annuaire officiel ; l'opposition commerciale du registre exclut le compte.
+- `.claude/skills/` — 11 skills (dont market-sourcing). Six implémentées en priorité : outbound-setup, outbound-batch, post-call-sync, offer-matching, sales-matching, daily-roadmap.
 - `knowledge/upstream-*` — fichiers Scalon (MIT) copiés tels quels.
 - `workspaces/` — **privé, ignoré par git**. Un dossier par entreprise réelle.
 
 ## Commandes
-`./install.sh` · `npm test` (25 tests Node + 5 tests Python) · `npm run demo` · `npm run postcall` · `npm run analytics` · `npm run build:workflows`.
+`./install.sh` · `npm test` (26 tests Node + 5 tests Python) · `npm run demo` · `npm run postcall` · `npm run analytics` · `npm run build:workflows`.
 Exécution n8n réelle vérifiée avec n8n 1.123.99 (`n8n import:workflow` puis `n8n execute --id`) : voir `outputs/n8n/EXECUTION_PROOF.md`. Les deux workflows ont aussi été importés par URL et exécutés avec succès sur n8n Cloud (22/11/2026).
 
 ## Règles non négociables
