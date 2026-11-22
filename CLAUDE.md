@@ -22,7 +22,7 @@ Priorités dans l'ordre : 1) publier l'open source, 2) prospecter pour Proper Gr
 
 ## Commandes
 `./install.sh` · `npm test` (25 tests Node + 5 tests Python) · `npm run demo` · `npm run postcall` · `npm run analytics` · `npm run build:workflows`.
-Exécution n8n réelle vérifiée avec n8n 1.123.99 (`n8n import:workflow` puis `n8n execute --id`) : voir `outputs/n8n/EXECUTION_PROOF.md`. n8n 2.x exige Node 24 et n'a pas été testé.
+Exécution n8n réelle vérifiée avec n8n 1.123.99 (`n8n import:workflow` puis `n8n execute --id`) : voir `outputs/n8n/EXECUTION_PROOF.md`. Les deux workflows ont aussi été importés par URL et exécutés avec succès sur n8n Cloud (22/11/2026).
 
 ## Règles non négociables
 1. Aucune dépense, aucun envoi, aucun appel, aucune publication, aucune écriture CRM sans autorisation explicite (ID de devis ou d'écriture approuvé + `mode: live`).
@@ -38,5 +38,6 @@ Exécution n8n réelle vérifiée avec n8n 1.123.99 (`n8n import:workflow` puis 
 
 ## État au 2026-11-19
 Fait : moteur v1.0.0, CLI, adaptateurs, 2 workflows n8n exécutés, SQL et analytics, 10 skills, documentation, configs privées Proper Group et DOERZ à compléter (prix et références à vérifier).
-Non fait : benchmark concurrentiel sourcé (`docs/MARKET_BENCHMARK.md` contient la grille), adaptateurs live, vérification d'agenda, publication GitHub (token invalide dans l'environnement de build), vidéo.
+Non fait : benchmark concurrentiel sourcé (`docs/MARKET_BENCHMARK.md` contient la grille), adaptateurs live, vérification d'agenda, vidéo, post LinkedIn.
+Publié : https://github.com/visionary237/rubicon-gtm-engine (22/11/2026).
 Décisions en attente : titulaire de la licence, visibilité du dépôt, premier lot réel (sources, coûts), choix du CRM pour DOERZ (Notion ou HubSpot).

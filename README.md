@@ -4,6 +4,15 @@
 
 Before you hire more salespeople, engineer the environment they sell in.
 
+![RUBICON architecture](assets/architecture.svg)
+
+### 60-second tour
+1. **The output**: open [`outputs/demo/daily-roadmap.md`](outputs/demo/daily-roadmap.md), the 8 a.m. plan for three reps, with promised follow-ups first and a manager escalation.
+2. **The call briefs**: [`outputs/demo/call-briefs.md`](outputs/demo/call-briefs.md), 25-second scripts that refuse to cite unverified studies.
+3. **The brain**: [`engine/rubicon.cjs`](engine/rubicon.cjs), one pure, tested decision engine.
+4. **The n8n workflows**: [`workflows/`](workflows/), import them by URL and click *Execute*.
+5. **The rules**: [`docs/BUSINESS_RULES.md`](docs/BUSINESS_RULES.md) and [`docs/SCORING.md`](docs/SCORING.md).
+
 RUBICON turns company, contact, offer and sales-team data into **explainable, executable daily decisions**: who to call, why, with which offer, in which order, and by whom. It runs on synthetic data with no paid API, and the same decision engine powers the CLI, the Claude Code skills and the n8n workflows.
 
 **Status: open-source portfolio prototype (v1.0.0).** It is not a SaaS, a dialer, a scraper or a validated prediction model. All demo data is fictional. No performance has been measured for RUBICON.
@@ -91,7 +100,11 @@ Open `outputs/demo/daily-roadmap.md`. Excerpt from the real demo output (labels 
 ### n8n
 
 Import `workflows/rubicon-daily.n8n.json` (13 nodes) and `workflows/rubicon-postcall.n8n.json` (5 nodes), then click *Execute*. Each stage is its own node, so you can inspect qualification, quotes, matching and allocation step by step. The workflows have no credential and no HTTP node, and they are inactive.
-**Verified:** both workflows were imported and executed with **n8n 1.123.99** via `n8n execute`, and the daily output is byte-identical to the CLI (`outputs/n8n/EXECUTION_PROOF.md`). n8n 2.x requires Node 24 and has not been tested yet.
+**Verified:** both workflows run on **n8n Cloud** (imported by URL and executed, November 2026) and on a self-hosted **n8n 1.123.99** via `n8n execute`, where the daily output is byte-identical to the CLI (`outputs/n8n/EXECUTION_PROOF.md`).
+
+Import by URL in n8n (menu ⋯ → *Import from URL*):
+- `https://raw.githubusercontent.com/visionary237/rubicon-gtm-engine/main/workflows/rubicon-daily.n8n.json`
+- `https://raw.githubusercontent.com/visionary237/rubicon-gtm-engine/main/workflows/rubicon-postcall.n8n.json`
 
 ## Claude Skills (`.claude/skills/`, project-local)
 
@@ -148,8 +161,8 @@ Workspaces · Accounts · Contacts · Offers · Sales Reps · Objectives · Camp
 
 - 25 Node tests + 5 Python tests pass (`npm test`), covering qualification lanes, cost gates, failure ledger, phone checks, explainability (scores = sum of contributions), promise handling, escalation, capacity, ISP guard, workspace separation, determinism, post-call idempotency/identity/evidence, modes, and n8n parity.
 - 500 synthetic accounts are processed in about 70 ms.
-- Real n8n 1.123.99 execution of both workflows.
-- **Not** tested: live providers, real CRM writes, n8n 2.x, real conversion rates.
+- Both workflows executed on n8n Cloud and on self-hosted n8n 1.123.99.
+- **Not** tested: live providers, real CRM writes, real conversion rates.
 
 ## Limits
 
